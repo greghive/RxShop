@@ -101,11 +101,9 @@
 			children = (
 				F3D75B1125AE36DD0069862E /* AppDelegate.swift */,
 				F3D75B1325AE36DD0069862E /* SceneDelegate.swift */,
-				F3D75B1525AE36DD0069862E /* ViewController.swift */,
-				F3D75B1725AE36DD0069862E /* Main.storyboard */,
-				F3D75B1A25AE36E00069862E /* Assets.xcassets */,
-				F3D75B1C25AE36E00069862E /* LaunchScreen.storyboard */,
-				F3D75B1F25AE36E00069862E /* Info.plist */,
+				F3D75B4525AE37400069862E /* Common */,
+				F3D75B4425AE37380069862E /* Scenes */,
+				F3D75B4625AE37A60069862E /* Resources */,
 			);
 			path = RxShop;
 			sourceTree = "<group>";
@@ -126,6 +124,32 @@
 				F3D75B3525AE36E00069862E /* Info.plist */,
 			);
 			path = RxShopUITests;
+			sourceTree = "<group>";
+		};
+		F3D75B4425AE37380069862E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3D75B1525AE36DD0069862E /* ViewController.swift */,
+				F3D75B1725AE36DD0069862E /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3D75B4525AE37400069862E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3D75B4625AE37A60069862E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3D75B1F25AE36E00069862E /* Info.plist */,
+				F3D75B1C25AE36E00069862E /* LaunchScreen.storyboard */,
+				F3D75B1A25AE36E00069862E /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = RxShop/Info.plist;
+				INFOPLIST_FILE = RxShop/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = RxShop/Info.plist;
+				INFOPLIST_FILE = RxShop/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
