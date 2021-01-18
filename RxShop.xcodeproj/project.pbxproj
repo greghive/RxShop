@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,13 +18,20 @@
 		F37850EA25B225F200099AA7 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850E925B225F200099AA7 /* SignIn.storyboard */; };
 		F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */; };
 		F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */; };
+		F3C4A5B625B5EA23002FDAFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F3C4A5B525B5EA23002FDAFE /* RxSwift */; };
+		F3C4A5BA25B5EA23002FDAFE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F3C4A5B925B5EA23002FDAFE /* RxRelay */; };
+		F3C4A5BC25B5EA23002FDAFE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F3C4A5BB25B5EA23002FDAFE /* RxCocoa */; };
+		F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */; };
+		F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5D025B5EF6D002FDAFE /* AuthCoordinator.swift */; };
+		F3C4A5D725B5F113002FDAFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5D625B5F113002FDAFE /* User.swift */; };
+		F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */; };
+		F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */; };
 		F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B1125AE36DD0069862E /* AppDelegate.swift */; };
 		F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B1325AE36DD0069862E /* SceneDelegate.swift */; };
 		F3D75B1B25AE36E00069862E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D75B1A25AE36E00069862E /* Assets.xcassets */; };
 		F3D75B1E25AE36E00069862E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D75B1C25AE36E00069862E /* LaunchScreen.storyboard */; };
 		F3D75B2925AE36E00069862E /* RxShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B2825AE36E00069862E /* RxShopTests.swift */; };
 		F3D75B3425AE36E00069862E /* RxShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B3325AE36E00069862E /* RxShopUITests.swift */; };
-		F3D75B5525AE3B6E0069862E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B5425AE3B6E0069862E /* MainCoordinator.swift */; };
 		F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B5C25AE3B930069862E /* LandingViewController.swift */; };
 		F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B6125AE3BA60069862E /* LandingViewModel.swift */; };
 		F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B6825AE3D330069862E /* TabsCoordinator.swift */; };
@@ -59,6 +66,11 @@
 		F37850E925B225F200099AA7 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
+		F3C4A5D025B5EF6D002FDAFE /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		F3C4A5D625B5F113002FDAFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCache.swift; sourceTree = "<group>"; };
+		F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsVoid.swift; sourceTree = "<group>"; };
 		F3D75B0E25AE36DD0069862E /* RxShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D75B1125AE36DD0069862E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D75B1325AE36DD0069862E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +83,6 @@
 		F3D75B2F25AE36E00069862E /* RxShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D75B3325AE36E00069862E /* RxShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxShopUITests.swift; sourceTree = "<group>"; };
 		F3D75B3525AE36E00069862E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3D75B5425AE3B6E0069862E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F3D75B5C25AE3B930069862E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F3D75B6125AE3BA60069862E /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		F3D75B6825AE3D330069862E /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
@@ -82,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C4A5BA25B5EA23002FDAFE /* RxRelay in Frameworks */,
+				F3C4A5BC25B5EA23002FDAFE /* RxCocoa in Frameworks */,
+				F3C4A5B625B5EA23002FDAFE /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +119,8 @@
 		F3C4A5A525B22E98002FDAFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */,
+				F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -116,6 +132,14 @@
 				F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F3C4A5D525B5F104002FDAFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4A5D625B5F113002FDAFE /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F3D75B0525AE36DD0069862E = {
@@ -143,7 +167,6 @@
 			children = (
 				F3D75B1125AE36DD0069862E /* AppDelegate.swift */,
 				F3D75B1325AE36DD0069862E /* SceneDelegate.swift */,
-				F3D75B5425AE3B6E0069862E /* MainCoordinator.swift */,
 				F3D75B4525AE37400069862E /* Common */,
 				F3D75B4425AE37380069862E /* Scenes */,
 				F3D75B4625AE37A60069862E /* Resources */,
@@ -183,6 +206,7 @@
 			children = (
 				F3C4A5AB25B22FE2002FDAFE /* Storyboards */,
 				F3C4A5A525B22E98002FDAFE /* Extensions */,
+				F3C4A5D525B5F104002FDAFE /* Models */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -232,6 +256,8 @@
 		F3D75B6625AE3CF50069862E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F3C4A5D025B5EF6D002FDAFE /* AuthCoordinator.swift */,
+				F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */,
 				F3D75B5125AE3B040069862E /* Landing */,
 				F3D75B5225AE3B0E0069862E /* SignUp */,
 				F3D75B5325AE3B170069862E /* SignIn */,
@@ -263,6 +289,11 @@
 			dependencies = (
 			);
 			name = RxShop;
+			packageProductDependencies = (
+				F3C4A5B525B5EA23002FDAFE /* RxSwift */,
+				F3C4A5B925B5EA23002FDAFE /* RxRelay */,
+				F3C4A5BB25B5EA23002FDAFE /* RxCocoa */,
+			);
 			productName = RxShop;
 			productReference = F3D75B0E25AE36DD0069862E /* RxShop.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +365,9 @@
 				Base,
 			);
 			mainGroup = F3D75B0525AE36DD0069862E;
+			packageReferences = (
+				F3C4A5B425B5EA23002FDAFE /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = F3D75B0F25AE36DD0069862E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,11 +413,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3D75B5525AE3B6E0069862E /* MainCoordinator.swift in Sources */,
 				F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */,
+				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
+				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
+				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
+				F3C4A5D725B5F113002FDAFE /* User.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,
 				F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */,
 				F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */,
@@ -393,6 +430,7 @@
 				F37850C725B2252F00099AA7 /* CreateAccountViewModel.swift in Sources */,
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
+				F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +755,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3C4A5B425B5EA23002FDAFE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3C4A5B525B5EA23002FDAFE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C4A5B425B5EA23002FDAFE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F3C4A5B925B5EA23002FDAFE /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C4A5B425B5EA23002FDAFE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F3C4A5BB25B5EA23002FDAFE /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C4A5B425B5EA23002FDAFE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3D75B0625AE36DD0069862E /* Project object */;
 }
