@@ -41,7 +41,7 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
         
         let user = response
             .map { try JSONDecoder().decode(User.self, from: $0) }
-            .map { SignUpAction.success($0) }
+            .map { SignInAction.success($0) }
         
         return (output: output, action: user)
     }
