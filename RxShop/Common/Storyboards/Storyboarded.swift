@@ -2,7 +2,7 @@
 
 import UIKit
 
-// ref: adapted from hacking with swift https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps
+// ref: adapted from https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps
 
 protocol Storyboarded {
     static var storyboard: Storyboard { get }

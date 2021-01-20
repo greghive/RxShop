@@ -16,6 +16,8 @@
 		F37850E025B225CA00099AA7 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850DF25B225CA00099AA7 /* Landing.storyboard */; };
 		F37850E525B225E000099AA7 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850E425B225E000099AA7 /* SignUp.storyboard */; };
 		F37850EA25B225F200099AA7 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850E925B225F200099AA7 /* SignIn.storyboard */; };
+		F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72C625B889BB008FB01F /* AuthRequests.swift */; };
+		F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72CE25B893DA008FB01F /* AuthFlow.swift */; };
 		F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */; };
 		F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */; };
 		F3C4A5B625B5EA23002FDAFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F3C4A5B525B5EA23002FDAFE /* RxSwift */; };
@@ -26,6 +28,7 @@
 		F3C4A5D725B5F113002FDAFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5D625B5F113002FDAFE /* User.swift */; };
 		F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */; };
 		F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */; };
+		F3C4A60425B70938002FDAFE /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A60325B70938002FDAFE /* Requests.swift */; };
 		F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B1125AE36DD0069862E /* AppDelegate.swift */; };
 		F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B1325AE36DD0069862E /* SceneDelegate.swift */; };
 		F3D75B1B25AE36E00069862E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D75B1A25AE36E00069862E /* Assets.xcassets */; };
@@ -64,6 +67,8 @@
 		F37850DF25B225CA00099AA7 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		F37850E425B225E000099AA7 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		F37850E925B225F200099AA7 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		F3BE72C625B889BB008FB01F /* AuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
+		F3BE72CE25B893DA008FB01F /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		F3C4A5D625B5F113002FDAFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCache.swift; sourceTree = "<group>"; };
 		F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsVoid.swift; sourceTree = "<group>"; };
+		F3C4A60325B70938002FDAFE /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		F3D75B0E25AE36DD0069862E /* RxShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D75B1125AE36DD0069862E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D75B1325AE36DD0069862E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,8 +125,10 @@
 		F3C4A5A525B22E98002FDAFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */,
-				F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */,
+				F3C4A5F425B6C7EC002FDAFE /* MVVM */,
+				F3C4A5F525B6C7FA002FDAFE /* Rx */,
+				F3C4A5F625B6C847002FDAFE /* UIKit */,
+				F3C4A60225B70908002FDAFE /* Network */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +148,37 @@
 				F3C4A5D625B5F113002FDAFE /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3C4A5F425B6C7EC002FDAFE /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		F3C4A5F525B6C7FA002FDAFE /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4A5EC25B62D57002FDAFE /* AsVoid.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		F3C4A5F625B6C847002FDAFE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F3C4A60225B70908002FDAFE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4A60325B70938002FDAFE /* Requests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F3D75B0525AE36DD0069862E = {
@@ -167,8 +206,8 @@
 			children = (
 				F3D75B1125AE36DD0069862E /* AppDelegate.swift */,
 				F3D75B1325AE36DD0069862E /* SceneDelegate.swift */,
-				F3D75B4525AE37400069862E /* Common */,
 				F3D75B4425AE37380069862E /* Scenes */,
+				F3D75B4525AE37400069862E /* Common */,
 				F3D75B4625AE37A60069862E /* Resources */,
 			);
 			path = RxShop;
@@ -257,7 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				F3C4A5D025B5EF6D002FDAFE /* AuthCoordinator.swift */,
+				F3BE72CE25B893DA008FB01F /* AuthFlow.swift */,
 				F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */,
+				F3BE72C625B889BB008FB01F /* AuthRequests.swift */,
 				F3D75B5125AE3B040069862E /* Landing */,
 				F3D75B5225AE3B0E0069862E /* SignUp */,
 				F3D75B5325AE3B170069862E /* SignIn */,
@@ -420,17 +461,20 @@
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
+				F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */,
 				F3C4A5D725B5F113002FDAFE /* User.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,
 				F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */,
 				F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */,
 				F37850D125B2256100099AA7 /* CreatePasswordViewModel.swift in Sources */,
+				F3C4A60425B70938002FDAFE /* Requests.swift in Sources */,
 				F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */,
 				F37850D625B2258100099AA7 /* SignInViewController.swift in Sources */,
 				F37850C725B2252F00099AA7 /* CreateAccountViewModel.swift in Sources */,
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */,
+				F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

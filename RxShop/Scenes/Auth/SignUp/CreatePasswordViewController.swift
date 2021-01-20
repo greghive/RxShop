@@ -11,6 +11,6 @@ extension CreatePasswordViewController: Storyboarded {
     static var storyboard: Storyboard = .signup
 }
 
-class CreatePasswordViewController: UIViewController {
-    
+class CreatePasswordViewController: UIViewController, HasViewModel {
+    var viewModelFactory: (CreatePasswordInput) -> CreatePasswordOutput = { _ in fatalError("Missing view model factory.") }
 }

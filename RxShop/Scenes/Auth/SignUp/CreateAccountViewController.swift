@@ -11,6 +11,6 @@ extension CreateAccountViewController: Storyboarded {
     static var storyboard: Storyboard = .signup
 }
 
-class CreateAccountViewController: UIViewController {
-    
+class CreateAccountViewController: UIViewController, HasViewModel {
+    var viewModelFactory: (CreateAccountInput) -> CreateAccountOutput = { _ in fatalError("Missing view model factory.") }
 }
