@@ -31,8 +31,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="signInButton" destination="D00-Wc-E7l" id="l7Y-4F-9Ei"/>
-                        <outlet property="signUpButton" destination="bsq-w0-NhN" id="aDf-nR-dRX"/>
+                        <outlet property="signInButton" destination="D00-Wc-E7l" id="UdL-NU-Fe2"/>
+                        <outlet property="signUpButton" destination="bsq-w0-NhN" id="7wa-R4-3cL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLr-Qk-hEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
