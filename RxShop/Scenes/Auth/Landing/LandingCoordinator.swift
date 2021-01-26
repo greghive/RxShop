@@ -14,7 +14,8 @@ func landingCoordinator(_ window: UIWindow) {
     let navigationController = UINavigationController(rootViewController: landingViewController)
     window.rootViewController = navigationController
        
-    _ = landingAction.flow(navController: navigationController, showSignIn: showSignIn(navController:))
+    _ = landingAction
+        .flow(navController: navigationController, showSignIn: showSignIn(navController:))
         .subscribe(onNext: { result in
             switch result {
             case .success(let user):

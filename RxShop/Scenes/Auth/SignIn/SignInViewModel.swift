@@ -26,7 +26,7 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
         
         let credentials = Observable
             .combineLatest(input.email, input.password)
-            .share()
+            .share(replay: 1)
         
         let signInEnabled = credentials
             .map { $0.0.count > 0 && $0.1.count > 0 }
@@ -40,7 +40,7 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
             .flatMap { dataTask(with: URLRequest.signIn($0)) }
         
         let user = response
-            .map { try JSONDecoder().decode(User.self, from: $0) }
+            .decode(type: User.self, decoder: jsonDecoder())
             .map { SignInAction.success($0) }
         
         return (output: output, action: user)

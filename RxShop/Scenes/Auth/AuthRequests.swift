@@ -22,13 +22,13 @@ struct SignInBody: Encodable {
 extension URLRequest {
     
     static func signUp(_ params: SignUpBody) -> URLRequest {
-        var request = baseRequest(method: .post, path: "/signup")
+        var request = baseRequest(method: .post, path: "/users/signup")
         request.httpBody = try? jsonEncoder().encode(params)
         return request
     }
     
     static func signIn(_ params: SignInBody) -> URLRequest {
-        var request = baseRequest(method: .post, path: "/signin")
+        var request = baseRequest(method: .post, path: "/users/signin")
         request.httpBody = try? jsonEncoder().encode(params)
         return request
     }

@@ -28,6 +28,10 @@ extension ObservableType where Element == LandingAction {
             .asVoid()
             .flatMapLatest {showSignIn(navController)}
             
+        // check if signup would work with 2 flatMapLatest like was being done before
+        // need some API data now, to get some responses from these view controllers
+        // if so, could switch all back to AuthCoordinator / AuthFlow
+        
         let authenticated = self
             .filter { $0.isCheckAuthentication }
             .compactMap { $0.authenticated }

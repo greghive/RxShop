@@ -43,7 +43,7 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
             .flatMap { dataTask(with: URLRequest.signUp($0)) }
         
         let user = response
-            .map { try JSONDecoder().decode(User.self, from: $0) }
+            .decode(type: User.self, decoder: jsonDecoder()) // what if this fails?????
             .map { SignUpAction.success($0) }
         
         // no way to get the error out ????

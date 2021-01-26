@@ -16,11 +16,12 @@ enum HTTPMethod: String {
 extension URLRequest {
     
     static func baseRequest(method: HTTPMethod, path: String) -> URLRequest {
-        // TODO: switch this to a simple vapor app running on heroku
-        var components = URLComponents(string: "https://my-json-server.typicode.com/greghive/rxshop")!
+        var components = URLComponents(string: "http://127.0.0.1:8080")!
         components.path = path
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         return request
     }
 }
@@ -30,7 +31,9 @@ func dataTask(with request: URLRequest) -> Observable<Data> {
 }
 
 func jsonEncoder() -> JSONEncoder {
-    let encoder = JSONEncoder()
-    encoder.keyEncodingStrategy = .convertToSnakeCase
-    return encoder
+    return JSONEncoder()
+}
+
+func jsonDecoder() -> JSONDecoder {
+    return JSONDecoder()
 }
