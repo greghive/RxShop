@@ -11,6 +11,7 @@ import RxSwift
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
+    case delete = "DELETE"
 }
 
 extension URLRequest {
@@ -26,8 +27,25 @@ extension URLRequest {
     }
 }
 
-func dataTask(with request: URLRequest) -> Observable<Data> {
-    return URLSession.shared.rx.data(request: request)
+func dataTask(with request: URLRequest) -> Observable<Result<Data>> {
+    return URLSession.shared.rx
+        .data(request: request)
+        .materialize()
+        .filter { $0.isCompleted == false }
+        .map { $0.asResult }
+}
+
+extension Event {
+    var asResult: Result<Element> {
+        switch self {
+        case .next(let element):
+            return .success(element)
+        case .error(let error):
+            return .error(error)
+        case .completed:
+            fatalError("Be sure to filter out completed events")
+        }
+    }
 }
 
 func jsonEncoder() -> JSONEncoder {

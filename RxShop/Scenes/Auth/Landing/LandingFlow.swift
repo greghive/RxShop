@@ -22,7 +22,7 @@ extension ObservableType where Element == LandingAction {
         return Observable.merge(signUp.debug("🟢 signUp"), signIn.debug("🟢 signIn")).debug("🟢 merge")
     }
     
-    func flow(navController: UINavigationController, showSignIn: @escaping (UINavigationController) -> Observable<SignInAction>) -> Observable<Result<User, Error>> {
+    func flow(navController: UINavigationController, showSignIn: @escaping (UINavigationController) -> Observable<SignInAction>) -> Observable<Result<User>> {
         let signIn = self
             .filter { $0.wantsSignIn }
             .asVoid()
@@ -33,7 +33,7 @@ extension ObservableType where Element == LandingAction {
         // if so, could switch all back to AuthCoordinator / AuthFlow
         
         let authenticated = self
-            .filter { $0.isCheckAuthentication }
+            //.filter { $0.isCheckAuthentication }
             .compactMap { $0.authenticated }
             .map { SignInAction.success($0) }
         

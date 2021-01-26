@@ -19,9 +19,10 @@ func landingCoordinator(_ window: UIWindow) {
         .subscribe(onNext: { result in
             switch result {
             case .success(let user):
-                print("user: \(user)")
-            case .failure(let error):
-                print("error: \(error)")
+                print("*** user: \(user)")
+                // cache the user here ????
+            case .error(let error):
+                print("*** error: \(error.localizedDescription)")
             }
         })
 }

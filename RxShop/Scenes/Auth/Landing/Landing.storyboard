@@ -16,19 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D00-Wc-E7l">
-                                <rect key="frame" x="183" y="274" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN IN"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsq-w0-NhN">
-                                <rect key="frame" x="177" y="137" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN UP"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-5y-Odi">
+                                <rect key="frame" x="0.0" y="738" width="414" height="92"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsq-w0-NhN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <state key="normal" title="SIGN UP"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D00-Wc-E7l">
+                                        <rect key="frame" x="0.0" y="62" width="414" height="30"/>
+                                        <state key="normal" title="SIGN IN"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="smY-hM-mLu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="smY-hM-mLu" firstAttribute="bottom" secondItem="K0k-5y-Odi" secondAttribute="bottom" constant="32" id="BHU-wt-ZYC"/>
+                            <constraint firstItem="smY-hM-mLu" firstAttribute="trailing" secondItem="K0k-5y-Odi" secondAttribute="trailing" id="GgZ-eq-wRO"/>
+                            <constraint firstItem="K0k-5y-Odi" firstAttribute="leading" secondItem="smY-hM-mLu" secondAttribute="leading" id="ngI-mN-dRI"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="D00-Wc-E7l" id="UdL-NU-Fe2"/>

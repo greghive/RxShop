@@ -19,7 +19,7 @@ struct CreatePasswordOutput {
     let signUpEnabled: Driver<Bool>
 }
 
-typealias SignUpAction = Result<User, Error>
+typealias SignUpAction = Result<User>
 
 func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: CreatePasswordInput) -> (output: CreatePasswordOutput, action: Observable<SignUpAction>) {
     return { input in
@@ -40,15 +40,21 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
                               lastName: accountDetails.lastName,
                               email: accountDetails.email,
                               password: $0.0) }
-            .flatMap { dataTask(with: URLRequest.signUp($0)) }
+            .flatMapLatest { dataTask(with: URLRequest.signUp($0)) }
+            .share(replay: 1)
         
         let user = response
-            .decode(type: User.self, decoder: jsonDecoder()) // what if this fails?????
-            .map { SignUpAction.success($0) }
+            .map { $0.map { try JSONDecoder().decode(User.self, from: $0) } }
+            .map { $0.map { SignUpAction.success($0) } }
+            .compactMap { $0.success }
         
-        // no way to get the error out ????
-        // see Daniels code 'dataTask(with)' + materialize
+        let error = response
+            .compactMap { $0.error }
+            .map { SignUpAction.error($0) }
         
-        return (output: output, action: user)
+        let action = Observable
+            .merge(user, error)
+   
+        return (output: output, action: action)
     }
 }

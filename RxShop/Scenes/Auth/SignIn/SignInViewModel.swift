@@ -19,7 +19,7 @@ struct SignInOutput {
     let signInEnabled: Driver<Bool>
 }
 
-typealias SignInAction = Result<User, Error>
+typealias SignInAction = Result<User>
 
 func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, action: Observable<SignInAction>) {
     return { input in
@@ -37,12 +37,21 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
         let response = input.signIn
             .withLatestFrom(credentials)
             .map { SignInBody(email: $0.0, password: $0.1) }
-            .flatMap { dataTask(with: URLRequest.signIn($0)) }
+            .flatMapLatest { dataTask(with: URLRequest.signIn($0)) }
+            .share(replay: 1)
         
         let user = response
-            .decode(type: User.self, decoder: jsonDecoder())
-            .map { SignInAction.success($0) }
+            .map { $0.map { try JSONDecoder().decode(User.self, from: $0) } }
+            .map { $0.map { SignInAction.success($0) } }
+            .compactMap { $0.success }
         
-        return (output: output, action: user)
+        let error = response
+            .compactMap { $0.error }
+            .map { SignInAction.error($0) }
+        
+        let action = Observable
+            .merge(user, error)
+        
+        return (output: output, action: action)
     }
 }
