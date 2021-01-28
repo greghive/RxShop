@@ -18,7 +18,7 @@ class LandingViewController: UIViewController, HasViewModel {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
     
-    private var disposeBag: DisposeBag!
+    private let disposeBag = DisposeBag()
     var viewModelFactory: (LandingInput) -> LandingOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
@@ -30,9 +30,8 @@ class LandingViewController: UIViewController, HasViewModel {
         let input = LandingInput(viewWillAppear: viewWillAppear, signUpTap: signUpTap, signInTap: signInTap)
         let viewModel = viewModelFactory(input)
         
-        disposeBag = DisposeBag {
-            viewModel.buttonsHidden
-                .drive(signUpButton.rx.isHidden, signInButton.rx.isHidden)
-        }
+        viewModel.buttonsHidden
+            .drive(signUpButton.rx.isHidden, signInButton.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }

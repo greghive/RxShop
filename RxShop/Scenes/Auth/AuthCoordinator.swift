@@ -30,20 +30,7 @@ func authCoordinator(_ window: UIWindow) {
         })
 }
 
-// FIXME: install the view model BEFORE showing the controller!!!! this could be the issue with the share of the action in the coordinator above!!!!
-
-//func showPostList(root: UIViewController, with channel: Channel) -> Observable<PostListAction> {
-//    let vc = MessagePostListViewController()
-//    let action = vc.installOutputViewModel(outputFactory: postListViewModel(channel: channel))
-//    root.showDetailViewController(vc, sender: nil)
-//    return action
-//}
-
-// Generic function for this????
-
-func show(navController: UINavigationController) {
-    
-}
+// improve with generic function 
 
 func showCreateAccount(navController: UINavigationController) -> Observable<CreateAccountAction> {
     let viewController = CreateAccountViewController.fromStoryboard()
@@ -54,14 +41,16 @@ func showCreateAccount(navController: UINavigationController) -> Observable<Crea
 
 func showCreatePassword(navController: UINavigationController, accountDetails: AccountDetails) -> Observable<SignUpAction> {
     let viewController = CreatePasswordViewController.fromStoryboard()
+    let action = viewController.installOutputViewModel(outputFactory: createPasswordViewModel(accountDetails: accountDetails))
     navController.pushViewController(viewController, animated: true)
-    return viewController.installOutputViewModel(outputFactory: createPasswordViewModel(accountDetails: accountDetails))
+    return action
 }
 
 func showSignIn(navController: UINavigationController) -> Observable<SignInAction> {
     let viewController = SignInViewController.fromStoryboard()
+    let action = viewController.installOutputViewModel(outputFactory: signInViewModel())
     navController.pushViewController(viewController, animated: true)
-    return viewController.installOutputViewModel(outputFactory: signInViewModel())
+    return action
 }
 
 func showTabs(_ navController: UINavigationController) {
