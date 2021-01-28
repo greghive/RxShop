@@ -33,11 +33,12 @@ extension ObservableType where Element == LandingAction {
         // if so, could switch all back to AuthCoordinator / AuthFlow
         
         let authenticated = self
-            //.filter { $0.isCheckAuthentication }
             .compactMap { $0.authenticated }
             .map { SignInAction.success($0) }
         
-        return Observable.merge(signIn.debug("🟢 signIn"), authenticated.debug("🟢 authenticated"))
+        return Observable
+            .merge(signIn.debug("🟢 signIn"), authenticated.debug("🟢 authenticated"))
+            .observe(on: MainScheduler.instance)
     }
 }
 

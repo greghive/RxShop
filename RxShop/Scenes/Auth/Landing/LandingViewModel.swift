@@ -28,7 +28,7 @@ func landingViewModel() -> (_ input: LandingInput) -> (output: LandingOutput, ac
     return { input in
         
         let user = input.viewWillAppear
-            .map { authenticatedUser() }
+            .map { cachedUser(from: .standard)}
             .share()
         
         let buttonsHidden = user
