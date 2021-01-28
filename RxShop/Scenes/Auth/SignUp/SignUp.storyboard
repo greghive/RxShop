@@ -15,9 +15,46 @@
                     <view key="view" contentMode="scaleToFill" id="MYr-Bw-Txo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="k8q-A7-L6o">
+                                <rect key="frame" x="32" y="76" width="350" height="168"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Ao-SJ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-wr-vu6">
+                                        <rect key="frame" x="0.0" y="46" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-HS-3KD">
+                                        <rect key="frame" x="0.0" y="92" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-e2-kFV">
+                                        <rect key="frame" x="0.0" y="138" width="350" height="30"/>
+                                        <state key="normal" title="NEXT"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sAw-I5-FeB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sAw-I5-FeB" firstAttribute="trailing" secondItem="k8q-A7-L6o" secondAttribute="trailing" constant="32" id="8hv-Zi-pk9"/>
+                            <constraint firstItem="k8q-A7-L6o" firstAttribute="leading" secondItem="sAw-I5-FeB" secondAttribute="leading" constant="32" id="FHk-My-myR"/>
+                            <constraint firstItem="k8q-A7-L6o" firstAttribute="top" secondItem="sAw-I5-FeB" secondAttribute="top" constant="32" id="jGL-Y8-yK3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="tW5-HS-3KD" id="l1d-qD-RmC"/>
+                        <outlet property="firstNameTextField" destination="IsY-Ao-SJ8" id="6Yc-y2-BBC"/>
+                        <outlet property="lastNameTextField" destination="hZP-wr-vu6" id="pk9-Fh-aNS"/>
+                        <outlet property="nextButton" destination="K1c-e2-kFV" id="Ldk-cE-Agt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6z-tD-Gtn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,9 +67,40 @@
                     <view key="view" contentMode="scaleToFill" id="bgn-tX-Bwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-5m-276">
+                                <rect key="frame" x="32" y="76" width="350" height="122"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-KC-pus">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-Vc-BgA">
+                                        <rect key="frame" x="0.0" y="46" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-e8-usL">
+                                        <rect key="frame" x="0.0" y="92" width="350" height="30"/>
+                                        <state key="normal" title="SIGN UP"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0E6-RB-aZU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lQb-5m-276" firstAttribute="top" secondItem="0E6-RB-aZU" secondAttribute="top" constant="32" id="194-fG-mZZ"/>
+                            <constraint firstItem="lQb-5m-276" firstAttribute="leading" secondItem="0E6-RB-aZU" secondAttribute="leading" constant="32" id="fGv-XB-gxr"/>
+                            <constraint firstItem="0E6-RB-aZU" firstAttribute="trailing" secondItem="lQb-5m-276" secondAttribute="trailing" constant="32" id="xvW-4s-Eyx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmTextField" destination="B1a-Vc-BgA" id="KV6-xn-ByI"/>
+                        <outlet property="passwordTextField" destination="tBa-KC-pus" id="Lqp-ya-YCe"/>
+                        <outlet property="signUpButton" destination="W1a-e8-usL" id="53C-aN-Hsx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnh-SC-cRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

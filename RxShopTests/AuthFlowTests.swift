@@ -10,7 +10,7 @@ import RxSwift
 import RxTest
 @testable import RxShop
 
-class LandingFlowTests: XCTestCase {
+class AuthFlowTests: XCTestCase {
 
     var scheduler: TestScheduler!
     var subscription: Disposable!

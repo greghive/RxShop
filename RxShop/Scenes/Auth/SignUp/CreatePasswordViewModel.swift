@@ -12,7 +12,7 @@ import RxCocoa
 struct CreatePasswordInput {
     let password: Observable<String>
     let confirmation: Observable<String>
-    let signUp: Observable<String>
+    let signUp: Observable<Void>
 }
 
 struct CreatePasswordOutput {
@@ -26,7 +26,7 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
         
         let passwords = Observable
             .combineLatest(input.password, input.confirmation)
-            .share()
+            .share(replay: 1)
                 
         let signUpEnabled = passwords
             .map { $0.0.count > 0 && $0.0 == $0.1 }

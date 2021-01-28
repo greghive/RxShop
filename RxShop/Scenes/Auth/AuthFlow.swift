@@ -22,22 +22,28 @@ extension ObservableType where Element == LandingAction {
         return Observable.merge(signUp.debug("🟢 signUp"), signIn.debug("🟢 signIn")).debug("🟢 merge")
     }
     
-    func flow(navController: UINavigationController, showSignIn: @escaping (UINavigationController) -> Observable<SignInAction>) -> Observable<Result<User>> {
+    func flow(navController: UINavigationController,
+              showSignIn: @escaping (UINavigationController) -> Observable<SignInAction>,
+              showCreateAccount: @escaping (UINavigationController) -> Observable<CreateAccountAction>,
+              showCreatePassword: @escaping (UINavigationController, AccountDetails) -> Observable<SignInAction>) -> Observable<Result<User>> {
+        
         let signIn = self
             .filter { $0.wantsSignIn }
             .asVoid()
-            .flatMapLatest {showSignIn(navController)}
+            .flatMapLatest { showSignIn(navController) }
             
-        // check if signup would work with 2 flatMapLatest like was being done before
-        // need some API data now, to get some responses from these view controllers
-        // if so, could switch all back to AuthCoordinator / AuthFlow
+        let signUp = self
+            .filter { $0.wantsSignUp }
+            .asVoid()
+            .flatMapLatest { showCreateAccount(navController) }
+            .flatMapLatest { showCreatePassword(navController, $0) }
         
         let authenticated = self
             .compactMap { $0.authenticated }
             .map { SignInAction.success($0) }
         
         return Observable
-            .merge(signIn.debug("🟢 signIn"), authenticated.debug("🟢 authenticated"))
+            .merge(signIn.debug("🟢 signIn"), signUp.debug("🟢 signUp"), authenticated.debug("🟢 authenticated"))
             .observe(on: MainScheduler.instance)
     }
 }

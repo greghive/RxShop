@@ -27,7 +27,7 @@ func createAccountViewModel() -> (_ input: CreateAccountInput) -> (output: Creat
         
         let credentials = Observable
             .combineLatest(input.firstName, input.lastName, input.email) { (firstName: $0, lastName: $1, email: $2) }
-            .share()
+            .share(replay: 1)
         
         let nextEnabled = credentials
             .map { !$0.firstName.isEmpty && !$0.lastName.isEmpty && !$0.email.isEmpty}
