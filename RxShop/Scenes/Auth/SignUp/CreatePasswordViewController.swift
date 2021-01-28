@@ -25,10 +25,11 @@ class CreatePasswordViewController: UIViewController, HasViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let password = passwordTextField.observableText()
-        let confirm = confirmTextField.observableText()
-        let signUp = signUpButton.observableTap()
-        let viewModel = viewModelFactory(CreatePasswordInput(password: password, confirmation: confirm, signUp: signUp))
+        let input = CreatePasswordInput(password: passwordTextField.observableText(),
+                                        confirmation: confirmTextField.observableText(),
+                                        signUp: signUpButton.observableTap())
+        
+        let viewModel = viewModelFactory(input)
     
         viewModel.signUpEnabled
             .drive(signUpButton.rx.isEnabled)

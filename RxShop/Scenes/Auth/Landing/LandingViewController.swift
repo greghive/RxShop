@@ -24,10 +24,10 @@ class LandingViewController: UIViewController, HasViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewWillAppear = rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid()
-        let signUpTap = signUpButton.observableTap()
-        let signInTap = signInButton.observableTap()
-        let input = LandingInput(viewWillAppear: viewWillAppear, signUpTap: signUpTap, signInTap: signInTap)
+        let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
+                                 signUpTap: signUpButton.observableTap(),
+                                 signInTap: signInButton.observableTap())
+       
         let viewModel = viewModelFactory(input)
         
         viewModel.buttonsHidden

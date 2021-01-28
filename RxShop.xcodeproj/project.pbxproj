@@ -43,8 +43,6 @@
 		F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B5C25AE3B930069862E /* LandingViewController.swift */; };
 		F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B6125AE3BA60069862E /* LandingViewModel.swift */; };
 		F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D75B6825AE3D330069862E /* TabsCoordinator.swift */; };
-		F3DF9E0425BCB47E00522732 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DF9E0325BCB47E00522732 /* SignUpCoordinator.swift */; };
-		F3DF9E0925BCB48E00522732 /* SignUpFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DF9E0825BCB48E00522732 /* SignUpFlow.swift */; };
 		F3EC865025BC8005002FDC4B /* AuthFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,8 +110,6 @@
 		F3D75B5C25AE3B930069862E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F3D75B6125AE3BA60069862E /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		F3D75B6825AE3D330069862E /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
-		F3DF9E0325BCB47E00522732 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
-		F3DF9E0825BCB48E00522732 /* SignUpFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlow.swift; sourceTree = "<group>"; };
 		F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,8 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				F37850E425B225E000099AA7 /* SignUp.storyboard */,
-				F3DF9E0325BCB47E00522732 /* SignUpCoordinator.swift */,
-				F3DF9E0825BCB48E00522732 /* SignUpFlow.swift */,
 				F37850BE25B224E600099AA7 /* CreateAccountViewController.swift */,
 				F37850C625B2252F00099AA7 /* CreateAccountViewModel.swift */,
 				F37850CB25B2254F00099AA7 /* CreatePasswordViewController.swift */,
@@ -589,7 +583,6 @@
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
-				F3DF9E0925BCB48E00522732 /* SignUpFlow.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
@@ -607,7 +600,6 @@
 				F37850D625B2258100099AA7 /* SignInViewController.swift in Sources */,
 				F37850C725B2252F00099AA7 /* CreateAccountViewModel.swift in Sources */,
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
-				F3DF9E0425BCB47E00522732 /* SignUpCoordinator.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */,
 				F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */,
