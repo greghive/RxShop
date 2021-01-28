@@ -45,5 +45,6 @@ func showSignIn(navController: UINavigationController) -> Observable<SignInActio
 }
 
 func showTabs(_ navController: UINavigationController) {
+    //TODO: ready to show TABS!!
     //tabsCoordinator()
 }
