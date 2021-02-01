@@ -15,6 +15,7 @@ struct BrowseInput {
 
 struct BrowseOutput {
     let products: Observable<[Product]>
+    let refreshEnded: Observable<Void>
 }
 
 typealias BrowseAction = Result<Product>
@@ -24,7 +25,7 @@ func browseViewModel() -> (_ input: BrowseInput) -> (output: BrowseOutput, actio
         
         let response = Observable
             .merge(input.viewWillAppear.take(1), input.refresh)
-            .flatMapLatest { dataTask(with: URLRequest.products()) }
+            .flatMapLatest { dataTask(with: URLRequest.products()) } // need to pass in url to test this???
             .share(replay: 1)
         
         let products = response
@@ -32,7 +33,11 @@ func browseViewModel() -> (_ input: BrowseInput) -> (output: BrowseOutput, actio
             .map { try jsonDecoder().decode([Product].self, from: $0) }
             .share(replay: 1)
 
-        let output = BrowseOutput(products: products)
+        let refreshEnded = response
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
+            .asVoid()
+        
+        let output = BrowseOutput(products: products, refreshEnded: refreshEnded)
         
         let selected = input.select
             .withLatestFrom(products) { $1[$0.row] }
@@ -44,6 +49,7 @@ func browseViewModel() -> (_ input: BrowseInput) -> (output: BrowseOutput, actio
         
         let action = Observable
             .merge(selected, error)
+            .observe(on: MainScheduler.instance)
         
         return (output: output, action: action)
     }

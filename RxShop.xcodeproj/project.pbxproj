@@ -374,6 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				F3D75B6825AE3D330069862E /* TabsCoordinator.swift */,
+				F3E2592125C8609D00AF4A8C /* ProductRequests.swift */,
+				F3E2591C25C85EA900AF4A8C /* Product.swift */,
 				F3E2590C25C85B9200AF4A8C /* Browse */,
 				F3E2590D25C85BB100AF4A8C /* Basket */,
 				F3E2590E25C85BB800AF4A8C /* Profile */,
@@ -387,8 +389,6 @@
 				F3E2592925C8634D00AF4A8C /* BrowseCoordinator.swift */,
 				F3E2590F25C85DF300AF4A8C /* BrowseViewController.swift */,
 				F3E2591725C85E0500AF4A8C /* BrowseViewModel.swift */,
-				F3E2592125C8609D00AF4A8C /* ProductRequests.swift */,
-				F3E2591C25C85EA900AF4A8C /* Product.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
