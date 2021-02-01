@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         authCoordinator(window)
+        //tabsCoordinator(window)
         self.window = window
         self.window?.makeKeyAndVisible()
     }
