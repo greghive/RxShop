@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3BA8AF80989CCA613B479948 /* Pods_RxShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE63B05B773A87258F105E /* Pods_RxShopTests.framework */; };
 		D014ADC4D50B074A4751B4DB /* Pods_RxShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8992105363D4D9BF6C1F9C72 /* Pods_RxShop.framework */; };
+		F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9525C899C80061179E /* ProductViewController.swift */; };
+		F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9A25C899D60061179E /* ProductViewModel.swift */; };
 		F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532125C065150054A73D /* UITextField+RxHelpers.swift */; };
 		F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532625C065720054A73D /* UIButton+RxHelpers.swift */; };
 		F328533725C0ADBE0054A73D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328533625C0ADBE0054A73D /* Result.swift */; };
@@ -78,6 +80,8 @@
 		CA1B2AB9BEE17474502AD44F /* Pods-RxShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxShopTests.release.xcconfig"; path = "Target Support Files/Pods-RxShopTests/Pods-RxShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFBBD6E89AA29394A713A5D3 /* Pods-RxShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxShop.release.xcconfig"; path = "Target Support Files/Pods-RxShop/Pods-RxShop.release.xcconfig"; sourceTree = "<group>"; };
 		E7FE63B05B773A87258F105E /* Pods_RxShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31DAB9525C899C80061179E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		F31DAB9A25C899D60061179E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F328532125C065150054A73D /* UITextField+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+RxHelpers.swift"; sourceTree = "<group>"; };
 		F328532625C065720054A73D /* UIButton+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+RxHelpers.swift"; sourceTree = "<group>"; };
 		F328533625C0ADBE0054A73D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 				F3E2592925C8634D00AF4A8C /* BrowseCoordinator.swift */,
 				F3E2590F25C85DF300AF4A8C /* BrowseViewController.swift */,
 				F3E2591725C85E0500AF4A8C /* BrowseViewModel.swift */,
+				F31DAB9525C899C80061179E /* ProductViewController.swift */,
+				F31DAB9A25C899D60061179E /* ProductViewModel.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */,
 				F346609125C2C6D600517263 /* UIViewController+Errors.swift in Sources */,
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
+				F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */,
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
@@ -639,6 +646,7 @@
 				F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */,
 				F3CEEE4C25BAEDEB00025635 /* UIResponder+Scene.swift in Sources */,
 				F3C4A5D725B5F113002FDAFE /* User.swift in Sources */,
+				F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,
 				F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */,
 				F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */,

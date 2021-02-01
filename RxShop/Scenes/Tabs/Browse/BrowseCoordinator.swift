@@ -13,7 +13,7 @@ func browseCoordinator() -> UINavigationController {
     _ = browseAction.subscribe(onNext: { result in
         switch result {
         case .success(let product):
-            print("selected: \(product)")
+            showProductViewController(browseViewController.navigationController!, product: product)
         case .error(let error):
             browseViewController.showBasicError(message: error.localizedDescription)
         }
@@ -21,4 +21,9 @@ func browseCoordinator() -> UINavigationController {
     
     let navigationController = UINavigationController(rootViewController: browseViewController)
     return navigationController
+}
+
+func showProductViewController(_ navigationController: UINavigationController, product: Product) {
+    let productViewController = ProductViewController(viewModel: product)
+    navigationController.pushViewController(productViewController, animated: true)
 }
