@@ -14,6 +14,11 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     let productsNavigationController = products.navigationController
     productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
      
+    
+    // use an enum for state of ProductAction / BasketAction .added and .deleted
+    // products cootdinator would send added, and basket cooridnator would send deleted
+    // could then sink this up here, with a merge, to get
+    // 1. the correct basket of item and 2. the correct total numver of items
     let boughtProducts = products.action
         .map { [$0] }
         .scan([]) { current, latest in
@@ -38,7 +43,7 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     })
     
     _  = boughtProducts
-        .map { "\($0.count)" }
+        .map { "\($0.count)" } // could do the price here???
         .subscribe(onNext: { count in
             basketViewController.tabBarItem.badgeValue = count
         })
