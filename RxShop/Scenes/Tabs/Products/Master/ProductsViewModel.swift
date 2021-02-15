@@ -7,20 +7,20 @@
 
 import RxSwift
 
-struct BrowseInput {
+struct ProductsInput {
     let viewWillAppear: Observable<Void>
     let refresh: Observable<Void>
     let select: Observable<IndexPath>
 }
 
-struct BrowseOutput {
+struct ProductsOutput {
     let products: Observable<[Product]>
     let refreshEnded: Observable<Void>
 }
 
-typealias BrowseAction = Result<Product>
+typealias ProductsAction = Result<Product>
 
-func browseViewModel() -> (_ input: BrowseInput) -> (output: BrowseOutput, action: Observable<BrowseAction>) {
+func productsViewModel() -> (_ input: ProductsInput) -> (output: ProductsOutput, action: Observable<ProductsAction>) {
     return { input in
         
         let response = Observable
@@ -37,15 +37,15 @@ func browseViewModel() -> (_ input: BrowseInput) -> (output: BrowseOutput, actio
             .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .asVoid()
         
-        let output = BrowseOutput(products: products, refreshEnded: refreshEnded)
+        let output = ProductsOutput(products: products, refreshEnded: refreshEnded)
         
         let selected = input.select
             .withLatestFrom(products) { $1[$0.row] }
-            .map { BrowseAction.success($0) }
+            .map { ProductsAction.success($0) }
         
         let error = response
             .compactMap { $0.error }
-            .map { BrowseAction.error($0) }
+            .map { ProductsAction.error($0) }
         
         let action = Observable
             .merge(selected, error)

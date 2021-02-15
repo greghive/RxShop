@@ -9,10 +9,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BrowseViewController: UITableViewController, HasViewModel {
+class ProductsViewController: UITableViewController, HasViewModel {
     
     private let disposeBag = DisposeBag()
-    var viewModelFactory: (BrowseInput) -> BrowseOutput = { _ in fatalError("Missing view model factory.") }
+    var viewModelFactory: (ProductsInput) -> ProductsOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class BrowseViewController: UITableViewController, HasViewModel {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         let refreshControl = tableView.refreshControl!
         
-        let input = BrowseInput(viewWillAppear: rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).asVoid(),
+        let input = ProductsInput(viewWillAppear: rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).asVoid(),
                                 refresh: tableView.refreshControl!.rx.controlEvent(.valueChanged).asObservable(),
                                 select: tableView.rx.itemSelected.asObservable())
         
@@ -31,15 +31,7 @@ class BrowseViewController: UITableViewController, HasViewModel {
         viewModel.refreshEnded
             .bind { refreshControl.endRefreshing() }
             .disposed(by: disposeBag)
-        
-//        viewModel
-//            .refreshEnded
-//            .withUnretained(tableView)
-//            .subscribe(onNext: { tableView, _ in
-//                tableView.refreshControl?.endRefreshing()
-//            })
-//            .disposed(by: disposeBag)
-        
+                
         viewModel
             .products
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, product, cell in

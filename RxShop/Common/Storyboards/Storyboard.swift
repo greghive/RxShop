@@ -9,4 +9,5 @@ enum Storyboard: String {
     case landing = "Landing"
     case signup = "SignUp"
     case signin = "SignIn"
+    case products = "Products"
 }
