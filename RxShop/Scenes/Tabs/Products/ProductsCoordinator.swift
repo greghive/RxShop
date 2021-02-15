@@ -22,7 +22,7 @@ func productsCoordinator() -> (navigationController: UINavigationController, act
     
     // don't need the flow
     
-    let _ = productsAction
+    _ = productsAction
         .compactMap { $0.error }
         .subscribe(onNext: { navigationController.showBasicError(message: $0.localizedDescription) })
     
