@@ -16,10 +16,7 @@ struct ProductOutput {
     let title: Driver<String>
 }
 
-
-typealias ProductAction = Product
-
-func productViewModel(product: Product) -> (_ input: ProductInput) -> (output: ProductOutput, action: Observable<ProductAction>) {
+func productViewModel(product: Product) -> (_ input: ProductInput) -> (output: ProductOutput, action: Observable<Product>) {
     return { input in
        
         let title = Observable
