@@ -8,11 +8,11 @@
 import UIKit
 import RxSwift
 
-typealias BasketCoordinatorResult = (navigationController: UINavigationController, action: Observable<Product>)
+typealias BasketCoordinatorResult = (navigationController: UINavigationController, basketCount: Observable<BasketCount>)
 
-func basketCoordinator(products: Observable<[Product]>) -> BasketCoordinatorResult {
+func basketCoordinator(addProduct: Observable<Product>) -> BasketCoordinatorResult {
     let basketViewController = BasketViewController()
-    let basketAction = basketViewController.installOutputViewModel(outputFactory: basketViewModel(products: products)).share(replay: 1)
+    let basketAction = basketViewController.installOutputViewModel(outputFactory: basketViewModel(addProduct: addProduct)).share(replay: 1)
     let navigationController = UINavigationController(rootViewController: basketViewController)
     return (navigationController, basketAction)
 }

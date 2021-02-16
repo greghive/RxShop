@@ -21,7 +21,7 @@ class BasketViewController: UITableViewController, HasViewModel {
         
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
-        viewModel.products
+        viewModel.basket
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, product, cell in
                 cell.textLabel!.text = product.title
             }.disposed(by: disposeBag)

@@ -8,56 +8,32 @@
 import UIKit
 import RxSwift
 
-// -> may need to return sign out action from this coordinator?
 func tabsCoordinator(_ navigationController: UINavigationController) {
     
-    let products = productsCoordinator()
-    let productsNavigationController = products.navigationController
-    productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
-     
-    let productsinBasket = Observable.just([Product]())
+    // MARK: Browse
     
-    // use an enum for state of ProductAction / BasketAction .added and .deleted
-    // products cootdinator would send added, and basket cooridnator would send deleted
-    // could then sink this up here, with a merge, to get
-    // 1. the correct basket of item and 2. the correct total numver of items
-    let boughtProducts = products.action
-        .map { [$0] }
-        .scan([]) { current, latest in
-            return current + latest
-        }
-        .share()
-        
-    let basketCoordinatorResult = basketCoordinator(products: boughtProducts)
+    let productCoordinatorResult = productsCoordinator()
+    let productsNavigationController = productCoordinatorResult.navigationController
+    productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
+  
+    // MARK: Basket
+    
+    let basketCoordinatorResult = basketCoordinator(addProduct: productCoordinatorResult.action)
     let basketNavigationController = basketCoordinatorResult.navigationController
     basketNavigationController.tabBarItem = .chunky(title: "Basket", icon: "cart.fill", tag: 1)
     
-    _ = basketCoordinatorResult.action
-        .bind { print("delete", $0) }
-    // should this come back out here?
-    // or can it all be done in the basket view model?
-    
-    // create an empty observable (empty array) pass that into basket,
-    // and then have the 2 view controllers add and delete from that array, with a scan
-    // merge the 2 sources with an enum, and in scan use the type to add or delete
-    
-    // how to merge the add from product view controller, with the delete from basket view controller
-    // *** surely needs to be 2 observables, meged with a scan, switch on enum type ***
+    _ = basketCoordinatorResult.basketCount
+        .map { $0 > 0 ? String($0) : nil }
+        .bind { basketNavigationController.tabBarItem.badgeValue = $0 }
+
+    // MARK: Profile
     
     let profileViewController = ProfileViewController()
     profileViewController.tabBarItem = .chunky(title: "Profile", icon: "person.fill", tag: 2)
     
+    // MARK: Tabs
+    
     let tabBarController = UITabBarController()
     tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileViewController]
     navigationController.pushViewController(tabBarController, animated: true)
-    
-    _ = boughtProducts.subscribe(onNext: {
-        print($0)
-    })
-    
-    _  = boughtProducts
-        .map { "\($0.count)" } // could do the price here??? or put that in the basket header or footer, something like that
-        .subscribe(onNext: { count in
-            basketNavigationController.tabBarItem.badgeValue = count
-        })
 }
