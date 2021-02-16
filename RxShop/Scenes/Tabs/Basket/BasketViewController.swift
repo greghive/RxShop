@@ -18,7 +18,7 @@ class BasketViewController: UITableViewController, HasViewModel {
         super.viewDidLoad()
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(BasketProductCell.self, forCellReuseIdentifier: BasketProductCell.reuseIdentifier)
 
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
@@ -36,14 +36,12 @@ extension BasketViewController {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
               
-              configureCell: { _, tableView, indexPath, item in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-                cell.textLabel?.text = "Item: \(item.product.title)"
-                return cell
-              },
+          configureCell: { _, tableView, indexPath, item in
+            return BasketProductCellConfigurator.cellFrom(tableView, at: indexPath, configuredWith: item)
+          },
               
-              canEditRowAtIndexPath: { _, _ in
-                return true
-              })
+          canEditRowAtIndexPath: { _, _ in
+            return true
+          })
     }
 }

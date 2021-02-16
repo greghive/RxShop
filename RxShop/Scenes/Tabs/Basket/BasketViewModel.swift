@@ -38,6 +38,7 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
             .scan(into: [BasketProduct]()) { current, action in
                 
                 // create as an extension??? operator???
+                // nope... look at the states and commands in the example code
                 switch action {
                 case .add(let product):
                     current.append(product)
