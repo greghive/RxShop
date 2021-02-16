@@ -12,11 +12,11 @@ struct BasketInput {
 }
 
 struct BasketOutput {
-    let basket: Observable<[Product]>
+    let basket: Observable<[BasketProductSection]>
 }
 
 enum BasketAction {
-    case add(Product)
+    case add(BasketProduct)
     case remove(IndexPath)
 }
 
@@ -26,6 +26,7 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
     return { input in
                 
         let addToBasket = addProduct
+            .map { BasketProduct($0) }
             .map { BasketAction.add($0) }
         
         let removeFromBasket = input
@@ -34,8 +35,9 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
         
         let basket = Observable
             .merge(addToBasket, removeFromBasket)
-            .scan(into: [Product]()) { current, action in
+            .scan(into: [BasketProduct]()) { current, action in
                 
+                // create as an extension??? operator???
                 switch action {
                 case .add(let product):
                     current.append(product)
@@ -48,7 +50,10 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
         let basketCount = basket
             .map { $0.count }
         
-        return(BasketOutput(basket: basket), basketCount)
+        let basketSection = basket
+            .map { [BasketProductSection($0)] }
+        
+        return(output: BasketOutput(basket: basketSection), basketCount: basketCount)        
     }
 }
 

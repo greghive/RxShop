@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 
 class BasketViewController: UITableViewController, HasViewModel {
   
@@ -18,12 +19,31 @@ class BasketViewController: UITableViewController, HasViewModel {
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
+
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
         viewModel.basket
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, product, cell in
-                cell.textLabel!.text = product.title
-            }.disposed(by: disposeBag)
+            .bind(to: tableView.rx.items(dataSource: BasketViewController.dataSource()))
+            .disposed(by: disposeBag)
+    }
+}
+
+extension BasketViewController {
+    
+    // this works...but it's swapping out the entire section 🤔
+    
+    static func dataSource() -> RxTableViewSectionedAnimatedDataSource<BasketProductSection> {
+        let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
+        return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
+              
+              configureCell: { _, tableView, indexPath, item in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                cell.textLabel?.text = "Item: \(item.product.title)"
+                return cell
+              },
+              
+              canEditRowAtIndexPath: { _, _ in
+                return true
+              })
     }
 }

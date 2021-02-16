@@ -37,3 +37,9 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileViewController]
     navigationController.pushViewController(tabBarController, animated: true)
 }
+
+// Bugs
+
+// 1. push from master to detail in products only works once you nav to basket
+
+// 2. basket does not animate the deletion
