@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 // -> may need to return sign out action from this coordinator?
 func tabsCoordinator(_ navigationController: UINavigationController) {
@@ -14,6 +15,8 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     let productsNavigationController = products.navigationController
     productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
      
+    let productsinBasket = Observable.just([Product]())
+    
     // use an enum for state of ProductAction / BasketAction .added and .deleted
     // products cootdinator would send added, and basket cooridnator would send deleted
     // could then sink this up here, with a merge, to get
@@ -33,6 +36,10 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
         .bind { print("delete", $0) }
     // should this come back out here?
     // or can it all be done in the basket view model?
+    
+    // create an empty observable (empty array) pass that into basket,
+    // and then have the 2 view controllers add and delete from that array, with a scan
+    // merge the 2 sources with an enum, and in scan use the type to add or delete
     
     // how to merge the add from product view controller, with the delete from basket view controller
     // *** surely needs to be 2 observables, meged with a scan, switch on enum type ***
