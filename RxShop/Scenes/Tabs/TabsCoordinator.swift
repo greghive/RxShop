@@ -42,4 +42,4 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // 1. push from master to detail in products only works once you nav to basket
 
-// 2. delete from basket deletes the entire section
+// 2. setup server on heroku

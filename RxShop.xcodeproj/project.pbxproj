@@ -17,9 +17,9 @@
 		F346609125C2C6D600517263 /* UIViewController+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346609025C2C6D600517263 /* UIViewController+Errors.swift */; };
 		F346609925C2C91F00517263 /* AuthCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346609825C2C91F00517263 /* AuthCacheTests.swift */; };
 		F34660A125C2CA8E00517263 /* UserDefaults+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34660A025C2CA8E00517263 /* UserDefaults+Testing.swift */; };
-		F34A4FA025DBF5B000E38F57 /* BasketProductSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4F9F25DBF5B000E38F57 /* BasketProductSection.swift */; };
-		F34A4FA925DBFAF000E38F57 /* BasketProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FA725DBFAF000E38F57 /* BasketProductCell.swift */; };
-		F34A4FAA25DBFAF000E38F57 /* BasketProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34A4FA825DBFAF000E38F57 /* BasketProductCell.xib */; };
+		F34A4FA025DBF5B000E38F57 /* BasketSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4F9F25DBF5B000E38F57 /* BasketSection.swift */; };
+		F34A4FA925DBFAF000E38F57 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FA725DBFAF000E38F57 /* BasketCell.swift */; };
+		F34A4FAA25DBFAF000E38F57 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34A4FA825DBFAF000E38F57 /* BasketCell.xib */; };
 		F34A4FB025DBFB1500E38F57 /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FAE25DBFB1500E38F57 /* ProductsCell.swift */; };
 		F34A4FB125DBFB1500E38F57 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */; };
 		F34A4FB625DBFB5E00E38F57 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */; };
@@ -99,9 +99,9 @@
 		F346609025C2C6D600517263 /* UIViewController+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Errors.swift"; sourceTree = "<group>"; };
 		F346609825C2C91F00517263 /* AuthCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCacheTests.swift; sourceTree = "<group>"; };
 		F34660A025C2CA8E00517263 /* UserDefaults+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Testing.swift"; sourceTree = "<group>"; };
-		F34A4F9F25DBF5B000E38F57 /* BasketProductSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProductSection.swift; sourceTree = "<group>"; };
-		F34A4FA725DBFAF000E38F57 /* BasketProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProductCell.swift; sourceTree = "<group>"; };
-		F34A4FA825DBFAF000E38F57 /* BasketProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketProductCell.xib; sourceTree = "<group>"; };
+		F34A4F9F25DBF5B000E38F57 /* BasketSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketSection.swift; sourceTree = "<group>"; };
+		F34A4FA725DBFAF000E38F57 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		F34A4FA825DBFAF000E38F57 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
 		F34A4FAE25DBFB1500E38F57 /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
@@ -457,9 +457,9 @@
 				F3A3D55125C86E5500A25D7B /* BasketViewController.swift */,
 				F37E9DFE25DB0F79007D744D /* BasketViewModel.swift */,
 				F37E9E8325DBED4C007D744D /* BasketProduct.swift */,
-				F34A4F9F25DBF5B000E38F57 /* BasketProductSection.swift */,
-				F34A4FA725DBFAF000E38F57 /* BasketProductCell.swift */,
-				F34A4FA825DBFAF000E38F57 /* BasketProductCell.xib */,
+				F34A4F9F25DBF5B000E38F57 /* BasketSection.swift */,
+				F34A4FA725DBFAF000E38F57 /* BasketCell.swift */,
+				F34A4FA825DBFAF000E38F57 /* BasketCell.xib */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -580,7 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F38983C125DAB4C300106277 /* Products.storyboard in Resources */,
-				F34A4FAA25DBFAF000E38F57 /* BasketProductCell.xib in Resources */,
+				F34A4FAA25DBFAF000E38F57 /* BasketCell.xib in Resources */,
 				F3D75B1E25AE36E00069862E /* LaunchScreen.storyboard in Resources */,
 				F3D75B1B25AE36E00069862E /* Assets.xcassets in Resources */,
 				F37850E025B225CA00099AA7 /* Landing.storyboard in Resources */,
@@ -728,11 +728,11 @@
 				F34A4FB625DBFB5E00E38F57 /* ReuseableView.swift in Sources */,
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
 				F357D45825DAC0220080D4C8 /* ProductsFlow.swift in Sources */,
-				F34A4FA925DBFAF000E38F57 /* BasketProductCell.swift in Sources */,
+				F34A4FA925DBFAF000E38F57 /* BasketCell.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */,
 				F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */,
-				F34A4FA025DBF5B000E38F57 /* BasketProductSection.swift in Sources */,
+				F34A4FA025DBF5B000E38F57 /* BasketSection.swift in Sources */,
 				F34A4FB025DBFB1500E38F57 /* ProductsCell.swift in Sources */,
 				F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */,
 				F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */,

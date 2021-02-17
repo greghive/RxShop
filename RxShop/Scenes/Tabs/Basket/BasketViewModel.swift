@@ -12,7 +12,7 @@ struct BasketInput {
 }
 
 struct BasketOutput {
-    let basket: Observable<[BasketProductSection]>
+    let basket: Observable<[BasketSection]>
 }
 
 enum BasketAction {
@@ -33,28 +33,49 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
             .delete
             .map { BasketAction.remove($0) }
         
+        let section = BasketSection([])
+        let seed = BasketState([section])
+        
         let basket = Observable
             .merge(addToBasket, removeFromBasket)
-            .scan(into: [BasketProduct]()) { current, action in
-                
-                // create as an extension??? operator???
-                // nope... look at the states and commands in the example code
-                switch action {
-                case .add(let product):
-                    current.append(product)
-                case .remove(let indexPath):
-                    current.remove(at: indexPath.row)
-                }
+            .scan(seed) { (state, action) in
+                state.execute(action)
             }
+            .map { $0.sections }
             .share(replay: 1)
         
         let basketCount = basket
-            .map { $0.count }
-        
-        let basketSection = basket
-            .map { [BasketProductSection($0)] }
-        
-        return(output: BasketOutput(basket: basketSection), basketCount: basketCount)        
+            .map { $0[0] }
+            .map { $0.basketProducts.count }
+
+        return(output: BasketOutput(basket: basket), basketCount: basketCount)
     }
+}
+
+struct BasketState {
+    
+    fileprivate var sections: [BasketSection]
+    init(_ sections: [BasketSection]) {
+        self.sections = sections
+    }
+    
+    func execute(_ action: BasketAction) -> BasketState {
+        switch action {
+        
+        case .add(let product):
+            var sections = self.sections
+            let items = sections[0].basketProducts + [product]
+            sections[0] = BasketSection(original: sections[0], items: items)
+            return BasketState(sections)
+        
+        case .remove(let indexPath):
+            var sections = self.sections
+            var items = sections[0].basketProducts
+            items.remove(at: indexPath.row)
+            sections[0] = BasketSection(original: sections[0], items: items)
+            return BasketState(sections)
+        }
+    }
+
 }
 

@@ -18,7 +18,7 @@ class BasketViewController: UITableViewController, HasViewModel {
         super.viewDidLoad()
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.register(BasketProductCell.self, forCellReuseIdentifier: BasketProductCell.reuseIdentifier)
+        tableView.register(BasketCell.self, forCellReuseIdentifier: BasketCell.reuseIdentifier)
 
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
@@ -29,15 +29,13 @@ class BasketViewController: UITableViewController, HasViewModel {
 }
 
 extension BasketViewController {
-    
-    // this works...but it's swapping out the entire section 🤔
-    
-    static func dataSource() -> RxTableViewSectionedAnimatedDataSource<BasketProductSection> {
+        
+    static func dataSource() -> RxTableViewSectionedAnimatedDataSource<BasketSection> {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
               
           configureCell: { _, tableView, indexPath, item in
-            return BasketProductCellConfigurator.cellFrom(tableView, at: indexPath, configuredWith: item)
+            return BasketCellConfigurator.cellFrom(tableView, at: indexPath, configuredWith: item)
           },
               
           canEditRowAtIndexPath: { _, _ in

@@ -8,7 +8,7 @@
 import Foundation
 import RxDataSources
 
-struct BasketProductSection {
+struct BasketSection {
     let uuid: UUID
     var basketProducts: [BasketProduct]
     
@@ -18,13 +18,13 @@ struct BasketProductSection {
     }
 }
 
-extension BasketProductSection: Equatable { }
+extension BasketSection: Equatable { }
 
-func ==(lhs: BasketProductSection, rhs: BasketProductSection) -> Bool {
+func ==(lhs: BasketSection, rhs: BasketSection) -> Bool {
     return lhs.uuid == rhs.uuid
 }
 
-extension BasketProductSection: AnimatableSectionModelType {
+extension BasketSection: AnimatableSectionModelType {
     typealias Item = BasketProduct
     typealias Identity = UUID
     
@@ -36,7 +36,7 @@ extension BasketProductSection: AnimatableSectionModelType {
         return basketProducts
     }
     
-    init(original: BasketProductSection, items: [Item]) {
+    init(original: BasketSection, items: [Item]) {
         self = original
         self.basketProducts = items
     }
