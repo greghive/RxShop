@@ -9,7 +9,13 @@ import UIKit
 
 struct Appearences {
     static func configure() {
-        UINavigationBar.appearance().tintColor = .rxSwiftPink
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.tintColor = .rxSwiftPink
+        navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.heavyFont(size: .large),
+            NSAttributedString.Key.foregroundColor: UIColor.rxSwiftPink
+        ]
+        UITabBar.appearance().tintColor = .rxSwiftPink
     }
 }
 

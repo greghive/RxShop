@@ -76,6 +76,7 @@
 		F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2592125C8609D00AF4A8C /* ProductRequests.swift */; };
 		F3E2592A25C8634D00AF4A8C /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2592925C8634D00AF4A8C /* ProductsCoordinator.swift */; };
 		F3EC865025BC8005002FDC4B /* AuthFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */; };
+		F3FA20B725DEFF2B0079ACFC /* UILabel+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		F3E2592125C8609D00AF4A8C /* ProductRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequests.swift; sourceTree = "<group>"; };
 		F3E2592925C8634D00AF4A8C /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowTests.swift; sourceTree = "<group>"; };
+		F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AppStyles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 				F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */,
 				F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */,
 				F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */,
+				F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */,
 				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
 				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
@@ -725,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3FA20B725DEFF2B0079ACFC /* UILabel+AppStyles.swift in Sources */,
 				F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */,
 				F346609125C2C6D600517263 /* UIViewController+Errors.swift in Sources */,
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,

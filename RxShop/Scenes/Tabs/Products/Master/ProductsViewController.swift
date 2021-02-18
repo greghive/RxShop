@@ -16,10 +16,13 @@ class ProductsViewController: UITableViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Browse"
         tableView.dataSource = nil
         tableView.delegate = nil
         tableView.refreshControl = UIRefreshControl()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
+        tableView.register(ProductsCell.reuseIdentifier)
         let refreshControl = tableView.refreshControl!
         
         let input = ProductsInput(viewWillAppear: rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).asVoid(),
@@ -31,11 +34,11 @@ class ProductsViewController: UITableViewController, HasViewModel {
         viewModel.refreshEnded
             .bind { refreshControl.endRefreshing() }
             .disposed(by: disposeBag)
-                
+        
         viewModel
             .products
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, product, cell in
-                cell.textLabel!.text = product.title
+            .bind(to: tableView.rx.items(cellIdentifier: ProductsCell.reuseIdentifier, cellType: ProductsCell.self)) { _, product, cell in
+                ProductsCellConfigurator.configure(cell, with: product)
             }.disposed(by: disposeBag)
     }
 }

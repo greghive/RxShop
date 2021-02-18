@@ -9,15 +9,33 @@ import UIKit
 
 class ProductsCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var thumbView: UIView!
+    @IBOutlet weak var thumbImageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+        containerView.layer.cornerRadius = 12
+        thumbView.layer.cornerRadius = 12
+        thumbView.layer.masksToBounds = true
+        thumbView.contentMode = .scaleAspectFit
+        priceLabel.style(.tag)
+        priceLabel.textColor = .white
+        nameLabel.style(.title)
+        descriptionLabel.style(.body)
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+struct ProductsCellConfigurator {
     
+    static func configure(_ cell: ProductsCell, with product: Product) {
+        cell.thumbImageView.image = UIImage(named: "burger")
+        cell.nameLabel.text = product.title
+        cell.descriptionLabel.text = product.description
+        cell.priceLabel.text = "£12.99"
+    }
 }
