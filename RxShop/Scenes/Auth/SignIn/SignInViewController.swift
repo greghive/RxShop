@@ -15,15 +15,22 @@ extension SignInViewController: Storyboarded {
 
 class SignInViewController: UIViewController, HasViewModel {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: PaddedTextField!
+    @IBOutlet weak var passwordTextField: PaddedTextField!
     @IBOutlet weak var signInButton: UIButton!
+    var inputs: [UITextField]!
 
     private var disposeBag: DisposeBag!
     var viewModelFactory: (SignInInput) -> SignInOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavBar(title: "Let's Shop!")
+        emailTextField.style(.email, icon: "envelope", placeholder: "Email")
+        passwordTextField.style(.password, icon: "lock.fill", placeholder: "Password")
+        inputs = [emailTextField, passwordTextField]
+        configureInputs(delegate: self)
+        signInButton.style(.pink)
         
         let email = emailTextField.observableText()
         let password = passwordTextField.observableText()
@@ -34,5 +41,15 @@ class SignInViewController: UIViewController, HasViewModel {
             viewModel.signInEnabled
                 .drive(signInButton.rx.isEnabled)
         }
+    }
+}
+
+extension SignInViewController: TextFieldResponding, UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return handleTextFieldShouldReturn(textField)
+    }
+    
+    func getFinalInputReturnKeyType() -> UIReturnKeyType {
+        .next
     }
 }

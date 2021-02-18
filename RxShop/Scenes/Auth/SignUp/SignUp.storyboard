@@ -71,31 +71,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-5m-276">
-                                <rect key="frame" x="32" y="76" width="350" height="122"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-5m-276">
+                                <rect key="frame" x="32" y="76" width="350" height="88"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-KC-pus" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-Vc-BgA" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="46" width="350" height="34"/>
+                                        <rect key="frame" x="0.0" y="54" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-e8-usL">
-                                        <rect key="frame" x="0.0" y="92" width="350" height="30"/>
-                                        <state key="normal" title="SIGN UP"/>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-e8-usL">
+                                <rect key="frame" x="60" y="194" width="294" height="30"/>
+                                <state key="normal" title="SIGN UP"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0E6-RB-aZU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lQb-5m-276" firstAttribute="top" secondItem="0E6-RB-aZU" secondAttribute="top" constant="32" id="194-fG-mZZ"/>
+                            <constraint firstItem="W1a-e8-usL" firstAttribute="top" secondItem="lQb-5m-276" secondAttribute="bottom" constant="30" id="1Nf-BP-t2e"/>
+                            <constraint firstItem="0E6-RB-aZU" firstAttribute="trailing" secondItem="W1a-e8-usL" secondAttribute="trailing" constant="60" id="6mm-Kt-LdJ"/>
+                            <constraint firstItem="W1a-e8-usL" firstAttribute="centerX" secondItem="bgn-tX-Bwe" secondAttribute="centerX" id="NQF-BX-3wB"/>
                             <constraint firstItem="lQb-5m-276" firstAttribute="leading" secondItem="0E6-RB-aZU" secondAttribute="leading" constant="32" id="fGv-XB-gxr"/>
+                            <constraint firstItem="W1a-e8-usL" firstAttribute="leading" secondItem="0E6-RB-aZU" secondAttribute="leading" constant="60" id="wvF-sf-Y0h"/>
                             <constraint firstItem="0E6-RB-aZU" firstAttribute="trailing" secondItem="lQb-5m-276" secondAttribute="trailing" constant="32" id="xvW-4s-Eyx"/>
                         </constraints>
                     </view>

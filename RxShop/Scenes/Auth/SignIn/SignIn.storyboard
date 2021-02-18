@@ -16,31 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tC5-rb-uQm">
-                                <rect key="frame" x="32" y="76" width="350" height="122"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tC5-rb-uQm">
+                                <rect key="frame" x="32" y="76" width="350" height="88"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8z-qk-m04">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8z-qk-m04" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7i-Ho-7kJ">
-                                        <rect key="frame" x="0.0" y="46" width="350" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7i-Ho-7kJ" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="54" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-CC-Vfr">
-                                        <rect key="frame" x="0.0" y="92" width="350" height="30"/>
-                                        <state key="normal" title="SIGN IN"/>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-CC-Vfr">
+                                <rect key="frame" x="60" y="194" width="294" height="30"/>
+                                <state key="normal" title="SIGN IN"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a90-p6-79B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a90-p6-79B" firstAttribute="trailing" secondItem="tC5-rb-uQm" secondAttribute="trailing" constant="32" id="2Y1-gi-PCg"/>
+                            <constraint firstItem="fHn-CC-Vfr" firstAttribute="top" secondItem="tC5-rb-uQm" secondAttribute="bottom" constant="30" id="JUl-66-hyp"/>
+                            <constraint firstItem="fHn-CC-Vfr" firstAttribute="leading" secondItem="a90-p6-79B" secondAttribute="leading" constant="60" id="U5N-nQ-0TD"/>
                             <constraint firstItem="tC5-rb-uQm" firstAttribute="top" secondItem="a90-p6-79B" secondAttribute="top" constant="32" id="ZEa-FP-5QN"/>
+                            <constraint firstItem="fHn-CC-Vfr" firstAttribute="centerX" secondItem="TYS-Wf-3Mg" secondAttribute="centerX" id="dKF-h6-Axy"/>
+                            <constraint firstItem="a90-p6-79B" firstAttribute="trailing" secondItem="fHn-CC-Vfr" secondAttribute="trailing" constant="60" id="g8c-bD-WhB"/>
                             <constraint firstItem="tC5-rb-uQm" firstAttribute="leading" secondItem="a90-p6-79B" secondAttribute="leading" constant="32" id="mJh-f2-ajd"/>
                         </constraints>
                     </view>
