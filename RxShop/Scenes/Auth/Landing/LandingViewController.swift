@@ -23,6 +23,8 @@ class LandingViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpButton.style(.pink)
+        signInButton.style(.orange)
         
         let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
                                  signUpTap: signUpButton.observableTap(),
@@ -33,5 +35,15 @@ class LandingViewController: UIViewController, HasViewModel {
         viewModel.buttonsHidden
             .drive(signUpButton.rx.isHidden, signInButton.rx.isHidden)
             .disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

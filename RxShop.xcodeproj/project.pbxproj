@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3BA8AF80989CCA613B479948 /* Pods_RxShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FE63B05B773A87258F105E /* Pods_RxShopTests.framework */; };
 		D014ADC4D50B074A4751B4DB /* Pods_RxShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8992105363D4D9BF6C1F9C72 /* Pods_RxShop.framework */; };
+		F31A4EBB25DE664D000EE824 /* UIButton+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */; };
+		F31A4EC125DE66AD000EE824 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */; };
+		F31A4ECF25DE68A3000EE824 /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */; };
+		F31A4ED725DE6B19000EE824 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */; };
+		F31A4EEA25DE6FFE000EE824 /* UIColor+Adjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */; };
 		F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9525C899C80061179E /* ProductViewController.swift */; };
 		F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9A25C899D60061179E /* ProductViewModel.swift */; };
 		F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532125C065150054A73D /* UITextField+RxHelpers.swift */; };
@@ -91,6 +96,11 @@
 		CA1B2AB9BEE17474502AD44F /* Pods-RxShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxShopTests.release.xcconfig"; path = "Target Support Files/Pods-RxShopTests/Pods-RxShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFBBD6E89AA29394A713A5D3 /* Pods-RxShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxShop.release.xcconfig"; path = "Target Support Files/Pods-RxShop/Pods-RxShop.release.xcconfig"; sourceTree = "<group>"; };
 		E7FE63B05B773A87258F105E /* Pods_RxShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AppStyles.swift"; sourceTree = "<group>"; };
+		F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Adjustments.swift"; sourceTree = "<group>"; };
 		F31DAB9525C899C80061179E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		F31DAB9A25C899D60061179E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F328532125C065150054A73D /* UITextField+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+RxHelpers.swift"; sourceTree = "<group>"; };
@@ -280,6 +290,11 @@
 		F3C4A5F625B6C847002FDAFE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */,
+				F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */,
+				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
+				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
+				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
 				F3CEEE4B25BAEDEB00025635 /* UIResponder+Scene.swift */,
 				F346609025C2C6D600517263 /* UIViewController+Errors.swift */,
 				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
@@ -697,6 +712,7 @@
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
 				F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */,
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
+				F31A4EC125DE66AD000EE824 /* UIColor+AppColors.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
@@ -731,10 +747,14 @@
 				F34A4FA925DBFAF000E38F57 /* BasketCell.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */,
+				F31A4EBB25DE664D000EE824 /* UIButton+AppStyles.swift in Sources */,
+				F31A4ED725DE6B19000EE824 /* UIImage+Color.swift in Sources */,
 				F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */,
+				F31A4ECF25DE68A3000EE824 /* UIFont+AppFonts.swift in Sources */,
 				F34A4FA025DBF5B000E38F57 /* BasketSection.swift in Sources */,
 				F34A4FB025DBFB1500E38F57 /* ProductsCell.swift in Sources */,
 				F3C4A5ED25B62D57002FDAFE /* AsVoid.swift in Sources */,
+				F31A4EEA25DE6FFE000EE824 /* UIColor+Adjustments.swift in Sources */,
 				F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

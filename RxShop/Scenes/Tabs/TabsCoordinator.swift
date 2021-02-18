@@ -40,6 +40,22 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // Bugs
 
-// 1. push from master to detail in products only works once you nav to basket
+// push from master to detail in products only works once you nav to basket
 
-// 2. setup server on heroku
+// TODOs
+
+// setup server on heroku
+
+// create UI for landing / auth form screen (use choosie / alpacr etc)
+
+// mockup cells for browse + build it
+
+// mock up cells for basket + build it
+
+// profile (simple you are logged in as + logout button) - handle logout
+
+// bonus, add setting location like in Choosie, some interesting work to do there
+
+// ^ could link to this from profile
+
+// icon (use SF Symbols with colors of RxSwift)
