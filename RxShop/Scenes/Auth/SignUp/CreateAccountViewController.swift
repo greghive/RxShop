@@ -15,9 +15,9 @@ extension CreateAccountViewController: Storyboarded {
 
 class CreateAccountViewController: UIViewController, HasViewModel {
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: PaddedTextField!
+    @IBOutlet weak var lastNameTextField: PaddedTextField!
+    @IBOutlet weak var emailTextField: PaddedTextField!
     @IBOutlet weak var nextButton: UIButton!
 
     private let disposeBag = DisposeBag()
@@ -25,6 +25,11 @@ class CreateAccountViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavBar(title: "Create your account")
+        firstNameTextField.style(.name, icon: "signature", placeholder: "First name")
+        lastNameTextField.style(.name, icon: "signature", placeholder: "Last name")
+        emailTextField.style(.email, icon: "envelope", placeholder: "Email")
+        nextButton.style(.pink)
         
         let input = CreateAccountInput(firstName: firstNameTextField.observableText(),
                                        lastName: lastNameTextField.observableText(),

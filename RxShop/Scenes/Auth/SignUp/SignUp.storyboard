@@ -16,36 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="k8q-A7-L6o">
-                                <rect key="frame" x="32" y="76" width="350" height="168"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k8q-A7-L6o">
+                                <rect key="frame" x="32" y="76" width="350" height="142"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Ao-SJ8">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Ao-SJ8" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-wr-vu6">
-                                        <rect key="frame" x="0.0" y="46" width="350" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-wr-vu6" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="54" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-HS-3KD">
-                                        <rect key="frame" x="0.0" y="92" width="350" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-HS-3KD" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-e2-kFV">
-                                        <rect key="frame" x="0.0" y="138" width="350" height="30"/>
-                                        <state key="normal" title="NEXT"/>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-e2-kFV">
+                                <rect key="frame" x="60" y="248" width="294" height="30"/>
+                                <state key="normal" title="NEXT"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sAw-I5-FeB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sAw-I5-FeB" firstAttribute="trailing" secondItem="k8q-A7-L6o" secondAttribute="trailing" constant="32" id="8hv-Zi-pk9"/>
                             <constraint firstItem="k8q-A7-L6o" firstAttribute="leading" secondItem="sAw-I5-FeB" secondAttribute="leading" constant="32" id="FHk-My-myR"/>
+                            <constraint firstItem="sAw-I5-FeB" firstAttribute="trailing" secondItem="K1c-e2-kFV" secondAttribute="trailing" constant="60" id="MnL-QV-C4g"/>
+                            <constraint firstItem="K1c-e2-kFV" firstAttribute="top" secondItem="k8q-A7-L6o" secondAttribute="bottom" constant="30" id="foK-he-Zww"/>
+                            <constraint firstItem="K1c-e2-kFV" firstAttribute="leading" secondItem="sAw-I5-FeB" secondAttribute="leading" constant="60" id="hgM-dn-ZkO"/>
                             <constraint firstItem="k8q-A7-L6o" firstAttribute="top" secondItem="sAw-I5-FeB" secondAttribute="top" constant="32" id="jGL-Y8-yK3"/>
                         </constraints>
                     </view>
@@ -71,12 +74,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-5m-276">
                                 <rect key="frame" x="32" y="76" width="350" height="122"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-KC-pus">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-KC-pus" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-Vc-BgA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-Vc-BgA" customClass="PaddedTextField" customModule="RxShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="46" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>

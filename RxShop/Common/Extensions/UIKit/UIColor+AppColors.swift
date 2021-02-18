@@ -16,6 +16,14 @@ extension UIColor {
     static var rxSwiftOrange: UIColor {
         return UIColor(named: "RxSwiftOrange")!
     }
+    
+    static var textFieldBackground: UIColor {
+        return UIColor(named: "TextFieldBackground")!
+    }
+    
+    static var textFieldBorder: UIColor {
+        return UIColor(named: "TextFieldBorder")!
+    }
 }
 
 

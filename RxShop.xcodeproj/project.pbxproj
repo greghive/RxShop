@@ -16,6 +16,9 @@
 		F31A4EEA25DE6FFE000EE824 /* UIColor+Adjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */; };
 		F31A4EF225DE7206000EE824 /* UITextField+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */; };
 		F31A4EF725DE731D000EE824 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */; };
+		F31A4EFF25DE7B7B000EE824 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */; };
+		F31A4F0425DE7D76000EE824 /* UIViewController+NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */; };
+		F31A4F0C25DE7FBB000EE824 /* Appearences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4F0B25DE7FBB000EE824 /* Appearences.swift */; };
 		F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9525C899C80061179E /* ProductViewController.swift */; };
 		F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9A25C899D60061179E /* ProductViewModel.swift */; };
 		F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532125C065150054A73D /* UITextField+RxHelpers.swift */; };
@@ -105,6 +108,9 @@
 		F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Adjustments.swift"; sourceTree = "<group>"; };
 		F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+AppStyles.swift"; sourceTree = "<group>"; };
 		F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
+		F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBar.swift"; sourceTree = "<group>"; };
+		F31A4F0B25DE7FBB000EE824 /* Appearences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearences.swift; sourceTree = "<group>"; };
 		F31DAB9525C899C80061179E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		F31DAB9A25C899D60061179E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F328532125C065150054A73D /* UITextField+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+RxHelpers.swift"; sourceTree = "<group>"; };
@@ -216,12 +222,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F37E9E4325DBD574007D744D /* Utils */ = {
+		F37E9E4325DBD574007D744D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3C4A5AB25B22FE2002FDAFE /* Storyboards */,
+				F31A4F0B25DE7FBB000EE824 /* Appearences.swift */,
+				F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */,
 			);
-			path = Utils;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F38983D125DAB61200106277 /* Master */ = {
@@ -302,9 +309,10 @@
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
 				F3CEEE4B25BAEDEB00025635 /* UIResponder+Scene.swift */,
 				F346609025C2C6D600517263 /* UIViewController+Errors.swift */,
+				F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */,
+				F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */,
 				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */,
-				F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -383,8 +391,9 @@
 		F3D75B4525AE37400069862E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F37E9E4325DBD574007D744D /* Utils */,
+				F3C4A5AB25B22FE2002FDAFE /* Storyboards */,
 				F3C4A5A525B22E98002FDAFE /* Extensions */,
+				F37E9E4325DBD574007D744D /* Views */,
 				F3C4A5D525B5F104002FDAFE /* Models */,
 			);
 			path = Common;
@@ -716,11 +725,13 @@
 				F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */,
 				F346609125C2C6D600517263 /* UIViewController+Errors.swift in Sources */,
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
+				F31A4F0425DE7D76000EE824 /* UIViewController+NavBar.swift in Sources */,
 				F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */,
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
 				F31A4EF225DE7206000EE824 /* UITextField+AppStyles.swift in Sources */,
 				F31A4EC125DE66AD000EE824 /* UIColor+AppColors.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
+				F31A4F0C25DE7FBB000EE824 /* Appearences.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
 				F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */,
@@ -756,6 +767,7 @@
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */,
 				F31A4EBB25DE664D000EE824 /* UIButton+AppStyles.swift in Sources */,
+				F31A4EFF25DE7B7B000EE824 /* PaddedTextField.swift in Sources */,
 				F31A4ED725DE6B19000EE824 /* UIImage+Color.swift in Sources */,
 				F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */,
 				F31A4ECF25DE68A3000EE824 /* UIFont+AppFonts.swift in Sources */,
