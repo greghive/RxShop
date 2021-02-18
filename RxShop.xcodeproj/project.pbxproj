@@ -19,6 +19,7 @@
 		F31A4EFF25DE7B7B000EE824 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */; };
 		F31A4F0425DE7D76000EE824 /* UIViewController+NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */; };
 		F31A4F0C25DE7FBB000EE824 /* Appearences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4F0B25DE7FBB000EE824 /* Appearences.swift */; };
+		F31A4F1425DE84F2000EE824 /* TextFieldResponding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4F1325DE84F2000EE824 /* TextFieldResponding.swift */; };
 		F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9525C899C80061179E /* ProductViewController.swift */; };
 		F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9A25C899D60061179E /* ProductViewModel.swift */; };
 		F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532125C065150054A73D /* UITextField+RxHelpers.swift */; };
@@ -111,6 +112,7 @@
 		F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBar.swift"; sourceTree = "<group>"; };
 		F31A4F0B25DE7FBB000EE824 /* Appearences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearences.swift; sourceTree = "<group>"; };
+		F31A4F1325DE84F2000EE824 /* TextFieldResponding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldResponding.swift; sourceTree = "<group>"; };
 		F31DAB9525C899C80061179E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		F31DAB9A25C899D60061179E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F328532125C065150054A73D /* UITextField+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+RxHelpers.swift"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */,
 				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */,
+				F31A4F1325DE84F2000EE824 /* TextFieldResponding.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				F3C4A5D725B5F113002FDAFE /* User.swift in Sources */,
 				F37E9DFF25DB0F79007D744D /* BasketViewModel.swift in Sources */,
 				F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */,
+				F31A4F1425DE84F2000EE824 /* TextFieldResponding.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,
 				F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */,
 				F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */,

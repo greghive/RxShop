@@ -19,6 +19,7 @@ class CreateAccountViewController: UIViewController, HasViewModel {
     @IBOutlet weak var lastNameTextField: PaddedTextField!
     @IBOutlet weak var emailTextField: PaddedTextField!
     @IBOutlet weak var nextButton: UIButton!
+    var inputs: [UITextField]!
 
     private let disposeBag = DisposeBag()
     var viewModelFactory: (CreateAccountInput) -> CreateAccountOutput = { _ in fatalError("Missing view model factory.") }
@@ -29,6 +30,8 @@ class CreateAccountViewController: UIViewController, HasViewModel {
         firstNameTextField.style(.name, icon: "signature", placeholder: "First name")
         lastNameTextField.style(.name, icon: "signature", placeholder: "Last name")
         emailTextField.style(.email, icon: "envelope", placeholder: "Email")
+        inputs = [firstNameTextField, lastNameTextField, emailTextField]
+        configureInputs(delegate: self)
         nextButton.style(.pink)
         
         let input = CreateAccountInput(firstName: firstNameTextField.observableText(),
@@ -41,5 +44,15 @@ class CreateAccountViewController: UIViewController, HasViewModel {
         viewModel.nextEnabled
             .drive(nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
+    }
+}
+
+extension CreateAccountViewController: TextFieldResponding, UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return handleTextFieldShouldReturn(textField)
+    }
+    
+    func getFinalInputReturnKeyType() -> UIReturnKeyType {
+        .next
     }
 }
