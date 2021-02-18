@@ -14,6 +14,8 @@
 		F31A4ECF25DE68A3000EE824 /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */; };
 		F31A4ED725DE6B19000EE824 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */; };
 		F31A4EEA25DE6FFE000EE824 /* UIColor+Adjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */; };
+		F31A4EF225DE7206000EE824 /* UITextField+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */; };
+		F31A4EF725DE731D000EE824 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */; };
 		F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9525C899C80061179E /* ProductViewController.swift */; };
 		F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DAB9A25C899D60061179E /* ProductViewModel.swift */; };
 		F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328532125C065150054A73D /* UITextField+RxHelpers.swift */; };
@@ -101,6 +103,8 @@
 		F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Adjustments.swift"; sourceTree = "<group>"; };
+		F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+AppStyles.swift"; sourceTree = "<group>"; };
+		F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		F31DAB9525C899C80061179E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		F31DAB9A25C899D60061179E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F328532125C065150054A73D /* UITextField+RxHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+RxHelpers.swift"; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			children = (
 				F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */,
 				F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */,
+				F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */,
 				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
 				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
@@ -299,6 +304,7 @@
 				F346609025C2C6D600517263 /* UIViewController+Errors.swift */,
 				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */,
+				F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -712,6 +718,7 @@
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
 				F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */,
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
+				F31A4EF225DE7206000EE824 /* UITextField+AppStyles.swift in Sources */,
 				F31A4EC125DE66AD000EE824 /* UIColor+AppColors.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
@@ -720,6 +727,7 @@
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
 				F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */,
 				F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */,
+				F31A4EF725DE731D000EE824 /* UITableView+Cells.swift in Sources */,
 				F3CEEE4C25BAEDEB00025635 /* UIResponder+Scene.swift in Sources */,
 				F3C4A5D725B5F113002FDAFE /* User.swift in Sources */,
 				F37E9DFF25DB0F79007D744D /* BasketViewModel.swift in Sources */,

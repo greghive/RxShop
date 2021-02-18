@@ -31,8 +31,6 @@ func authCoordinator(_ window: UIWindow) {
         })
 }
 
-// improve with generic function 
-
 func showCreateAccount(navController: UINavigationController) -> Observable<CreateAccountAction> {
     let viewController = CreateAccountViewController.fromStoryboard()
     let action = viewController.installOutputViewModel(outputFactory: createAccountViewModel())

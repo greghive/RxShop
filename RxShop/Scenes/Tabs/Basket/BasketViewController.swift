@@ -18,7 +18,7 @@ class BasketViewController: UITableViewController, HasViewModel {
         super.viewDidLoad()
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.register(BasketCell.self, forCellReuseIdentifier: BasketCell.reuseIdentifier)
+        tableView.register(BasketCell.reuseIdentifier)
 
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
