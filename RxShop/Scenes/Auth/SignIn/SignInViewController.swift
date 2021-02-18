@@ -48,8 +48,4 @@ extension SignInViewController: TextFieldResponding, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return handleTextFieldShouldReturn(textField)
     }
-    
-    func getFinalInputReturnKeyType() -> UIReturnKeyType {
-        .next
-    }
 }

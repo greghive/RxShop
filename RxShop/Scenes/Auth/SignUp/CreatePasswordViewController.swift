@@ -25,7 +25,7 @@ class CreatePasswordViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavBar(title: "Create your password")
+        configureNavBar(title: "Set your password")
         passwordTextField.style(.name, icon: "lock", placeholder: "Password")
         confirmTextField.style(.name, icon: "lock.fill", placeholder: "Confirm password")
         inputs = [passwordTextField, confirmTextField]
@@ -47,9 +47,5 @@ class CreatePasswordViewController: UIViewController, HasViewModel {
 extension CreatePasswordViewController: TextFieldResponding, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return handleTextFieldShouldReturn(textField)
-    }
-    
-    func getFinalInputReturnKeyType() -> UIReturnKeyType {
-        .next
     }
 }
