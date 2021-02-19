@@ -49,11 +49,13 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // add image icons
 
+// simple item view
+
+// empty basket label in basket 
+
 // update server data, add price as an int, then show using functions from choosie
 
 // update checkout with real amounts
-
-// hide the checkout if there are no items in basket
 
 
 // profile (simple you are logged in as + logout button) - handle logout

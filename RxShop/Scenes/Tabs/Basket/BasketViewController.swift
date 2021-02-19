@@ -27,7 +27,27 @@ class BasketViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         
+        let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
+        let viewModel = viewModelFactory(input)
+        
+        viewModel.basket
+            .bind(to: tableView.rx.items(dataSource: BasketViewController.dataSource()))
+            .disposed(by: disposeBag)
+                
+        viewModel.basketEmpty
+            .bind(to: tableView.rx.isEmpty(message: "You have no items in your basket"))
+            .disposed(by: disposeBag)
+        
+        viewModel.checkoutVisible
+            .bind { [weak self] in
+                self?.animateCheckoutContainer(visible: $0.visible, animated: $0.animated)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureUI() {
         title = "Basket"
         tableView.delegate = nil
         tableView.dataSource = nil
@@ -43,23 +63,9 @@ class BasketViewController: UIViewController, HasViewModel {
         amountLabel.style(.title)
         amountLabel.textColor = .rxSwiftPink
         checkoutButton.style(.pink)
-        animateCheckout(visible: false, animated: false)
-        
-        let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
-        let viewModel = viewModelFactory(input)
-        
-        viewModel.basket
-            .bind(to: tableView.rx.items(dataSource: BasketViewController.dataSource()))
-            .disposed(by: disposeBag)
-        
-        viewModel.checkoutVisible
-            .bind { [weak self] in
-                self?.animateCheckout(visible: $0.visible, animated: $0.animated)
-            }
-            .disposed(by: disposeBag)
     }
     
-    private func animateCheckout(visible: Bool, animated: Bool) {
+    private func animateCheckoutContainer(visible: Bool, animated: Bool) {
         let offset: CGFloat = visible ? 12 : -144
         if animated {
             view.layoutIfNeeded()
