@@ -35,7 +35,11 @@ class BasketViewController: UIViewController, HasViewModel {
         viewModel.basket
             .bind(to: tableView.rx.items(dataSource: BasketViewController.dataSource()))
             .disposed(by: disposeBag)
-                
+             
+        viewModel.basketTotal
+            .bind(to: amountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
         viewModel.basketEmpty
             .bind(to: tableView.rx.isEmpty(message: "You have no items in your basket"))
             .disposed(by: disposeBag)

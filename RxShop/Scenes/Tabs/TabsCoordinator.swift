@@ -46,22 +46,16 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // setup server on heroku
 
-
 // add image icons
 
 // simple item view
-
-// empty basket label in basket 
-
-// update server data, add price as an int, then show using functions from choosie
-
-// update checkout with real amounts
 
 
 // profile (simple you are logged in as + logout button) - handle logout
 
 // label underneath set password (your passwords do not match...i.e. why is button disabled...)
 
+// new logo? snacks? change name... RxSnacks ???
 
 
 // upload before then....

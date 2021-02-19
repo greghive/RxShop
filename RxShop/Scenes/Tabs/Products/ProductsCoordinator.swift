@@ -20,7 +20,7 @@ func productsCoordinator() -> (navigationController: UINavigationController, act
     
     //let buyAction = productsFlow(navigationController, showProduct: showProductViewController(_:product:), action: productsAction)
     
-    // don't need the flow
+    // don't need the flow (but keep it for reference???)
     
     _ = productsAction
         .compactMap { $0.error }

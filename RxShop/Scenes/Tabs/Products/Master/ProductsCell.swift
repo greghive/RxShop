@@ -37,6 +37,6 @@ struct ProductsCellConfigurator {
         cell.thumbImageView.image = UIImage(named: "burger")
         cell.nameLabel.text = product.title
         cell.descriptionLabel.text = product.description
-        cell.priceLabel.text = "£12.99"
+        cell.priceLabel.text = product.price.decimalCurrencyString
     }
 }

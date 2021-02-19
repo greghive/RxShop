@@ -18,6 +18,14 @@ struct BasketSection {
     }
 }
 
+extension BasketSection {
+    var basketTotal: Int {
+        return basketProducts.reduce(0) { result, basketProduct in
+            return result + basketProduct.product.price
+        }
+    }
+}
+
 extension BasketSection: Equatable { }
 
 func ==(lhs: BasketSection, rhs: BasketSection) -> Bool {

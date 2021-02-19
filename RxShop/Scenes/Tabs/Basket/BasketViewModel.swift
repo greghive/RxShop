@@ -13,6 +13,7 @@ struct BasketInput {
 
 struct BasketOutput {
     let basket: Observable<[BasketSection]>
+    let basketTotal: Observable<String>
     let basketEmpty: Observable<Bool>
     let checkoutVisible: Observable<(visible: Bool, animated: Bool)>
 }
@@ -46,6 +47,10 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
             .map { $0.sections }
             .share(replay: 1)
         
+        let basketTotal = basket
+            .map { $0[0].basketTotal }
+            .map { $0.decimalCurrencyString }
+        
         let basketCount = basket
             .map { $0[0] }
             .map { $0.basketProducts.count }
@@ -59,7 +64,10 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
             .map { $0 == 0 ? (visible: false, animated: true) : (visible: true, animated: true) }
             .startWith((visible: false, animated: false))
 
-        let output = BasketOutput(basket: basket, basketEmpty: basketEmpty, checkoutVisible: checkoutVisible)
+        let output = BasketOutput(basket: basket,
+                                  basketTotal: basketTotal,
+                                  basketEmpty: basketEmpty,
+                                  checkoutVisible: checkoutVisible)
         
         return(output: output, basketCount: basketCount)
     }
