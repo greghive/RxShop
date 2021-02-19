@@ -53,6 +53,7 @@
 		F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */; };
 		F3A3D55225C86E5500A25D7B /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55125C86E5500A25D7B /* BasketViewController.swift */; };
 		F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */; };
+		F3B96DF925E02B5D00269FDC /* UIView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B96DF825E02B5D00269FDC /* UIView+AppStyles.swift */; };
 		F3BA8D6C25DFF85100594E74 /* Int+DecimalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8D6B25DFF85100594E74 /* Int+DecimalCurrency.swift */; };
 		F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72C625B889BB008FB01F /* AuthRequests.swift */; };
 		F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72CE25B893DA008FB01F /* AuthFlow.swift */; };
@@ -150,6 +151,7 @@
 		F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Helper.swift"; sourceTree = "<group>"; };
 		F3A3D55125C86E5500A25D7B /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3B96DF825E02B5D00269FDC /* UIView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AppStyles.swift"; sourceTree = "<group>"; };
 		F3BA8D6B25DFF85100594E74 /* Int+DecimalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+DecimalCurrency.swift"; sourceTree = "<group>"; };
 		F3BE72C625B889BB008FB01F /* AuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
 		F3BE72CE25B893DA008FB01F /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */,
 				F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */,
 				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
+				F3B96DF825E02B5D00269FDC /* UIView+AppStyles.swift */,
 				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
 				F3CEEE4B25BAEDEB00025635 /* UIResponder+Scene.swift */,
@@ -785,6 +788,7 @@
 				F328533725C0ADBE0054A73D /* Result.swift in Sources */,
 				F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */,
 				F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */,
+				F3B96DF925E02B5D00269FDC /* UIView+AppStyles.swift in Sources */,
 				F37850D625B2258100099AA7 /* SignInViewController.swift in Sources */,
 				F3E2592A25C8634D00AF4A8C /* ProductsCoordinator.swift in Sources */,
 				F37850C725B2252F00099AA7 /* CreateAccountViewModel.swift in Sources */,

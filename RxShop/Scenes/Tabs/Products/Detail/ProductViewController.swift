@@ -15,20 +15,31 @@ extension ProductViewController: Storyboarded {
 
 class ProductViewController: UIViewController, HasViewModel {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     
-    private let disposeBag = DisposeBag()
+    private var disposeBag: DisposeBag!
     var viewModelFactory: (ProductInput) -> ProductOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar(title: "Item")
+        containerView.style(.infoCard)
+        titleLabel.style(.title)
+        priceLabel.style(.title)
+        priceLabel.textColor = .rxSwiftPink
+        descriptionLabel.style(.body)
+        buyButton.style(.pink, size: .small)
         
         let input = ProductInput(buy: buyButton.observableTap())
         let viewModel = viewModelFactory(input)
-        viewModel.title
-            .drive(titleLabel.rx.text)
-            .disposed(by: disposeBag)
+        disposeBag = DisposeBag {
+            viewModel.title.drive(titleLabel.rx.text)
+            viewModel.price.drive(priceLabel.rx.text)
+            viewModel.description.drive(descriptionLabel.rx.text)
+        }
     }
 }

@@ -12,24 +12,38 @@ enum ButtonStyle {
     case orange
 }
 
+enum ButtonSize {
+    case small
+    case regular
+}
+
 extension UIButton {
     
-    func style(_ style: ButtonStyle) {
+    func style(_ style: ButtonStyle, size: ButtonSize = .regular) {
         let normalColor = colorFor(style)
         let darkerColor = normalColor.darker()
         let disabledColor = normalColor.withAlphaComponent(0.5)
         
-        heightAnchor.constraint(equalToConstant: 54).isActive = true
+        contentEdgeInsets = UIEdgeInsets(top: 12, left: 18, bottom: 12, right: 18)
         setBackgroundImage(UIImage(color: normalColor), for: .normal)
         setBackgroundImage(UIImage(color: normalColor), for: .highlighted)
         setBackgroundImage(UIImage(color: normalColor), for: .selected)
         setBackgroundImage(UIImage(color: disabledColor), for: .disabled)
         setTitleColor(.white, for: .normal)
-        titleLabel?.font = .heavyFont(size: .regular)
         layer.borderColor = darkerColor.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 12
         layer.masksToBounds = true
+        
+        switch size {
+        
+        case .small:
+            //heightAnchor.constraint(equalToConstant: 30).isActive = true
+            titleLabel?.font = .heavyFont(size: .small)
+        case .regular:
+            heightAnchor.constraint(equalToConstant: 54).isActive = true
+            titleLabel?.font = .heavyFont(size: .regular)
+        }
     }
     
     private func colorFor(_ style: ButtonStyle) -> UIColor {

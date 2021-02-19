@@ -14,16 +14,17 @@ struct ProductInput {
 
 struct ProductOutput {
     let title: Driver<String>
+    let price: Driver<String>
+    let description: Driver<String>
 }
 
 func productViewModel(product: Product) -> (_ input: ProductInput) -> (output: ProductOutput, action: Observable<Product>) {
     return { input in
        
-        let title = Observable
-            .just(product.title)
-            .asDriver(onErrorJustReturn: "")
-        
-        let output = ProductOutput(title: title)
+        let title = Driver.just(product.title)
+        let price = Driver.just(product.price.decimalCurrencyString)
+        let description = Driver.just(product.description)
+        let output = ProductOutput(title: title, price: price , description: description)
         
         let action = input
             .buy
