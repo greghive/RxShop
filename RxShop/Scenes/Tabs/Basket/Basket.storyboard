@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basket View Controller-->
+        <scene sceneID="8rl-Cx-aFQ">
+            <objects>
+                <viewController storyboardIdentifier="BasketViewController" id="YzF-v7-EpN" customClass="BasketViewController" customModule="RxShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="njK-sP-uzF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pre-9a-Jr0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foe-hy-pFL">
+                                <rect key="frame" x="12" y="718" width="390" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4a-ID-HfJ">
+                                        <rect key="frame" x="60" y="72" width="270" height="30"/>
+                                        <state key="normal" title="CHECKOUT"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEU-a2-eUg">
+                                        <rect key="frame" x="60" y="31" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£12.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIG-gR-llz">
+                                        <rect key="frame" x="277.5" y="31" width="52.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="EEU-a2-eUg" firstAttribute="leading" secondItem="E4a-ID-HfJ" secondAttribute="leading" id="5He-wY-yfK"/>
+                                    <constraint firstItem="E4a-ID-HfJ" firstAttribute="top" secondItem="iIG-gR-llz" secondAttribute="bottom" constant="20" id="IQ1-pc-9pq"/>
+                                    <constraint firstItem="iIG-gR-llz" firstAttribute="trailing" secondItem="E4a-ID-HfJ" secondAttribute="trailing" id="JUG-Jv-AYi"/>
+                                    <constraint firstAttribute="trailing" secondItem="E4a-ID-HfJ" secondAttribute="trailing" constant="60" id="LCh-RT-jIe"/>
+                                    <constraint firstAttribute="bottom" secondItem="E4a-ID-HfJ" secondAttribute="bottom" constant="30" id="bny-C9-Co9"/>
+                                    <constraint firstAttribute="height" constant="132" id="flb-Ni-9bi"/>
+                                    <constraint firstItem="E4a-ID-HfJ" firstAttribute="leading" secondItem="foe-hy-pFL" secondAttribute="leading" constant="60" id="h8b-Vd-gkU"/>
+                                    <constraint firstItem="E4a-ID-HfJ" firstAttribute="top" secondItem="EEU-a2-eUg" secondAttribute="bottom" constant="20" id="uEs-b3-PPp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mbP-pX-31F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pre-9a-Jr0" firstAttribute="top" secondItem="mbP-pX-31F" secondAttribute="top" id="2V8-L4-mqo"/>
+                            <constraint firstItem="foe-hy-pFL" firstAttribute="leading" secondItem="mbP-pX-31F" secondAttribute="leading" constant="12" id="CyL-be-ixj"/>
+                            <constraint firstItem="mbP-pX-31F" firstAttribute="trailing" secondItem="foe-hy-pFL" secondAttribute="trailing" constant="12" id="Di4-1U-7Mx"/>
+                            <constraint firstItem="pre-9a-Jr0" firstAttribute="leading" secondItem="mbP-pX-31F" secondAttribute="leading" id="Pvu-GT-zzS"/>
+                            <constraint firstItem="mbP-pX-31F" firstAttribute="bottom" secondItem="foe-hy-pFL" secondAttribute="bottom" constant="12" id="ZAl-Zk-qPS"/>
+                            <constraint firstItem="foe-hy-pFL" firstAttribute="top" secondItem="pre-9a-Jr0" secondAttribute="bottom" id="ZEJ-yy-vin"/>
+                            <constraint firstItem="mbP-pX-31F" firstAttribute="trailing" secondItem="pre-9a-Jr0" secondAttribute="trailing" id="urC-PP-dXU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="iIG-gR-llz" id="vsL-NH-CFq"/>
+                        <outlet property="checkoutBottom" destination="ZAl-Zk-qPS" id="sR9-nf-ccN"/>
+                        <outlet property="checkoutButton" destination="E4a-ID-HfJ" id="SJm-J9-tRQ"/>
+                        <outlet property="checkoutContainer" destination="foe-hy-pFL" id="NSK-8t-uI5"/>
+                        <outlet property="tableView" destination="pre-9a-Jr0" id="6Wc-Rn-DKL"/>
+                        <outlet property="totalLabel" destination="EEU-a2-eUg" id="Hz9-hE-gCl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ao2-wv-hHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

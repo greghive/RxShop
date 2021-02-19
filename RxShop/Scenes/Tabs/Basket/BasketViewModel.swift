@@ -13,6 +13,7 @@ struct BasketInput {
 
 struct BasketOutput {
     let basket: Observable<[BasketSection]>
+    let checkoutVisible: Observable<(visible: Bool, animated: Bool)>
 }
 
 enum BasketAction {
@@ -47,8 +48,15 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
         let basketCount = basket
             .map { $0[0] }
             .map { $0.basketProducts.count }
+            .share(replay: 1)
+        
+        let checkoutVisible = basketCount
+            .map { $0 == 0 ? (visible: false, animated: true) : (visible: true, animated: true) }
+            .startWith((visible: false, animated: false))
 
-        return(output: BasketOutput(basket: basket), basketCount: basketCount)
+        let output = BasketOutput(basket: basket, checkoutVisible: checkoutVisible)
+        
+        return(output: output, basketCount: basketCount)
     }
 }
 

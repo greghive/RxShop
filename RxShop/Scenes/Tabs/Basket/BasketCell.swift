@@ -9,7 +9,18 @@ import UIKit
 
 class BasketCell: UITableViewCell {
 
-    // outlets
+    @IBOutlet weak var thumbImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+        thumbImageView.contentMode = .scaleAspectFit
+        priceLabel.style(.tag)
+        priceLabel.textColor = .rxSwiftPink
+        nameLabel.style(.title)
+    }
 }
 
 struct BasketCellConfigurator {
@@ -20,7 +31,9 @@ struct BasketCellConfigurator {
     }
     
     static func configure(_ cell: BasketCell, with basketProduct: BasketProduct) -> BasketCell {
-        cell.textLabel?.text = "Item: \(basketProduct.product.title)"
+        cell.thumbImageView.image = UIImage(named: "burger")
+        cell.nameLabel.text = basketProduct.product.title
+        cell.priceLabel.text = "£12.99"
         return cell
     }
 }

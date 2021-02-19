@@ -23,7 +23,7 @@ class ProductViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        configureNavBar(title: "Item")
         
         let input = ProductInput(buy: buyButton.observableTap())
         let viewModel = viewModelFactory(input)

@@ -20,6 +20,7 @@ class ProductsCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         containerView.layer.cornerRadius = 12
+        containerView.backgroundColor = .secondarySystemBackground
         thumbView.layer.cornerRadius = 12
         thumbView.layer.masksToBounds = true
         thumbView.contentMode = .scaleAspectFit
