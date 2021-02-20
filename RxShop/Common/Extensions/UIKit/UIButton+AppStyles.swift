@@ -47,8 +47,8 @@ extension UIButton {
     
     private func colorFor(_ style: ButtonStyle) -> UIColor {
         switch style {
-        case .pink: return .rxSwiftPink
-        case .orange: return .rxSwiftOrange
+        case .pink: return .rxShopRed
+        case .orange: return .rxShopGreen
         }
     }
 }

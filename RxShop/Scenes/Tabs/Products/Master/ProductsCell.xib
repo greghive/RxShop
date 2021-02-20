@@ -37,7 +37,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="RxSwiftPink"/>
+                                        <color key="backgroundColor" name="RxShopRed"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="1we-mw-Dc7"/>
                                             <constraint firstItem="jqC-4e-PeN" firstAttribute="centerY" secondItem="oks-dJ-syn" secondAttribute="centerY" id="Pw0-cN-rZM"/>
@@ -105,8 +105,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="RxSwiftPink">
-            <color red="1" green="0.30196078431372547" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="RxShopRed">
+            <color red="1" green="0.3843137254901961" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextFieldBackground">
             <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,8 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RxSwift_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hjl-Xl-BRW">
-                                <rect key="frame" x="114" y="213.5" width="186" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rxshop_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hjl-Xl-BRW">
+                                <rect key="frame" x="62" y="170" width="290" height="287"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hjl-Xl-BRW" secondAttribute="height" multiplier="94:93" id="WyC-zv-LFb"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -25,6 +28,7 @@
                         <constraints>
                             <constraint firstItem="Hjl-Xl-BRW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="19Y-le-rT9"/>
                             <constraint firstItem="Hjl-Xl-BRW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1XM-WU-pzI"/>
+                            <constraint firstItem="Hjl-Xl-BRW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="71C-o1-SW8"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RxSwift_Logo" width="186" height="200"/>
+        <image name="rxshop_logo" width="376" height="372"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

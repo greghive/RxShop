@@ -31,7 +31,7 @@ class ProductViewController: UIViewController, HasViewModel {
         containerView.style(.infoCard)
         titleLabel.style(.title)
         priceLabel.style(.title)
-        priceLabel.textColor = .rxSwiftPink
+        priceLabel.textColor = .rxShopRed
         descriptionLabel.style(.body)
         descriptionLabel.numberOfLines = 0
         buyButton.style(.pink, size: .small)

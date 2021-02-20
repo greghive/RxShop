@@ -9,12 +9,12 @@ import UIKit
 
 extension UIColor {
     
-    static var rxSwiftPink: UIColor {
-        return UIColor(named: "RxSwiftPink")!
+    static var rxShopRed: UIColor {
+        return UIColor(named: "RxShopRed")!
     }
     
-    static var rxSwiftOrange: UIColor {
-        return UIColor(named: "RxSwiftOrange")!
+    static var rxShopGreen: UIColor {
+        return UIColor(named: "RxShopGreen")!
     }
     
     static var textFieldBackground: UIColor {

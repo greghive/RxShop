@@ -56,7 +56,7 @@ class BasketViewController: UIViewController, HasViewModel {
         checkoutContainer.layer.cornerRadius = 12
         totalLabel.style(.title)
         amountLabel.style(.title)
-        amountLabel.textColor = .rxSwiftPink
+        amountLabel.textColor = .rxShopRed
         checkoutButton.style(.pink)
     }
     

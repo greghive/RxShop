@@ -29,8 +29,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RxSwift_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="u7U-Ik-TB6">
-                                <rect key="frame" x="114" y="213.5" width="186" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rxshop_logo" translatesAutoresizingMaskIntoConstraints="NO" id="u7U-Ik-TB6">
+                                <rect key="frame" x="62" y="170" width="290" height="287"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u7U-Ik-TB6" secondAttribute="height" multiplier="94:93" id="YVa-4R-9O1"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="smY-hM-mLu"/>
@@ -39,6 +42,7 @@
                             <constraint firstItem="smY-hM-mLu" firstAttribute="bottom" secondItem="K0k-5y-Odi" secondAttribute="bottom" constant="32" id="BHU-wt-ZYC"/>
                             <constraint firstItem="smY-hM-mLu" firstAttribute="trailing" secondItem="K0k-5y-Odi" secondAttribute="trailing" constant="60" id="GgZ-eq-wRO"/>
                             <constraint firstItem="u7U-Ik-TB6" firstAttribute="centerY" secondItem="zFv-8s-1bR" secondAttribute="centerY" multiplier="0.7" id="IlE-XQ-RIf"/>
+                            <constraint firstItem="u7U-Ik-TB6" firstAttribute="width" secondItem="zFv-8s-1bR" secondAttribute="width" multiplier="0.7" id="mXL-Y7-dRm"/>
                             <constraint firstItem="K0k-5y-Odi" firstAttribute="leading" secondItem="smY-hM-mLu" secondAttribute="leading" constant="60" id="ngI-mN-dRI"/>
                             <constraint firstItem="u7U-Ik-TB6" firstAttribute="centerX" secondItem="zFv-8s-1bR" secondAttribute="centerX" id="qOU-pw-Dab"/>
                         </constraints>
@@ -54,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RxSwift_Logo" width="186" height="200"/>
+        <image name="rxshop_logo" width="376" height="372"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

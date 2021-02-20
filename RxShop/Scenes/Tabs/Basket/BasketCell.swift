@@ -18,7 +18,7 @@ class BasketCell: UITableViewCell {
         selectionStyle = .none
         thumbImageView.contentMode = .scaleAspectFit
         priceLabel.style(.tag)
-        priceLabel.textColor = .rxSwiftPink
+        priceLabel.textColor = .rxShopRed
         nameLabel.style(.title)
     }
 }

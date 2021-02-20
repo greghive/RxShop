@@ -29,7 +29,7 @@ extension UITextField {
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .rxSwiftPink
+        imageView.tintColor = .rxShopRed
         leftView = imageView
         leftViewMode = UITextField.ViewMode.always
         
@@ -42,7 +42,7 @@ extension UITextField {
         font = .boldFont(size: .regular)
         self.placeholder = placeholder
         textColor = .darkText
-        tintColor = .rxSwiftPink
+        tintColor = .rxShopRed
         
         heightAnchor.constraint(equalToConstant: 54).isActive = true
     }

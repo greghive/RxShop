@@ -10,12 +10,12 @@ import UIKit
 struct Appearences {
     static func configure() {
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.tintColor = .rxSwiftPink
+        navigationBar.tintColor = .rxShopRed
         navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.heavyFont(size: .large),
-            NSAttributedString.Key.foregroundColor: UIColor.rxSwiftPink
+            NSAttributedString.Key.foregroundColor: UIColor.rxShopRed
         ]
-        UITabBar.appearance().tintColor = .rxSwiftPink
+        UITabBar.appearance().tintColor = .rxShopRed
     }
 }
 
