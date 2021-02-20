@@ -12,10 +12,11 @@ struct Product: Decodable, Equatable {
     let title: String
     let description: String
     let price: Int
+    let image: String
 }
 
 extension Product {
-    var image: UIImage? {
-        return UIImage(named: "bubble_tea")
+    var productImage: UIImage? {
+        return UIImage(named: image)
     }
 }

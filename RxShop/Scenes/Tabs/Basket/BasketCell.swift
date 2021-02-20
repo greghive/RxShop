@@ -31,7 +31,7 @@ struct BasketCellConfigurator {
     }
     
     static func configure(_ cell: BasketCell, with basketProduct: BasketProduct) -> BasketCell {
-        cell.thumbImageView.image = UIImage(named: "burger")
+        cell.thumbImageView.image = basketProduct.product.productImage
         cell.nameLabel.text = basketProduct.product.title
         cell.priceLabel.text = basketProduct.product.price.decimalCurrencyString
         return cell

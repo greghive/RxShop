@@ -22,7 +22,7 @@ struct ProductOutput {
 func productViewModel(product: Product) -> (_ input: ProductInput) -> (output: ProductOutput, action: Observable<Product>) {
     return { input in
        
-        let image = Driver.just(product.image)
+        let image = Driver.just(product.productImage)
         let title = Driver.just(product.title)
         let price = Driver.just(product.price.decimalCurrencyString)
         let description = Driver.just(product.description)

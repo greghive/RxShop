@@ -28,13 +28,14 @@ class ProductsCell: UITableViewCell {
         priceLabel.textColor = .white
         nameLabel.style(.title)
         descriptionLabel.style(.body)
+        descriptionLabel.numberOfLines = 2
     }
 }
 
 struct ProductsCellConfigurator {
     
     static func configure(_ cell: ProductsCell, with product: Product) {
-        cell.thumbImageView.image = product.image
+        cell.thumbImageView.image = product.productImage
         cell.nameLabel.text = product.title
         cell.descriptionLabel.text = product.description
         cell.priceLabel.text = product.price.decimalCurrencyString
