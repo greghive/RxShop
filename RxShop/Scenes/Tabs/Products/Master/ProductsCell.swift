@@ -34,7 +34,7 @@ class ProductsCell: UITableViewCell {
 struct ProductsCellConfigurator {
     
     static func configure(_ cell: ProductsCell, with product: Product) {
-        cell.thumbImageView.image = UIImage(named: "burger")
+        cell.thumbImageView.image = product.image
         cell.nameLabel.text = product.title
         cell.descriptionLabel.text = product.description
         cell.priceLabel.text = product.price.decimalCurrencyString

@@ -17,24 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pre-9a-Jr0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="656"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foe-hy-pFL">
-                                <rect key="frame" x="12" y="718" width="390" height="132"/>
+                                <rect key="frame" x="12" y="700" width="390" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4a-ID-HfJ">
-                                        <rect key="frame" x="60" y="72" width="270" height="30"/>
+                                        <rect key="frame" x="60" y="90" width="270" height="30"/>
                                         <state key="normal" title="CHECKOUT"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEU-a2-eUg">
-                                        <rect key="frame" x="60" y="31" width="42" height="21"/>
+                                        <rect key="frame" x="60" y="49" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£12.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIG-gR-llz">
-                                        <rect key="frame" x="277.5" y="31" width="52.5" height="21"/>
+                                        <rect key="frame" x="277.5" y="49" width="52.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                     <constraint firstItem="iIG-gR-llz" firstAttribute="trailing" secondItem="E4a-ID-HfJ" secondAttribute="trailing" id="JUG-Jv-AYi"/>
                                     <constraint firstAttribute="trailing" secondItem="E4a-ID-HfJ" secondAttribute="trailing" constant="60" id="LCh-RT-jIe"/>
                                     <constraint firstAttribute="bottom" secondItem="E4a-ID-HfJ" secondAttribute="bottom" constant="30" id="bny-C9-Co9"/>
-                                    <constraint firstAttribute="height" constant="132" id="flb-Ni-9bi"/>
+                                    <constraint firstAttribute="height" constant="150" id="flb-Ni-9bi"/>
                                     <constraint firstItem="E4a-ID-HfJ" firstAttribute="leading" secondItem="foe-hy-pFL" secondAttribute="leading" constant="60" id="h8b-Vd-gkU"/>
                                     <constraint firstItem="E4a-ID-HfJ" firstAttribute="top" secondItem="EEU-a2-eUg" secondAttribute="bottom" constant="20" id="uEs-b3-PPp"/>
                                 </constraints>

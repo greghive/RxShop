@@ -16,6 +16,7 @@ extension ProductViewController: Storyboarded {
 class ProductViewController: UIViewController, HasViewModel {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -37,6 +38,7 @@ class ProductViewController: UIViewController, HasViewModel {
         let input = ProductInput(buy: buyButton.observableTap())
         let viewModel = viewModelFactory(input)
         disposeBag = DisposeBag {
+            viewModel.image.drive(imageView.rx.image)
             viewModel.title.drive(titleLabel.rx.text)
             viewModel.price.drive(priceLabel.rx.text)
             viewModel.description.drive(descriptionLabel.rx.text)

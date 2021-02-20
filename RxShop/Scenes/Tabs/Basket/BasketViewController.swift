@@ -22,7 +22,7 @@ class BasketViewController: UIViewController, HasViewModel {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
     
-    private let disposeBag = DisposeBag()
+    private var disposeBag: DisposeBag!
     var viewModelFactory: (BasketInput) -> BasketOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
@@ -32,23 +32,16 @@ class BasketViewController: UIViewController, HasViewModel {
         let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
         let viewModel = viewModelFactory(input)
         
-        viewModel.basket
-            .bind(to: tableView.rx.items(dataSource: BasketViewController.dataSource()))
-            .disposed(by: disposeBag)
-             
-        viewModel.basketTotal
-            .bind(to: amountLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        viewModel.basketEmpty
-            .bind(to: tableView.rx.isEmpty(message: "You have no items in your basket"))
-            .disposed(by: disposeBag)
-        
-        viewModel.checkoutVisible
-            .bind { [weak self] in
-                self?.animateCheckoutContainer(visible: $0.visible, animated: $0.animated)
-            }
-            .disposed(by: disposeBag)
+        disposeBag = DisposeBag {
+            tableView.rx.setDelegate(self)
+            viewModel.basket.bind(to: tableView.rx.items(dataSource: dataSource()))
+            viewModel.basketTotal.bind(to: amountLabel.rx.text)
+            viewModel.basketEmpty.bind(to: tableView.rx.isEmpty(message: "Your basket is empty"))
+            viewModel.checkoutVisible
+                .bind { [weak self] in
+                    self?.animateCheckoutContainer(visible: $0.visible, animated: $0.animated)
+                }
+        }
     }
     
     private func configureUI() {
@@ -59,8 +52,6 @@ class BasketViewController: UIViewController, HasViewModel {
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
         tableView.tableFooterView = UIView()
         tableView.register(BasketCell.reuseIdentifier)
-        tableView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
 
         checkoutContainer.layer.cornerRadius = 12
         totalLabel.style(.title)
@@ -70,7 +61,7 @@ class BasketViewController: UIViewController, HasViewModel {
     }
     
     private func animateCheckoutContainer(visible: Bool, animated: Bool) {
-        let offset: CGFloat = visible ? 12 : -144
+        let offset: CGFloat = visible ? 12 : -162
         if animated {
             view.layoutIfNeeded()
             UIView.animate(withDuration: 0.3) {
@@ -86,7 +77,7 @@ class BasketViewController: UIViewController, HasViewModel {
 }
 
 extension BasketViewController {
-    static func dataSource() -> RxTableViewSectionedAnimatedDataSource<BasketSection> {
+    func dataSource() -> RxTableViewSectionedAnimatedDataSource<BasketSection> {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
               

@@ -48,8 +48,6 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // add image icons
 
-// simple item view
-
 
 // profile (simple you are logged in as + logout button) - handle logout
 

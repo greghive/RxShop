@@ -38,7 +38,6 @@ extension UIButton {
         switch size {
         
         case .small:
-            //heightAnchor.constraint(equalToConstant: 30).isActive = true
             titleLabel?.font = .heavyFont(size: .small)
         case .regular:
             heightAnchor.constraint(equalToConstant: 54).isActive = true

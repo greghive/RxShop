@@ -13,6 +13,7 @@ struct ProductInput {
 }
 
 struct ProductOutput {
+    let image: Driver<UIImage?>
     let title: Driver<String>
     let price: Driver<String>
     let description: Driver<String>
@@ -21,10 +22,11 @@ struct ProductOutput {
 func productViewModel(product: Product) -> (_ input: ProductInput) -> (output: ProductOutput, action: Observable<Product>) {
     return { input in
        
+        let image = Driver.just(product.image)
         let title = Driver.just(product.title)
         let price = Driver.just(product.price.decimalCurrencyString)
         let description = Driver.just(product.description)
-        let output = ProductOutput(title: title, price: price , description: description)
+        let output = ProductOutput(image: image, title: title, price: price , description: description)
         
         let action = input
             .buy
