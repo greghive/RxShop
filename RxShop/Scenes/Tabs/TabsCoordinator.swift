@@ -44,8 +44,6 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // TODOs
 
-// setup server on heroku
-
 // profile (simple you are logged in as + logout button) - handle logout
 
 // label underneath set password (your passwords do not match...i.e. why is button disabled...)
@@ -53,6 +51,10 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 // some kind of toast ir alert for adding an item ???
 
 // login (etc) disable button whilst network call is made
+
+// dummy checkout screen (which clears the basket)
+
+// slide checkout off more
 
 
 // upload before then....

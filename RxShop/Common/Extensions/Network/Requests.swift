@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 extension URLRequest {
     
     static func baseRequest(method: HTTPMethod, path: String) -> URLRequest {
-        var components = URLComponents(string: "http://127.0.0.1:8080")!
+        var components = URLComponents(string: "https://rxshop-server.herokuapp.com/")!
         components.path = path
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
