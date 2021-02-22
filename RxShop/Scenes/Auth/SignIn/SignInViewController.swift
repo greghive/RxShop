@@ -42,7 +42,7 @@ class SignInViewController: UIViewController, HasViewModel {
         
         disposeBag = DisposeBag {
             viewModel.signInEnabled.drive(signInButton.rx.isEnabled)
-            viewModel.status.drive(statusLabel.rx.text)
+            viewModel.stateString.drive(statusLabel.rx.text)
         }
     }
 }

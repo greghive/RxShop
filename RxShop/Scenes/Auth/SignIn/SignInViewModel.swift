@@ -17,7 +17,7 @@ struct SignInInput {
 
 struct SignInOutput {
     let signInEnabled: Driver<Bool>
-    let status: Driver<String?>
+    let stateString: Driver<String?>
 }
 
 typealias SignInAction = Result<User>
@@ -29,22 +29,25 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
             .combineLatest(input.email, input.password) { (email: $0, password: $1) }
             .share(replay: 1)
         
-        let status = credentials
-            .skip(1)
+        let state = credentials
             .map { credentialsState(email: $0.email, password: $0.password) }
+            .share(replay: 1)
+        
+        let stateString = state
+            .skip(1)
             .map { $0.description }
             .startWith(" ")
             .asDriver(onErrorJustReturn: nil)
         
-        let signInEnabled = credentials
-            .map { $0.0.count > 0 && $0.1.count > 0 }
+        let signInEnabled = state
+            .map { $0 == .allInputsValid }
             .asDriver(onErrorJustReturn: false)
         
-        let output = SignInOutput(signInEnabled: signInEnabled, status: status)
+        let output = SignInOutput(signInEnabled: signInEnabled, stateString: stateString)
         
         let response = input.signIn
             .withLatestFrom(credentials)
-            .map { SignInBody(email: $0.0, password: $0.1) }
+            .map { SignInBody(email: $0.email, password: $0.password) }
             .flatMapLatest { dataTask(with: URLRequest.signIn($0)) }
             .share(replay: 1)
         
