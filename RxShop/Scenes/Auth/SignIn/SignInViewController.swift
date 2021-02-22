@@ -40,6 +40,11 @@ class SignInViewController: UIViewController, HasViewModel {
         disposeBag = DisposeBag {
             viewModel.signInEnabled
                 .drive(signInButton.rx.isEnabled)
+            viewModel.status
+                .asObservable()
+                .subscribe(onNext: {
+                    status in print("status: \(status)")
+                })
         }
     }
 }

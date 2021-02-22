@@ -56,6 +56,8 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // slide checkout off more
 
+// check binds in coordinators, like above, when the tab bar gets popped on logot, do the subscriptions remain? may need takeUntil(vc.dellocating)
+
 
 // upload before then....
 
