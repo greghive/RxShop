@@ -18,6 +18,7 @@ class SignInViewController: UIViewController, HasViewModel {
     @IBOutlet weak var emailTextField: PaddedTextField!
     @IBOutlet weak var passwordTextField: PaddedTextField!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
     var inputs: [UITextField]!
 
     private var disposeBag: DisposeBag!
@@ -31,6 +32,8 @@ class SignInViewController: UIViewController, HasViewModel {
         inputs = [emailTextField, passwordTextField]
         configureInputs(delegate: self)
         signInButton.style(.pink)
+        statusLabel.style(.body)
+        statusLabel.textColor = .rxShopRed
         
         let email = emailTextField.observableText()
         let password = passwordTextField.observableText()
@@ -38,13 +41,8 @@ class SignInViewController: UIViewController, HasViewModel {
         let viewModel = viewModelFactory(SignInInput(email: email, password: password, signIn: signIn))
         
         disposeBag = DisposeBag {
-            viewModel.signInEnabled
-                .drive(signInButton.rx.isEnabled)
-            viewModel.status
-                .asObservable()
-                .subscribe(onNext: {
-                    status in print("status: \(status)")
-                })
+            viewModel.signInEnabled.drive(signInButton.rx.isEnabled)
+            viewModel.status.drive(statusLabel.rx.text)
         }
     }
 }

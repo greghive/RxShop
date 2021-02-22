@@ -30,8 +30,10 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
             .share(replay: 1)
         
         let status = credentials
+            .skip(1)
             .map { credentialsState(email: $0.email, password: $0.password) }
             .map { $0.description }
+            .startWith(" ")
             .asDriver(onErrorJustReturn: nil)
         
         let signInEnabled = credentials

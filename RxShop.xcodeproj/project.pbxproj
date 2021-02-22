@@ -50,7 +50,8 @@
 		F37E9E0425DB1335007D744D /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37E9E0325DB1335007D744D /* BasketCoordinator.swift */; };
 		F37E9E8425DBED4C007D744D /* BasketProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37E9E8325DBED4C007D744D /* BasketProduct.swift */; };
 		F38983C125DAB4C300106277 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38983C025DAB4C300106277 /* Products.storyboard */; };
-		F38B2DE925E41F2C004E1EC9 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2DE825E41F2C004E1EC9 /* Credentials.swift */; };
+		F38B2DE925E41F2C004E1EC9 /* CredentialsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */; };
+		F38B2DF225E420A9004E1EC9 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2DF125E420A9004E1EC9 /* String+Validation.swift */; };
 		F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */; };
 		F3A3D55225C86E5500A25D7B /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55125C86E5500A25D7B /* BasketViewController.swift */; };
 		F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */; };
@@ -149,7 +150,8 @@
 		F37E9E0325DB1335007D744D /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
 		F37E9E8325DBED4C007D744D /* BasketProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProduct.swift; sourceTree = "<group>"; };
 		F38983C025DAB4C300106277 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
-		F38B2DE825E41F2C004E1EC9 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsState.swift; sourceTree = "<group>"; };
+		F38B2DF125E420A9004E1EC9 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Helper.swift"; sourceTree = "<group>"; };
 		F3A3D55125C86E5500A25D7B /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -265,19 +267,20 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		F38B2DED25E41F3C004E1EC9 /* Utils */ = {
+		F38B2DED25E41F3C004E1EC9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F38B2DE825E41F2C004E1EC9 /* Credentials.swift */,
 				F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */,
+				F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */,
 			);
-			path = Utils;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		F3BA8D6A25DFF85100594E74 /* StandardLibrary */ = {
 			isa = PBXGroup;
 			children = (
 				F3BA8D6B25DFF85100594E74 /* Int+DecimalCurrency.swift */,
+				F38B2DF125E420A9004E1EC9 /* String+Validation.swift */,
 			);
 			path = StandardLibrary;
 			sourceTree = "<group>";
@@ -340,7 +343,6 @@
 				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */,
 				F31A4F1325DE84F2000EE824 /* TextFieldResponding.swift */,
-				F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -419,7 +421,7 @@
 		F3D75B4525AE37400069862E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F38B2DED25E41F3C004E1EC9 /* Utils */,
+				F38B2DED25E41F3C004E1EC9 /* Storyboards */,
 				F3C4A5A525B22E98002FDAFE /* Extensions */,
 				F37E9E4325DBD574007D744D /* Views */,
 				F3C4A5D525B5F104002FDAFE /* Models */,
@@ -476,6 +478,7 @@
 				F3BE72CE25B893DA008FB01F /* AuthFlow.swift */,
 				F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */,
 				F3BE72C625B889BB008FB01F /* AuthRequests.swift */,
+				F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */,
 				F3D75B5125AE3B040069862E /* Landing */,
 				F3D75B5225AE3B0E0069862E /* SignUp */,
 				F3D75B5325AE3B170069862E /* SignIn */,
@@ -752,10 +755,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F38B2DE925E41F2C004E1EC9 /* Credentials.swift in Sources */,
+				F38B2DE925E41F2C004E1EC9 /* CredentialsState.swift in Sources */,
 				F3FA20B725DEFF2B0079ACFC /* UILabel+AppStyles.swift in Sources */,
 				F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */,
 				F346609125C2C6D600517263 /* UIViewController+Errors.swift in Sources */,
+				F38B2DF225E420A9004E1EC9 /* String+Validation.swift in Sources */,
 				F3C4A5DC25B5F4A8002FDAFE /* AuthCache.swift in Sources */,
 				F31A4F0425DE7D76000EE824 /* UIViewController+NavBar.swift in Sources */,
 				F31DAB9625C899C80061179E /* ProductViewController.swift in Sources */,

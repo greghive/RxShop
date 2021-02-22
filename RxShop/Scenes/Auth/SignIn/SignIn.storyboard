@@ -32,19 +32,28 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-CC-Vfr">
-                                <rect key="frame" x="60" y="194" width="294" height="30"/>
+                                <rect key="frame" x="60" y="246" width="294" height="30"/>
                                 <state key="normal" title="SIGN IN"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-9b-duG">
+                                <rect key="frame" x="32" y="184" width="350" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a90-p6-79B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a90-p6-79B" firstAttribute="trailing" secondItem="tC5-rb-uQm" secondAttribute="trailing" constant="32" id="2Y1-gi-PCg"/>
-                            <constraint firstItem="fHn-CC-Vfr" firstAttribute="top" secondItem="tC5-rb-uQm" secondAttribute="bottom" constant="30" id="JUl-66-hyp"/>
+                            <constraint firstItem="fHn-CC-Vfr" firstAttribute="top" secondItem="M8a-9b-duG" secondAttribute="bottom" constant="44" id="AJA-K5-2Se"/>
+                            <constraint firstItem="M8a-9b-duG" firstAttribute="leading" secondItem="tC5-rb-uQm" secondAttribute="leading" id="J3o-ZM-rMV"/>
                             <constraint firstItem="fHn-CC-Vfr" firstAttribute="leading" secondItem="a90-p6-79B" secondAttribute="leading" constant="60" id="U5N-nQ-0TD"/>
+                            <constraint firstItem="M8a-9b-duG" firstAttribute="trailing" secondItem="tC5-rb-uQm" secondAttribute="trailing" id="WrR-r2-zsp"/>
                             <constraint firstItem="tC5-rb-uQm" firstAttribute="top" secondItem="a90-p6-79B" secondAttribute="top" constant="32" id="ZEa-FP-5QN"/>
                             <constraint firstItem="fHn-CC-Vfr" firstAttribute="centerX" secondItem="TYS-Wf-3Mg" secondAttribute="centerX" id="dKF-h6-Axy"/>
                             <constraint firstItem="a90-p6-79B" firstAttribute="trailing" secondItem="fHn-CC-Vfr" secondAttribute="trailing" constant="60" id="g8c-bD-WhB"/>
+                            <constraint firstItem="M8a-9b-duG" firstAttribute="top" secondItem="tC5-rb-uQm" secondAttribute="bottom" constant="20" id="gqO-FD-lPr"/>
                             <constraint firstItem="tC5-rb-uQm" firstAttribute="leading" secondItem="a90-p6-79B" secondAttribute="leading" constant="32" id="mJh-f2-ajd"/>
                         </constraints>
                     </view>
@@ -52,6 +61,7 @@
                         <outlet property="emailTextField" destination="c8z-qk-m04" id="9Ey-KN-Ma5"/>
                         <outlet property="passwordTextField" destination="L7i-Ho-7kJ" id="hdV-q6-tbk"/>
                         <outlet property="signInButton" destination="fHn-CC-Vfr" id="HdB-zr-w69"/>
+                        <outlet property="statusLabel" destination="M8a-9b-duG" id="gAg-oQ-PUJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kro-ds-f5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
