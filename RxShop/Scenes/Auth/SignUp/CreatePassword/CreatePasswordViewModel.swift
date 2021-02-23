@@ -17,6 +17,7 @@ struct CreatePasswordInput {
 
 struct CreatePasswordOutput {
     let signUpEnabled: Driver<Bool>
+    let signUpRunning: Driver<Bool>
     let stateString: Driver<String?>
 }
 
@@ -38,18 +39,11 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
             .map { $0.description }
             .startWith(" ")
             .asDriver(onErrorJustReturn: nil)
+                
+        let signUp = input.signUp
+            .share(replay: 1)
         
-        let signUpEnabled = state
-            .map { $0 == .allInputsValid }
-            .asDriver(onErrorJustReturn: false)
-        
-//        let signUpEnabled = passwords
-//            .map { $0.0.count > 0 && $0.0 == $0.1 }
-//            .asDriver(onErrorJustReturn: false)
-        
-        let output = CreatePasswordOutput(signUpEnabled: signUpEnabled, stateString: stateString)
-        
-        let response = input.signUp
+        let response = signUp
             .withLatestFrom(passwords)
             .map { SignUpBody(firstName: accountDetails.firstName,
                               lastName: accountDetails.lastName,
@@ -70,6 +64,21 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
         let action = Observable
             .merge(user, error)
    
+        let running = Observable.merge(
+            signUp.map { _ in true },
+            action.map { _ in false })
+            .share(replay: 1)
+        
+        let signUpRunning = running
+            .asDriver(onErrorJustReturn: false)
+        
+        let signUpEnabled = Observable.merge(
+            state.map { $0 == .allInputsValid },
+            running.map { !$0 })
+            .asDriver(onErrorJustReturn: false)
+        
+        let output = CreatePasswordOutput(signUpEnabled: signUpEnabled, signUpRunning: signUpRunning, stateString: stateString)
+        
         return (output: output, action: action)
     }
 }

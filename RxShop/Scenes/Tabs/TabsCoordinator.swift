@@ -46,11 +46,7 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // profile (simple you are logged in as + logout button) - handle logout
 
-// label underneath set password (your passwords do not match...i.e. why is button disabled...)
-
 // some kind of toast ir alert for adding an item ???
-
-// login (etc) disable button whilst network call is made
 
 // dummy checkout screen (which clears the basket)
 

@@ -21,6 +21,8 @@ class CreatePasswordViewController: XiblessViewController<CreatePasswordView>, H
             let viewModel = viewModelFactory(contentView.input)
             viewModel.signUpEnabled.drive(contentView.button.rx.isEnabled)
             viewModel.stateString.drive(contentView.statusLabel.rx.text)
+            viewModel.signUpRunning.drive(contentView.activityView.rx.isAnimating)
+            viewModel.signUpRunning.drive(contentView.statusLabel.rx.isHidden)
         }
     }
 }
