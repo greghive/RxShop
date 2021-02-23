@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 func authCoordinator(_ window: UIWindow) {
-    let landingViewController = LandingViewController.fromStoryboard()
+    let landingViewController = LandingViewController()
     let landingAction = landingViewController.installOutputViewModel(outputFactory: landingViewModel()).share(replay: 1)
     let navigationController = UINavigationController(rootViewController: landingViewController)
     window.rootViewController = navigationController

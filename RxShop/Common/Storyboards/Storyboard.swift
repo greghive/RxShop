@@ -6,7 +6,6 @@
 //
 
 enum Storyboard: String {
-    case landing = "Landing"
     case products = "Products"
     case basket = "Basket"
 }

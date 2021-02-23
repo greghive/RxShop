@@ -9,31 +9,45 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension LandingViewController: Storyboarded {
-    static var storyboard: Storyboard = .landing
-}
+//extension LandingViewController: Storyboarded {
+//    static var storyboard: Storyboard = .landing
+//}
 
-class LandingViewController: UIViewController, HasViewModel {
+class LandingViewController: XiblessViewController<LandingView>, HasViewModel {
     
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
+    //@IBOutlet weak var signUpButton: UIButton!
+    //@IBOutlet weak var signInButton: UIButton!
     
-    private let disposeBag = DisposeBag()
+    private var disposeBag: DisposeBag!
     var viewModelFactory: (LandingInput) -> LandingOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpButton.style(.red)
-        signInButton.style(.green)
         
-        let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
-                                 signUpTap: signUpButton.rxTap(),
-                                 signInTap: signInButton.rxTap())
-       
+        let input = LandingInput(
+            viewWillAppear: rxViewWillAppear(),
+            signUpTap: contentView.signUp.rxTap(),
+            signInTap: contentView.signIn.rxTap())
+        
         let viewModel = viewModelFactory(input)
+        disposeBag = DisposeBag {
+            viewModel.buttonsHidden.drive(
+                contentView.signUp.rx.isHidden,
+                contentView.signIn.rx.isHidden)
+        }
         
-        viewModel.buttonsHidden
-            .drive(signUpButton.rx.isHidden, signInButton.rx.isHidden)
-            .disposed(by: disposeBag)
+        
+//        signUpButton.style(.red)
+//        signInButton.style(.green)
+//        
+//        let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
+//                                 signUpTap: signUpButton.rxTap(),
+//                                 signInTap: signInButton.rxTap())
+//       
+//        let viewModel = viewModelFactory(input)
+//        
+//        viewModel.buttonsHidden
+//            .drive(signUpButton.rx.isHidden, signInButton.rx.isHidden)
+//            .disposed(by: disposeBag)
     }
 }
