@@ -26,6 +26,15 @@ class AuthView: UIView {
         return label
     }()
     
+    private(set) var activityView: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView(style: .medium)
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        activityView.color = .rxShopRed
+        activityView.hidesWhenStopped = true
+        activityView.stopAnimating()
+        return activityView
+    }()
+    
     private(set) var button: UIButton = {
         return UIButton.bigRed
     }()
@@ -44,6 +53,7 @@ class AuthView: UIView {
         self.backgroundColor = .systemBackground
         addSubview(stackView)
         addSubview(statusLabel)
+        addSubview(activityView)
         addSubview(button)
         
         let stackGap: CGFloat = 32
@@ -57,6 +67,11 @@ class AuthView: UIView {
             statusLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             statusLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             statusLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            activityView.centerXAnchor.constraint(equalTo: statusLabel.centerXAnchor),
+            activityView.centerYAnchor.constraint(equalTo: statusLabel.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([

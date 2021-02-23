@@ -21,6 +21,8 @@ class SignInViewController: XiblessViewController<SignInView>, HasViewModel {
             let viewModel = viewModelFactory(contentView.input)
             viewModel.signInEnabled.drive(contentView.button.rx.isEnabled)
             viewModel.stateString.drive(contentView.statusLabel.rx.text)
+            viewModel.signInRunning.drive(contentView.activityView.rx.isAnimating)
+            viewModel.signInRunning.drive(contentView.statusLabel.rx.isHidden)
         }
     }
 }

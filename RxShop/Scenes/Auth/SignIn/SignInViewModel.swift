@@ -17,6 +17,7 @@ struct SignInInput {
 
 struct SignInOutput {
     let signInEnabled: Driver<Bool>
+    let signInRunning: Driver<Bool>
     let stateString: Driver<String?>
 }
 
@@ -38,14 +39,11 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
             .map { $0.description }
             .startWith(" ")
             .asDriver(onErrorJustReturn: nil)
+                
+        let signIn = input.signIn
+            .share(replay: 1)
         
-        let signInEnabled = state
-            .map { $0 == .allInputsValid }
-            .asDriver(onErrorJustReturn: false)
-        
-        let output = SignInOutput(signInEnabled: signInEnabled, stateString: stateString)
-        
-        let response = input.signIn
+        let response = signIn
             .withLatestFrom(credentials)
             .map { SignInBody(email: $0.email, password: $0.password) }
             .flatMapLatest { dataTask(with: URLRequest.signIn($0)) }
@@ -62,6 +60,22 @@ func signInViewModel() -> (_ input: SignInInput) -> (output: SignInOutput, actio
         
         let action = Observable
             .merge(user, error)
+            .share(replay: 1)
+        
+        let running = Observable.merge(
+            signIn.map { _ in true },
+            action.map { _ in false })
+            .share(replay: 1)
+
+        let signInRunning = running
+            .asDriver(onErrorJustReturn: false)
+        
+        let signInEnabled = Observable.merge(
+            state.map { $0 == .allInputsValid },
+            running.map { !$0 })
+            .asDriver(onErrorJustReturn: false)
+        
+        let output = SignInOutput(signInEnabled: signInEnabled, signInRunning: signInRunning, stateString: stateString)
         
         return (output: output, action: action)
     }
