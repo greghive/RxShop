@@ -7,6 +7,7 @@
 
 import UIKit
 
+//remove
 enum LabelStyle {
     case title
     case body
@@ -15,6 +16,30 @@ enum LabelStyle {
 
 extension UILabel {
     
+    static var title: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .heavyFont(size: .regular)
+        label.textColor = .label
+        return label
+    }
+    
+    static var body: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .regularFont(size: .small)
+        label.textColor = .secondaryLabel
+        return label
+    }
+    
+    static var tag: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .heavyFont(size: .small) // do we use multiple sizes here? smallTag / largeTag ???
+        return label // if we use different sizes and colors, just bin this????
+    }
+    
+    // remove
     func style(_ labelStyle: LabelStyle) {
         switch labelStyle {
         

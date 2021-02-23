@@ -30,7 +30,7 @@ class CreatePasswordViewController: UIViewController, HasViewModel {
         confirmTextField.style(.name, icon: "lock.fill", placeholder: "Confirm password")
         inputs = [passwordTextField, confirmTextField]
         configureInputs(delegate: self)
-        signUpButton.style(.pink)
+        signUpButton.style(.red)
         
         let input = CreatePasswordInput(password: passwordTextField.observableText(),
                                         confirmation: confirmTextField.observableText(),

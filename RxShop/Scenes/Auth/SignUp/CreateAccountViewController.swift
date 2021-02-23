@@ -32,7 +32,7 @@ class CreateAccountViewController: UIViewController, HasViewModel {
         emailTextField.style(.email, icon: "envelope", placeholder: "Email")
         inputs = [firstNameTextField, lastNameTextField, emailTextField]
         configureInputs(delegate: self)
-        nextButton.style(.pink)
+        nextButton.style(.red)
         
         let input = CreateAccountInput(firstName: firstNameTextField.observableText(),
                                        lastName: lastNameTextField.observableText(),

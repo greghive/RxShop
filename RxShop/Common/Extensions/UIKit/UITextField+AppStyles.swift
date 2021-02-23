@@ -15,13 +15,36 @@ enum TextFieldStyle {
 
 extension UITextField {
     
+    static func name(placeholder: String) -> UITextField {
+        let textField = PaddedTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.style(.name, icon: "signature", placeholder: placeholder)
+        return textField
+    }
+    
+    static func email(placeholder: String = "Email") -> UITextField {
+        let textField = PaddedTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.style(.email, icon: "signature", placeholder: "Email")
+        return textField
+    }
+    
+    static func password(placeholder: String = "Password") -> UITextField {
+        let textField = PaddedTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.style(.password, icon: "signature", placeholder: placeholder)
+        return textField
+    }
+    
     func style(_ inputStyle: TextFieldStyle, icon: String, placeholder: String) {
         switch inputStyle {
         case .name:
             autocapitalizationType = .words
         case .email:
+            autocapitalizationType = .none
             keyboardType = .emailAddress
         case .password:
+            autocapitalizationType = .none
             isSecureTextEntry = true
         }
         

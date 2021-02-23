@@ -57,7 +57,7 @@ class BasketViewController: UIViewController, HasViewModel {
         totalLabel.style(.title)
         amountLabel.style(.title)
         amountLabel.textColor = .rxShopRed
-        checkoutButton.style(.pink)
+        checkoutButton.style(.red)
     }
     
     private func animateCheckoutContainer(visible: Bool, animated: Bool) {

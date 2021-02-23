@@ -46,7 +46,7 @@ func showCreatePassword(navController: UINavigationController, accountDetails: A
 }
 
 func showSignIn(navController: UINavigationController) -> Observable<SignInAction> {
-    let viewController = SignInViewController.fromStoryboard()
+    let viewController = SignInViewController()
     let action = viewController.installOutputViewModel(outputFactory: signInViewModel())
     navController.pushViewController(viewController, animated: true)
     return action

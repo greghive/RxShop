@@ -34,7 +34,7 @@ class ProductViewController: UIViewController, HasViewModel {
         priceLabel.textColor = .rxShopRed
         descriptionLabel.style(.body)
         descriptionLabel.numberOfLines = 0
-        buyButton.style(.pink, size: .small)
+        buyButton.style(.red, size: .small)
         
         let input = ProductInput(buy: buyButton.observableTap())
         let viewModel = viewModelFactory(input)

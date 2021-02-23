@@ -23,8 +23,8 @@ class LandingViewController: UIViewController, HasViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpButton.style(.pink)
-        signInButton.style(.orange)
+        signUpButton.style(.red)
+        signInButton.style(.green)
         
         let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
                                  signUpTap: signUpButton.observableTap(),

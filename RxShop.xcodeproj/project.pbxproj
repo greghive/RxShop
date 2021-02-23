@@ -52,6 +52,7 @@
 		F38983C125DAB4C300106277 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38983C025DAB4C300106277 /* Products.storyboard */; };
 		F38B2DE925E41F2C004E1EC9 /* CredentialsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */; };
 		F38B2DF225E420A9004E1EC9 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2DF125E420A9004E1EC9 /* String+Validation.swift */; };
+		F38B2E0125E4499B004E1EC9 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B2E0025E4499B004E1EC9 /* AuthView.swift */; };
 		F3A3D54A25C86D8400A25D7B /* UITabBarItem+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */; };
 		F3A3D55225C86E5500A25D7B /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55125C86E5500A25D7B /* BasketViewController.swift */; };
 		F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */; };
@@ -82,6 +83,8 @@
 		F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2592125C8609D00AF4A8C /* ProductRequests.swift */; };
 		F3E2592A25C8634D00AF4A8C /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2592925C8634D00AF4A8C /* ProductsCoordinator.swift */; };
 		F3EC865025BC8005002FDC4B /* AuthFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */; };
+		F3F3746225E4E6FC00B1E134 /* XiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */; };
+		F3F3746725E4E78700B1E134 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3746625E4E78700B1E134 /* SignInView.swift */; };
 		F3FA20B725DEFF2B0079ACFC /* UILabel+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +155,7 @@
 		F38983C025DAB4C300106277 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsState.swift; sourceTree = "<group>"; };
 		F38B2DF125E420A9004E1EC9 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		F38B2E0025E4499B004E1EC9 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Helper.swift"; sourceTree = "<group>"; };
 		F3A3D55125C86E5500A25D7B /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 		F3E2592125C8609D00AF4A8C /* ProductRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequests.swift; sourceTree = "<group>"; };
 		F3E2592925C8634D00AF4A8C /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowTests.swift; sourceTree = "<group>"; };
+		F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiblessViewController.swift; sourceTree = "<group>"; };
+		F3F3746625E4E78700B1E134 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AppStyles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +249,7 @@
 			children = (
 				F31A4F0B25DE7FBB000EE824 /* Appearences.swift */,
 				F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */,
+				F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +281,17 @@
 				F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F38B2DFF25E44974004E1EC9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */,
+				F3BE72C625B889BB008FB01F /* AuthRequests.swift */,
+				F38B2E0025E4499B004E1EC9 /* AuthView.swift */,
+				F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		F3BA8D6A25DFF85100594E74 /* StandardLibrary */ = {
@@ -465,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				F37850E925B225F200099AA7 /* SignIn.storyboard */,
+				F3F3746625E4E78700B1E134 /* SignInView.swift */,
 				F37850D525B2258100099AA7 /* SignInViewController.swift */,
 				F37850DA25B2258F00099AA7 /* SignInViewModel.swift */,
 			);
@@ -476,9 +495,7 @@
 			children = (
 				F3C4A5D025B5EF6D002FDAFE /* AuthCoordinator.swift */,
 				F3BE72CE25B893DA008FB01F /* AuthFlow.swift */,
-				F3C4A5DB25B5F4A8002FDAFE /* AuthCache.swift */,
-				F3BE72C625B889BB008FB01F /* AuthRequests.swift */,
-				F38B2DE825E41F2C004E1EC9 /* CredentialsState.swift */,
+				F38B2DFF25E44974004E1EC9 /* Shared */,
 				F3D75B5125AE3B040069862E /* Landing */,
 				F3D75B5225AE3B0E0069862E /* SignUp */,
 				F3D75B5325AE3B170069862E /* SignIn */,
@@ -769,6 +786,7 @@
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F31A4F0C25DE7FBB000EE824 /* Appearences.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
+				F3F3746725E4E78700B1E134 /* SignInView.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
 				F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */,
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
@@ -786,6 +804,7 @@
 				F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */,
 				F3D75B5D25AE3B930069862E /* LandingViewController.swift in Sources */,
 				F3E2591D25C85EA900AF4A8C /* Product.swift in Sources */,
+				F3F3746225E4E6FC00B1E134 /* XiblessViewController.swift in Sources */,
 				F3E2591025C85DF300AF4A8C /* ProductsViewController.swift in Sources */,
 				F3A3D55225C86E5500A25D7B /* BasketViewController.swift in Sources */,
 				F37850D125B2256100099AA7 /* CreatePasswordViewModel.swift in Sources */,
@@ -803,6 +822,7 @@
 				F34A4FB625DBFB5E00E38F57 /* ReuseableView.swift in Sources */,
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
 				F357D45825DAC0220080D4C8 /* ProductsFlow.swift in Sources */,
+				F38B2E0125E4499B004E1EC9 /* AuthView.swift in Sources */,
 				F34A4FA925DBFAF000E38F57 /* BasketCell.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F328532725C065720054A73D /* UIButton+RxHelpers.swift in Sources */,
