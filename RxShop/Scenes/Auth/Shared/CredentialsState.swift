@@ -47,10 +47,10 @@ func credentialsState(firstName: String, lastName: String, email: String) -> Cre
     }
 }
 
-func credentialsState(password: String, confirmPassword: String) -> CredentialsState {
-    if password.isEmpty || confirmPassword.isEmpty {
+func credentialsState(password: String, confirmation: String) -> CredentialsState {
+    if password.isEmpty || confirmation.isEmpty {
         return .missingInputs
-    } else if password != confirmPassword {
+    } else if password != confirmation {
         return .passwordsDoNotMatch
     } else {
         return .allInputsValid

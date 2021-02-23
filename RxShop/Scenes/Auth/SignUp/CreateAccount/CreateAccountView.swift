@@ -22,9 +22,10 @@ class CreateAccountView: AuthView {
 
 extension CreateAccountView {
     var input: CreateAccountInput {
-        CreateAccountInput(firstName: firstName.rxText(),
-                           lastName: lastName.rxText(),
-                           email: email.rxText(),
-                           next: button.rxTap())
+        CreateAccountInput(
+            firstName: firstName.rxText(),
+            lastName: lastName.rxText(),
+            email: email.rxText(),
+            next: button.rxTap())
     }
 }

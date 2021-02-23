@@ -39,7 +39,7 @@ func showCreateAccount(navController: UINavigationController) -> Observable<Crea
 }
 
 func showCreatePassword(navController: UINavigationController, accountDetails: AccountDetails) -> Observable<SignUpAction> {
-    let viewController = CreatePasswordViewController.fromStoryboard()
+    let viewController = CreatePasswordViewController()
     let action = viewController.installOutputViewModel(outputFactory: createPasswordViewModel(accountDetails: accountDetails))
     navController.pushViewController(viewController, animated: true)
     return action

@@ -21,8 +21,9 @@ class SignInView: AuthView {
 
 extension SignInView {
     var input: SignInInput {
-        SignInInput(email: email.rxText(),
-                    password: password.rxText(),
-                    signIn: button.rxTap())
+        SignInInput(
+            email: email.rxText(),
+            password: password.rxText(),
+            signIn: button.rxTap())
     }
 }

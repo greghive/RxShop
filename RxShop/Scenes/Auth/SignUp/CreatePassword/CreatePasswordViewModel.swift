@@ -17,6 +17,7 @@ struct CreatePasswordInput {
 
 struct CreatePasswordOutput {
     let signUpEnabled: Driver<Bool>
+    let stateString: Driver<String?>
 }
 
 typealias SignUpAction = Result<User>
@@ -25,14 +26,28 @@ func createPasswordViewModel(accountDetails: AccountDetails) -> (_ input: Create
     return { input in
         
         let passwords = Observable
-            .combineLatest(input.password, input.confirmation)
+            .combineLatest(input.password, input.confirmation) { (password: $0, confirmation: $1) }
             .share(replay: 1)
-                
-        let signUpEnabled = passwords
-            .map { $0.0.count > 0 && $0.0 == $0.1 }
+          
+        let state = passwords
+            .map { credentialsState(password: $0.password, confirmation: $0.confirmation) }
+            .share(replay: 1)
+        
+        let stateString = state
+            .skip(1)
+            .map { $0.description }
+            .startWith(" ")
+            .asDriver(onErrorJustReturn: nil)
+        
+        let signUpEnabled = state
+            .map { $0 == .allInputsValid }
             .asDriver(onErrorJustReturn: false)
         
-        let output = CreatePasswordOutput(signUpEnabled: signUpEnabled)
+//        let signUpEnabled = passwords
+//            .map { $0.0.count > 0 && $0.0 == $0.1 }
+//            .asDriver(onErrorJustReturn: false)
+        
+        let output = CreatePasswordOutput(signUpEnabled: signUpEnabled, stateString: stateString)
         
         let response = input.signUp
             .withLatestFrom(passwords)
