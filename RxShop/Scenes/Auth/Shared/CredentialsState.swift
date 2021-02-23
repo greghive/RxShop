@@ -38,11 +38,23 @@ func credentialsState(email: String, password: String) -> CredentialsState {
 }
 
 func credentialsState(firstName: String, lastName: String, email: String) -> CredentialsState {
-    return .missingInputs
+    if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
+        return .missingInputs
+    } else if !email.isValidEmail {
+        return .emailIsInvalid
+    } else {
+        return .allInputsValid
+    }
 }
 
 func credentialsState(password: String, confirmPassword: String) -> CredentialsState {
-    return .missingInputs
+    if password.isEmpty || confirmPassword.isEmpty {
+        return .missingInputs
+    } else if password != confirmPassword {
+        return .passwordsDoNotMatch
+    } else {
+        return .allInputsValid
+    }
 }
 
 

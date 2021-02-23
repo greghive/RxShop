@@ -35,6 +35,7 @@
 		F34A4FB125DBFB1500E38F57 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */; };
 		F34A4FB625DBFB5E00E38F57 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */; };
 		F357D45825DAC0220080D4C8 /* ProductsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F357D45725DAC0220080D4C8 /* ProductsFlow.swift */; };
+		F3600DDD25E50FA600DCD1DF /* XiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3600DDC25E50FA600DCD1DF /* XiblessView.swift */; };
 		F371A42225DFC1E800D96D0A /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F371A42125DFC1E800D96D0A /* Basket.storyboard */; };
 		F371A42A25DFCE2A00D96D0A /* UITableView+RxEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371A42925DFCE2A00D96D0A /* UITableView+RxEmptyState.swift */; };
 		F37850BF25B224E600099AA7 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37850BE25B224E600099AA7 /* CreateAccountViewController.swift */; };
@@ -45,7 +46,6 @@
 		F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37850DA25B2258F00099AA7 /* SignInViewModel.swift */; };
 		F37850E025B225CA00099AA7 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850DF25B225CA00099AA7 /* Landing.storyboard */; };
 		F37850E525B225E000099AA7 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850E425B225E000099AA7 /* SignUp.storyboard */; };
-		F37850EA25B225F200099AA7 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37850E925B225F200099AA7 /* SignIn.storyboard */; };
 		F37E9DFF25DB0F79007D744D /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37E9DFE25DB0F79007D744D /* BasketViewModel.swift */; };
 		F37E9E0425DB1335007D744D /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37E9E0325DB1335007D744D /* BasketCoordinator.swift */; };
 		F37E9E8425DBED4C007D744D /* BasketProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37E9E8325DBED4C007D744D /* BasketProduct.swift */; };
@@ -85,6 +85,7 @@
 		F3EC865025BC8005002FDC4B /* AuthFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */; };
 		F3F3746225E4E6FC00B1E134 /* XiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */; };
 		F3F3746725E4E78700B1E134 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3746625E4E78700B1E134 /* SignInView.swift */; };
+		F3F3748625E50ADD00B1E134 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3748525E50ADD00B1E134 /* CreateAccountView.swift */; };
 		F3FA20B725DEFF2B0079ACFC /* UILabel+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
 		F357D45725DAC0220080D4C8 /* ProductsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsFlow.swift; sourceTree = "<group>"; };
+		F3600DDC25E50FA600DCD1DF /* XiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiblessView.swift; sourceTree = "<group>"; };
 		F371A42125DFC1E800D96D0A /* Basket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basket.storyboard; sourceTree = "<group>"; };
 		F371A42925DFCE2A00D96D0A /* UITableView+RxEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RxEmptyState.swift"; sourceTree = "<group>"; };
 		F37850BE25B224E600099AA7 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 		F37850DA25B2258F00099AA7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F37850DF25B225CA00099AA7 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		F37850E425B225E000099AA7 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
-		F37850E925B225F200099AA7 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		F37E9DFE25DB0F79007D744D /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		F37E9E0325DB1335007D744D /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
 		F37E9E8325DBED4C007D744D /* BasketProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProduct.swift; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 		F3EC864F25BC8005002FDC4B /* AuthFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowTests.swift; sourceTree = "<group>"; };
 		F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiblessViewController.swift; sourceTree = "<group>"; };
 		F3F3746625E4E78700B1E134 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F3F3748525E50ADD00B1E134 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AppStyles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 			children = (
 				F31A4F0B25DE7FBB000EE824 /* Appearences.swift */,
 				F31A4EFE25DE7B7B000EE824 /* PaddedTextField.swift */,
+				F3600DDC25E50FA600DCD1DF /* XiblessView.swift */,
 				F3F3746125E4E6FC00B1E134 /* XiblessViewController.swift */,
 			);
 			path = Views;
@@ -470,9 +473,8 @@
 		F3D75B5225AE3B0E0069862E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				F3F3748D25E50C8900B1E134 /* CreateAccount */,
 				F37850E425B225E000099AA7 /* SignUp.storyboard */,
-				F37850BE25B224E600099AA7 /* CreateAccountViewController.swift */,
-				F37850C625B2252F00099AA7 /* CreateAccountViewModel.swift */,
 				F37850CB25B2254F00099AA7 /* CreatePasswordViewController.swift */,
 				F37850D025B2256100099AA7 /* CreatePasswordViewModel.swift */,
 			);
@@ -482,7 +484,6 @@
 		F3D75B5325AE3B170069862E /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				F37850E925B225F200099AA7 /* SignIn.storyboard */,
 				F3F3746625E4E78700B1E134 /* SignInView.swift */,
 				F37850D525B2258100099AA7 /* SignInViewController.swift */,
 				F37850DA25B2258F00099AA7 /* SignInViewModel.swift */,
@@ -549,6 +550,16 @@
 				F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F3F3748D25E50C8900B1E134 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3748525E50ADD00B1E134 /* CreateAccountView.swift */,
+				F37850BE25B224E600099AA7 /* CreateAccountViewController.swift */,
+				F37850C625B2252F00099AA7 /* CreateAccountViewModel.swift */,
+			);
+			path = CreateAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -665,7 +676,6 @@
 				F37850E025B225CA00099AA7 /* Landing.storyboard in Resources */,
 				F371A42225DFC1E800D96D0A /* Basket.storyboard in Resources */,
 				F34A4FB125DBFB1500E38F57 /* ProductsCell.xib in Resources */,
-				F37850EA25B225F200099AA7 /* SignIn.storyboard in Resources */,
 				F37850E525B225E000099AA7 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,6 +801,7 @@
 				F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */,
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
 				F328532225C065150054A73D /* UITextField+RxHelpers.swift in Sources */,
+				F3F3748625E50ADD00B1E134 /* CreateAccountView.swift in Sources */,
 				F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */,
 				F31A4EF725DE731D000EE824 /* UITableView+Cells.swift in Sources */,
 				F3CEEE4C25BAEDEB00025635 /* UIResponder+Scene.swift in Sources */,
@@ -798,6 +809,7 @@
 				F3BA8D6C25DFF85100594E74 /* Int+DecimalCurrency.swift in Sources */,
 				F371A42A25DFCE2A00D96D0A /* UITableView+RxEmptyState.swift in Sources */,
 				F37E9DFF25DB0F79007D744D /* BasketViewModel.swift in Sources */,
+				F3600DDD25E50FA600DCD1DF /* XiblessView.swift in Sources */,
 				F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */,
 				F31A4F1425DE84F2000EE824 /* TextFieldResponding.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,

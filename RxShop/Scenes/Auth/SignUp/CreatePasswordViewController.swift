@@ -32,9 +32,9 @@ class CreatePasswordViewController: UIViewController, HasViewModel {
         configureInputs(delegate: self)
         signUpButton.style(.red)
         
-        let input = CreatePasswordInput(password: passwordTextField.observableText(),
-                                        confirmation: confirmTextField.observableText(),
-                                        signUp: signUpButton.observableTap())
+        let input = CreatePasswordInput(password: passwordTextField.rxText(),
+                                        confirmation: confirmTextField.rxText(),
+                                        signUp: signUpButton.rxTap())
         
         let viewModel = viewModelFactory(input)
     

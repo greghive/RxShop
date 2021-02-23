@@ -9,25 +9,20 @@ import UIKit
 
 class SignInView: AuthView {
 
-    private(set) var email: UITextField = {
-        return .email()
-    }()
-    
-    private(set) var password: UITextField = {
-        return .password()
-    }()
-    
+    let email = UITextField.email()
+    let password = UITextField.password()
+     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layoutUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func layoutUI() {
         addInputs([email, password])
         button.setTitle("SIGN IN", for: .normal)
+    }
+}
+
+extension SignInView {
+    var input: SignInInput {
+        SignInInput(email: email.rxText(),
+                    password: password.rxText(),
+                    signIn: button.rxTap())
     }
 }

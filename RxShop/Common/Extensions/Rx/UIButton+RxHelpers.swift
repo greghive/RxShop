@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 extension UIButton {
-    func observableTap() -> Observable<Void> {
+    func rxTap() -> Observable<Void> {
         return rx.tap.asObservable()
     }
 }

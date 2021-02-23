@@ -27,8 +27,8 @@ class LandingViewController: UIViewController, HasViewModel {
         signInButton.style(.green)
         
         let input = LandingInput(viewWillAppear: rx.methodInvoked(#selector(viewWillAppear(_:))).asVoid(),
-                                 signUpTap: signUpButton.observableTap(),
-                                 signInTap: signInButton.observableTap())
+                                 signUpTap: signUpButton.rxTap(),
+                                 signInTap: signInButton.rxTap())
        
         let viewModel = viewModelFactory(input)
         

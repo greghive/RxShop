@@ -17,6 +17,7 @@ struct CreateAccountInput {
 
 struct CreateAccountOutput {
     let nextEnabled: Driver<Bool>
+    let stateString: Driver<String?>
 }
 
 typealias AccountDetails = (firstName: String, lastName: String, email: String)
@@ -29,11 +30,21 @@ func createAccountViewModel() -> (_ input: CreateAccountInput) -> (output: Creat
             .combineLatest(input.firstName, input.lastName, input.email) { (firstName: $0, lastName: $1, email: $2) }
             .share(replay: 1)
         
-        let nextEnabled = credentials
-            .map { !$0.firstName.isEmpty && !$0.lastName.isEmpty && !$0.email.isEmpty}
+        let state = credentials
+            .map { credentialsState(firstName: $0.firstName, lastName: $0.lastName, email: $0.email) }
+            .share(replay: 1)
+        
+        let stateString = state
+            .skip(1)
+            .map { $0.description }
+            .startWith(" ")
+            .asDriver(onErrorJustReturn: nil)
+        
+        let nextEnabled = state
+            .map { $0 == .allInputsValid }
             .asDriver(onErrorJustReturn: false)
 
-        let output = CreateAccountOutput(nextEnabled: nextEnabled)
+        let output = CreateAccountOutput(nextEnabled: nextEnabled, stateString: stateString)
         
         let action = input.next
             .withLatestFrom(credentials)

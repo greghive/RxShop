@@ -32,7 +32,7 @@ func authCoordinator(_ window: UIWindow) {
 }
 
 func showCreateAccount(navController: UINavigationController) -> Observable<CreateAccountAction> {
-    let viewController = CreateAccountViewController.fromStoryboard()
+    let viewController = CreateAccountViewController()
     let action = viewController.installOutputViewModel(outputFactory: createAccountViewModel())
     navController.pushViewController(viewController, animated: true)
     return action

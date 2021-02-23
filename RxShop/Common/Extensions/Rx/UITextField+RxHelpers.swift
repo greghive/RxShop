@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 extension UITextField {
-    func observableText() -> Observable<String> {
+    func rxText() -> Observable<String> {
         return rx.text.orEmpty.asObservable()
     }
 }

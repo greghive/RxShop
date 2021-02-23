@@ -36,7 +36,7 @@ class ProductViewController: UIViewController, HasViewModel {
         descriptionLabel.numberOfLines = 0
         buyButton.style(.red, size: .small)
         
-        let input = ProductInput(buy: buyButton.observableTap())
+        let input = ProductInput(buy: buyButton.rxTap())
         let viewModel = viewModelFactory(input)
         disposeBag = DisposeBag {
             viewModel.image.drive(imageView.rx.image)
