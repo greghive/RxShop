@@ -24,6 +24,7 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     
     _ = basketCoordinatorResult.basketCount
         .map { $0 > 0 ? String($0) : nil }
+        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔
         .bind { basketNavigationController.tabBarItem.badgeValue = $0 }
 
     // MARK: Profile
@@ -44,7 +45,7 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // TODOs
 
-// loading spinner for browse
+// add delay to spinners in auth screens
 
 // profile (simple you are logged in as + logout button) - handle logout
 

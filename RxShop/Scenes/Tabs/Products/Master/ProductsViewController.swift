@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ProductsViewController: UITableViewController, HasViewModel {
+class ProductsViewController: XiblessViewController<ProductsView>, HasViewModel {
     
     private let disposeBag = DisposeBag()
     var viewModelFactory: (ProductsInput) -> ProductsOutput = { _ in fatalError("Missing view model factory.") }
@@ -17,17 +17,14 @@ class ProductsViewController: UITableViewController, HasViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Browse"
-        tableView.dataSource = nil
-        tableView.delegate = nil
-        tableView.refreshControl = UIRefreshControl()
-        tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
-        tableView.register(ProductsCell.reuseIdentifier)
-        let refreshControl = tableView.refreshControl!
         
-        let input = ProductsInput(viewWillAppear: rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).asVoid(),
-                                refresh: tableView.refreshControl!.rx.controlEvent(.valueChanged).asObservable(),
-                                select: tableView.rx.itemSelected.asObservable())
+        contentView.tableView.register(ProductsCell.reuseIdentifier)
+        let refreshControl = contentView.tableView.refreshControl!
+        
+        let input = ProductsInput(
+            viewWillAppear: rxViewWillAppear(),
+            refresh: contentView.tableView.refreshControl!.rx.controlEvent(.valueChanged).asObservable(),
+            select: contentView.tableView.rx.itemSelected.asObservable())
         
         let viewModel = viewModelFactory(input)
         
@@ -35,9 +32,12 @@ class ProductsViewController: UITableViewController, HasViewModel {
             .bind { refreshControl.endRefreshing() }
             .disposed(by: disposeBag)
         
-        viewModel
-            .products
-            .bind(to: tableView.rx.items(cellIdentifier: ProductsCell.reuseIdentifier, cellType: ProductsCell.self)) { _, product, cell in
+        viewModel.runningFirstFetch
+            .drive(contentView.activityView.rx.isAnimating)
+            .disposed(by: disposeBag)
+
+        viewModel.products
+            .bind(to: contentView.tableView.rx.items(cellIdentifier: ProductsCell.reuseIdentifier, cellType: ProductsCell.self)) { _, product, cell in
                 ProductsCellConfigurator.configure(cell, with: product)
             }.disposed(by: disposeBag)
     }

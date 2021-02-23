@@ -59,6 +59,9 @@
 		F3BA8D6C25DFF85100594E74 /* Int+DecimalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8D6B25DFF85100594E74 /* Int+DecimalCurrency.swift */; };
 		F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72C625B889BB008FB01F /* AuthRequests.swift */; };
 		F3BE72CF25B893DA008FB01F /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE72CE25B893DA008FB01F /* AuthFlow.swift */; };
+		F3BE877825E5622800D9F811 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE877725E5622800D9F811 /* ProductsView.swift */; };
+		F3BE878025E5629F00D9F811 /* UITableView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE877F25E5629F00D9F811 /* UITableView+AppStyles.swift */; };
+		F3BE878625E5632C00D9F811 /* UIActivityView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE878525E5632C00D9F811 /* UIActivityView+AppStyles.swift */; };
 		F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */; };
 		F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */; };
 		F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */; };
@@ -162,6 +165,9 @@
 		F3BA8D6B25DFF85100594E74 /* Int+DecimalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+DecimalCurrency.swift"; sourceTree = "<group>"; };
 		F3BE72C625B889BB008FB01F /* AuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
 		F3BE72CE25B893DA008FB01F /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
+		F3BE877725E5622800D9F811 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		F3BE877F25E5629F00D9F811 /* UITableView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+AppStyles.swift"; sourceTree = "<group>"; };
+		F3BE878525E5632C00D9F811 /* UIActivityView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityView+AppStyles.swift"; sourceTree = "<group>"; };
 		F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 		F38983D125DAB61200106277 /* Master */ = {
 			isa = PBXGroup;
 			children = (
+				F3BE877725E5622800D9F811 /* ProductsView.swift */,
 				F3E2590F25C85DF300AF4A8C /* ProductsViewController.swift */,
 				F3E2591725C85E0500AF4A8C /* ProductsViewModel.swift */,
 				F34A4FAE25DBFB1500E38F57 /* ProductsCell.swift */,
@@ -314,6 +321,21 @@
 			path = StandardLibrary;
 			sourceTree = "<group>";
 		};
+		F3BE878425E5630900D9F811 /* AppStyles */ = {
+			isa = PBXGroup;
+			children = (
+				F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */,
+				F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */,
+				F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */,
+				F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */,
+				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
+				F3B96DF825E02B5D00269FDC /* UIView+AppStyles.swift */,
+				F3BE877F25E5629F00D9F811 /* UITableView+AppStyles.swift */,
+				F3BE878525E5632C00D9F811 /* UIActivityView+AppStyles.swift */,
+			);
+			path = AppStyles;
+			sourceTree = "<group>";
+		};
 		F3C4A5A525B22E98002FDAFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,12 +376,7 @@
 		F3C4A5F625B6C847002FDAFE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				F31A4ECE25DE68A3000EE824 /* UIFont+AppFonts.swift */,
-				F31A4EC025DE66AD000EE824 /* UIColor+AppColors.swift */,
-				F31A4EF125DE7206000EE824 /* UITextField+AppStyles.swift */,
-				F3FA20B625DEFF2B0079ACFC /* UILabel+AppStyles.swift */,
-				F31A4EBA25DE664D000EE824 /* UIButton+AppStyles.swift */,
-				F3B96DF825E02B5D00269FDC /* UIView+AppStyles.swift */,
+				F3BE878425E5630900D9F811 /* AppStyles */,
 				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
 				F3CEEE4B25BAEDEB00025635 /* UIResponder+Scene.swift */,
@@ -797,12 +814,14 @@
 				F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */,
 				F31A4EF225DE7206000EE824 /* UITextField+AppStyles.swift in Sources */,
 				F31A4EC125DE66AD000EE824 /* UIColor+AppColors.swift in Sources */,
+				F3BE877825E5622800D9F811 /* ProductsView.swift in Sources */,
 				F3D75B1225AE36DD0069862E /* AppDelegate.swift in Sources */,
 				F31A4F0C25DE7FBB000EE824 /* Appearences.swift in Sources */,
 				F37850DB25B2258F00099AA7 /* SignInViewModel.swift in Sources */,
 				F3F3746725E4E78700B1E134 /* SignInView.swift in Sources */,
 				F3D75B6925AE3D330069862E /* TabsCoordinator.swift in Sources */,
 				F3E2592225C8609D00AF4A8C /* ProductRequests.swift in Sources */,
+				F3BE878025E5629F00D9F811 /* UITableView+AppStyles.swift in Sources */,
 				F3C4A5D125B5EF6D002FDAFE /* AuthCoordinator.swift in Sources */,
 				F3F3748625E50ADD00B1E134 /* CreateAccountView.swift in Sources */,
 				F3BE72C725B889BB008FB01F /* AuthRequests.swift in Sources */,
@@ -830,6 +849,7 @@
 				F37E9E8425DBED4C007D744D /* BasketProduct.swift in Sources */,
 				F3E2591825C85E0500AF4A8C /* ProductsViewModel.swift in Sources */,
 				F328533725C0ADBE0054A73D /* Result.swift in Sources */,
+				F3BE878625E5632C00D9F811 /* UIActivityView+AppStyles.swift in Sources */,
 				F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */,
 				F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */,
 				F3B96DF925E02B5D00269FDC /* UIView+AppStyles.swift in Sources */,

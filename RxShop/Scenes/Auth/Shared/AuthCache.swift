@@ -10,10 +10,9 @@ import Foundation
 // ❌ this is for demo purposes only! (don't store user credentials in user defaults!) ❌
 
 func cachedUser(from defaults: UserDefaults) -> User? {
-//    guard let data = defaults.data(forKey: "user") else { return nil }
-//    guard let user = try? jsonDecoder().decode(User.self, from: data) else { return nil }
-//    return user
-    return nil
+    guard let data = defaults.data(forKey: "user") else { return nil }
+    guard let user = try? jsonDecoder().decode(User.self, from: data) else { return nil }
+    return user
 }
 
 @discardableResult

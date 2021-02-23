@@ -27,12 +27,7 @@ class AuthView: UIView {
     }()
     
     private(set) var activityView: UIActivityIndicatorView = {
-        let activityView = UIActivityIndicatorView(style: .medium)
-        activityView.translatesAutoresizingMaskIntoConstraints = false
-        activityView.color = .rxShopRed
-        activityView.hidesWhenStopped = true
-        activityView.stopAnimating()
-        return activityView
+        return .style(.medium)
     }()
     
     private(set) var button: UIButton = {

@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 struct ProductsInput {
     let viewWillAppear: Observable<Void>
@@ -15,6 +16,7 @@ struct ProductsInput {
 
 struct ProductsOutput {
     let products: Observable<[Product]>
+    let runningFirstFetch: Driver<Bool>
     let refreshEnded: Observable<Void>
 }
 
@@ -23,9 +25,13 @@ typealias ProductsAction = Result<Product>
 func productsViewModel() -> (_ input: ProductsInput) -> (output: ProductsOutput, action: Observable<ProductsAction>) {
     return { input in
         
+        let firstAppear = input.viewWillAppear
+            .take(1)
+            .share(replay: 1)
+        
         let response = Observable
-            .merge(input.viewWillAppear.take(1), input.refresh)
-            .flatMapLatest { dataTask(with: URLRequest.products()) } // need to pass in url to test this???
+            .merge(firstAppear, input.refresh)
+            .flatMapLatest { dataTask(with: URLRequest.products()) }
             .share(replay: 1)
         
         let products = response
@@ -37,8 +43,6 @@ func productsViewModel() -> (_ input: ProductsInput) -> (output: ProductsOutput,
             .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .asVoid()
         
-        let output = ProductsOutput(products: products, refreshEnded: refreshEnded)
-        
         let selected = input.select
             .withLatestFrom(products) { $1[$0.row] }
             .map { ProductsAction.success($0) }
@@ -46,10 +50,25 @@ func productsViewModel() -> (_ input: ProductsInput) -> (output: ProductsOutput,
         let error = response
             .compactMap { $0.error }
             .map { ProductsAction.error($0) }
+            .share(replay: 1)
         
         let action = Observable
             .merge(selected, error)
             .observe(on: MainScheduler.instance)
+            .share(replay: 1)
+        
+        let runningFirstFetch = Observable.merge(
+            firstAppear.map { _ in true },
+            products.map { _ in false },
+            error.map { _ in false })
+            .delay(.seconds(1), scheduler: MainScheduler.instance)
+            .take(2)
+            .debug("*** fetch")
+            .asDriver(onErrorJustReturn: false)
+        
+        // delay, throttle, or debounce ?????
+        
+        let output = ProductsOutput(products: products, runningFirstFetch: runningFirstFetch, refreshEnded: refreshEnded)
         
         return (output: output, action: action)
     }
