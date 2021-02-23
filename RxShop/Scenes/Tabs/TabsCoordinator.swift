@@ -44,6 +44,8 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // TODOs
 
+// loading spinner for browse
+
 // profile (simple you are logged in as + logout button) - handle logout
 
 // some kind of toast ir alert for adding an item ???

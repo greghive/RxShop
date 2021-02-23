@@ -28,6 +28,19 @@ class LandingView: XiblessView {
     }
     
     private func layoutUI() {
+        let logo = UIImageView()
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.image = UIImage(named: "rxshop_logo")
+        logo.contentMode = .scaleAspectFit
+        addSubview(logo)
+        
+        NSLayoutConstraint.activate([
+            logo.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7),
+            logo.heightAnchor.constraint(equalTo: logo.widthAnchor),
+            logo.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            NSLayoutConstraint(item: logo, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 0.7, constant: 1)
+        ])
+                
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
