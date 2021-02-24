@@ -25,14 +25,14 @@ extension UITextField {
     static func email(placeholder: String = "Email") -> UITextField {
         let textField = PaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.style(.email, icon: "signature", placeholder: "Email")
+        textField.style(.email, icon: "envelope.fill", placeholder: "Email")
         return textField
     }
     
     static func password(placeholder: String = "Password") -> UITextField {
         let textField = PaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.style(.password, icon: "signature", placeholder: placeholder)
+        textField.style(.password, icon: "lock.fill", placeholder: placeholder)
         return textField
     }
     
