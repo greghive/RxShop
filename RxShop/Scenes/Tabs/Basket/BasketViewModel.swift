@@ -9,6 +9,7 @@ import RxSwift
 
 struct BasketInput {
     let delete: Observable<IndexPath>
+    let checkout: Observable<Void>
 }
 
 struct BasketOutput {
@@ -21,6 +22,7 @@ struct BasketOutput {
 enum BasketAction {
     case add(BasketProduct)
     case remove(IndexPath)
+    case checkout
 }
 
 typealias BasketCount = Int
@@ -36,11 +38,15 @@ func basketViewModel(addProduct: Observable<Product>) -> (_ input: BasketInput) 
             .delete
             .map { BasketAction.remove($0) }
         
+        let checkoutBasket = input
+            .checkout
+            .map { BasketAction.checkout }
+        
         let section = BasketSection([])
         let seed = BasketState([section])
         
         let basket = Observable
-            .merge(addToBasket, removeFromBasket)
+            .merge(addToBasket, removeFromBasket, checkoutBasket)
             .scan(seed) { (state, action) in
                 state.execute(action)
             }
@@ -81,6 +87,7 @@ struct BasketState {
     }
     
     func execute(_ action: BasketAction) -> BasketState {
+        guard self.sections.count == 1 else { fatalError("BasketState only supports 1 section") }
         switch action {
         
         case .add(let product):
@@ -94,6 +101,11 @@ struct BasketState {
             var items = sections[0].basketProducts
             items.remove(at: indexPath.row)
             sections[0] = BasketSection(original: sections[0], items: items)
+            return BasketState(sections)
+            
+        case .checkout:
+            var sections = self.sections
+            sections[0] = BasketSection(original: sections[0], items: [])
             return BasketState(sections)
         }
     }

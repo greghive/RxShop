@@ -29,7 +29,16 @@ class BasketViewController: UIViewController, HasViewModel {
         super.viewDidLoad()
         configureUI()
         
-        let input = BasketInput(delete: tableView.rx.itemDeleted.asObservable())
+        let checkout = checkoutButton.rxTap()
+            .withUnretained(self)
+            .flatMapLatest { s, _ in s.checkoutAlert() }
+            .filter { $0 == .default }
+            .asVoid()
+        
+        let input = BasketInput(
+            delete: tableView.rxItemDeleted(),
+            checkout: checkout)
+        
         let viewModel = viewModelFactory(input)
         
         disposeBag = DisposeBag {
@@ -71,6 +80,13 @@ class BasketViewController: UIViewController, HasViewModel {
             checkoutBottom.constant = offset
             view.layoutIfNeeded()
         }
+    }
+    
+    private func checkoutAlert() -> Observable<UIViewController.AlertAction> {
+        return alert(title: "Complete Order",
+                     message: "Would you like to checkout now and complete your order?",
+                     defaultTitle: "Checkout",
+                     cancelTitle: "Cancel")
     }
 }
 

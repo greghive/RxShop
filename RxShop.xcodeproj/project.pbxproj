@@ -357,6 +357,7 @@
 				F3BA8D6A25DFF85100594E74 /* StandardLibrary */,
 				F3C4A5F425B6C7EC002FDAFE /* MVVM */,
 				F3C4A5F525B6C7FA002FDAFE /* Rx */,
+				F3BE878425E5630900D9F811 /* AppStyles */,
 				F3C4A5F625B6C847002FDAFE /* UIKit */,
 				F3C4A60225B70908002FDAFE /* Network */,
 			);
@@ -391,15 +392,14 @@
 		F3C4A5F625B6C847002FDAFE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				F3BE878425E5630900D9F811 /* AppStyles */,
 				F31A4EE925DE6FFE000EE824 /* UIColor+Adjustments.swift */,
 				F31A4ED625DE6B19000EE824 /* UIImage+Color.swift */,
 				F3CEEE4B25BAEDEB00025635 /* UIResponder+Scene.swift */,
 				F346609025C2C6D600517263 /* UIViewController+Errors.swift */,
 				F31A4F0325DE7D76000EE824 /* UIViewController+NavBar.swift */,
 				F31A4EF625DE731D000EE824 /* UITableView+Cells.swift */,
-				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F371A42925DFCE2A00D96D0A /* UITableView+RxEmptyState.swift */,
+				F3A3D54925C86D8400A25D7B /* UITabBarItem+Helper.swift */,
 				F3600DFB25E529C300DCD1DF /* UIKit+RxHelpers.swift */,
 				F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */,
 				F31A4F1325DE84F2000EE824 /* TextFieldResponding.swift */,
