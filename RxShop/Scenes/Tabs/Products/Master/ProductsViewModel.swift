@@ -61,12 +61,7 @@ func productsViewModel() -> (_ input: ProductsInput) -> (output: ProductsOutput,
             firstAppear.map { _ in true },
             products.map { _ in false },
             error.map { _ in false })
-            .delay(.seconds(1), scheduler: MainScheduler.instance)
-            .take(2)
-            .debug("*** fetch")
             .asDriver(onErrorJustReturn: false)
-        
-        // delay, throttle, or debounce ?????
         
         let output = ProductsOutput(products: products, runningFirstFetch: runningFirstFetch, refreshEnded: refreshEnded)
         

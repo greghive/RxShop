@@ -10,3 +10,9 @@ struct User: Codable, Equatable {
     let firstName: String
     let lastName: String
 }
+
+extension User {
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
+}

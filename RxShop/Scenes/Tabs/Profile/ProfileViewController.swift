@@ -7,10 +7,17 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: XiblessViewController<ProfileView>, HasViewModel {
+    
+    var viewModelFactory: (ProfileInput) -> ProfileOutput = { _ in fatalError("Missing view model factory.") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Profile"
+        
+        let input = ProfileInput(signOut: contentView.signOut.rxTap())
+        let viewModel = viewModelFactory(input)
+        contentView.userLabel.text = viewModel.nameText
     }
 }
 

@@ -21,3 +21,7 @@ func cacheUser(_ user: User, to defaults: UserDefaults) -> Bool {
     defaults.set(data, forKey: "user")
     return true
 }
+
+func clearUser(from defaults: UserDefaults) {
+    defaults.set(nil, forKey: "user")
+}

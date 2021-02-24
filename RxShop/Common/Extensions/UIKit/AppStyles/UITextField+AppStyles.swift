@@ -64,7 +64,7 @@ extension UITextField {
 
         font = .boldFont(size: .regular)
         self.placeholder = placeholder
-        textColor = .darkText
+        textColor = .label
         tintColor = .rxShopRed
         
         heightAnchor.constraint(equalToConstant: 54).isActive = true

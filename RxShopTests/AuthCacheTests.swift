@@ -23,4 +23,12 @@ class AuthCacheTests: XCTestCase {
         let cached = cachedUser(from: defaults)
         XCTAssertEqual(user, cached)
     }
+    
+    func test_clearUser() {
+        let user = User(id: "3", firstName: "Jane", lastName: "Doe")
+        _ = cacheUser(user, to: .nonPersistent)
+        clearUser(from: .nonPersistent)
+        let nilUser = cachedUser(from: .standard)
+        XCTAssertNil(nilUser)
+    }
 }

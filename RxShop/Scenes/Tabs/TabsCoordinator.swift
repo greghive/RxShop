@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-func tabsCoordinator(_ navigationController: UINavigationController) {
+func tabsCoordinator(_ navigationController: UINavigationController, user: User) {
     
     // MARK: Browse
     
@@ -24,18 +24,27 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
     
     _ = basketCoordinatorResult.basketCount
         .map { $0 > 0 ? String($0) : nil }
-        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔
+        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔 (test with sign out)
         .bind { basketNavigationController.tabBarItem.badgeValue = $0 }
 
     // MARK: Profile
     
-    let profileViewController = ProfileViewController()
-    profileViewController.tabBarItem = .chunky(title: "Profile", icon: "person.fill", tag: 2)
+    let profileCoordinatorResult = profileCoordinator(user: user)
+    let profileNavigationController = profileCoordinatorResult.navigationController
+    profileNavigationController.tabBarItem = .chunky(title: "Profile", icon: "person.fill", tag: 2)
+    
+    _ = profileCoordinatorResult.action
+        .filter { $0 == .signOut }
+        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔 (test with sign out)
+        .bind { _ in
+            clearUser(from: .standard)
+            navigationController.popToRootViewController(animated: true)
+        }
     
     // MARK: Tabs
     
     let tabBarController = UITabBarController()
-    tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileViewController]
+    tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileNavigationController]
     navigationController.pushViewController(tabBarController, animated: true)
 }
 
@@ -45,17 +54,13 @@ func tabsCoordinator(_ navigationController: UINavigationController) {
 
 // TODOs
 
-// add delay to spinners in auth screens
-
-// profile (simple you are logged in as + logout button) - handle logout
-
 // some kind of toast ir alert for adding an item ???
 
 // dummy checkout screen (which clears the basket)
 
 // slide checkout off more
 
-// check binds in coordinators, like above, when the tab bar gets popped on logot, do the subscriptions remain? may need takeUntil(vc.dellocating)
+// check binds in ALL coordinators, like above, when the tab bar gets popped on logot, do the subscriptions remain? may need takeUntil(vc.dellocating)
 
 
 // upload before then....

@@ -24,7 +24,7 @@ func authCoordinator(_ window: UIWindow) {
             switch result {
             case .success(let user):
                 cacheUser(user, to: .standard)
-                showTabs(navigationController)
+                showTabs(navigationController, user: user)
             case .error(let error):
                 navigationController.showBasicError(message: error.localizedDescription)
             }
@@ -52,7 +52,7 @@ func showSignIn(navController: UINavigationController) -> Observable<SignInActio
     return action
 }
 
-func showTabs(_ navController: UINavigationController) {
+func showTabs(_ navController: UINavigationController, user: User) {
     navController.setNavigationBarHidden(true, animated: true)
-    tabsCoordinator(navController)
+    tabsCoordinator(navController, user: user)
 }

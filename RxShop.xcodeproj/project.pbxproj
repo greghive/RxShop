@@ -62,6 +62,9 @@
 		F3BE877825E5622800D9F811 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE877725E5622800D9F811 /* ProductsView.swift */; };
 		F3BE878025E5629F00D9F811 /* UITableView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE877F25E5629F00D9F811 /* UITableView+AppStyles.swift */; };
 		F3BE878625E5632C00D9F811 /* UIActivityView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE878525E5632C00D9F811 /* UIActivityView+AppStyles.swift */; };
+		F3BE878B25E5978B00D9F811 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE878A25E5978B00D9F811 /* ProfileView.swift */; };
+		F3BE879325E59D2300D9F811 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE879225E59D2300D9F811 /* ProfileViewModel.swift */; };
+		F3BE879825E6543300D9F811 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE879725E6543300D9F811 /* ProfileCoordinator.swift */; };
 		F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */; };
 		F3C4A5AD25B22FF8002FDAFE /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */; };
 		F3C4A5C325B5ECDB002FDAFE /* HasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */; };
@@ -168,6 +171,9 @@
 		F3BE877725E5622800D9F811 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		F3BE877F25E5629F00D9F811 /* UITableView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+AppStyles.swift"; sourceTree = "<group>"; };
 		F3BE878525E5632C00D9F811 /* UIActivityView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityView+AppStyles.swift"; sourceTree = "<group>"; };
+		F3BE878A25E5978B00D9F811 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F3BE879225E59D2300D9F811 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F3BE879725E6543300D9F811 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		F3C4A5A625B22EB4002FDAFE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F3C4A5AC25B22FF8002FDAFE /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		F3C4A5C225B5ECDB002FDAFE /* HasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasViewModel.swift; sourceTree = "<group>"; };
@@ -569,7 +575,10 @@
 		F3E2590E25C85BB800AF4A8C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F3BE879725E6543300D9F811 /* ProfileCoordinator.swift */,
+				F3BE878A25E5978B00D9F811 /* ProfileView.swift */,
 				F3A3D55625C86E8000A25D7B /* ProfileViewController.swift */,
+				F3BE879225E59D2300D9F811 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -832,6 +841,7 @@
 				F371A42A25DFCE2A00D96D0A /* UITableView+RxEmptyState.swift in Sources */,
 				F37E9DFF25DB0F79007D744D /* BasketViewModel.swift in Sources */,
 				F3600DDD25E50FA600DCD1DF /* XiblessView.swift in Sources */,
+				F3BE879325E59D2300D9F811 /* ProfileViewModel.swift in Sources */,
 				F31DAB9B25C899D60061179E /* ProductViewModel.swift in Sources */,
 				F31A4F1425DE84F2000EE824 /* TextFieldResponding.swift in Sources */,
 				F3C4A5A725B22EB5002FDAFE /* Storyboarded.swift in Sources */,
@@ -842,6 +852,7 @@
 				F3E2591025C85DF300AF4A8C /* ProductsViewController.swift in Sources */,
 				F3A3D55225C86E5500A25D7B /* BasketViewController.swift in Sources */,
 				F37850D125B2256100099AA7 /* CreatePasswordViewModel.swift in Sources */,
+				F3BE878B25E5978B00D9F811 /* ProfileView.swift in Sources */,
 				F37E9E0425DB1335007D744D /* BasketCoordinator.swift in Sources */,
 				F3C4A60425B70938002FDAFE /* Requests.swift in Sources */,
 				F3600DF425E5272800DCD1DF /* LandingView.swift in Sources */,
@@ -849,6 +860,7 @@
 				F37E9E8425DBED4C007D744D /* BasketProduct.swift in Sources */,
 				F3E2591825C85E0500AF4A8C /* ProductsViewModel.swift in Sources */,
 				F328533725C0ADBE0054A73D /* Result.swift in Sources */,
+				F3BE879825E6543300D9F811 /* ProfileCoordinator.swift in Sources */,
 				F3BE878625E5632C00D9F811 /* UIActivityView+AppStyles.swift in Sources */,
 				F3D75B6225AE3BA60069862E /* LandingViewModel.swift in Sources */,
 				F3A3D55725C86E8000A25D7B /* ProfileViewController.swift in Sources */,
