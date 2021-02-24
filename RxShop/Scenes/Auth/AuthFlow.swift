@@ -43,7 +43,7 @@ extension ObservableType where Element == LandingAction {
             .map { SignInAction.success($0) }
         
         return Observable
-            .merge(signIn.debug("🟢 signIn"), signUp.debug("🟢 signUp"), authenticated.debug("🟢 authenticated"))
+            .merge(signIn, signUp, authenticated)
             .observe(on: MainScheduler.instance)
     }
 }

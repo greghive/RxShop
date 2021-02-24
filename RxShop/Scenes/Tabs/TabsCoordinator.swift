@@ -10,21 +10,30 @@ import RxSwift
 
 func tabsCoordinator(_ navigationController: UINavigationController, user: User) {
     
+    let tabBarController = UITabBarController()
+    
     // MARK: Browse
     
     let productCoordinatorResult = productsCoordinator()
     let productsNavigationController = productCoordinatorResult.navigationController
     productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
   
+    // this may not be needed
+    // issue around tapping into a product...could be related
+    // ProductsViewController is not getting deallocated
+    // (check other vc's?)
+    let addProduct = productCoordinatorResult.action
+        .take(until: tabBarController.rx.deallocating)
+    
     // MARK: Basket
     
-    let basketCoordinatorResult = basketCoordinator(addProduct: productCoordinatorResult.action)
+    let basketCoordinatorResult = basketCoordinator(addProduct: addProduct)
     let basketNavigationController = basketCoordinatorResult.navigationController
     basketNavigationController.tabBarItem = .chunky(title: "Basket", icon: "cart.fill", tag: 1)
     
     _ = basketCoordinatorResult.basketCount
         .map { $0 > 0 ? String($0) : nil }
-        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔 (test with sign out)
+        .take(until: tabBarController.rx.deallocating)
         .bind { basketNavigationController.tabBarItem.badgeValue = $0 }
 
     // MARK: Profile
@@ -35,7 +44,7 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
     
     _ = profileCoordinatorResult.action
         .filter { $0 == .signOut }
-        //.take(until: basketNavigationController.rx.deallocating) // check these out 🤔 (test with sign out)
+        .take(until: tabBarController.rx.deallocating)
         .bind { _ in
             clearUser(from: .standard)
             navigationController.popToRootViewController(animated: true)
@@ -43,7 +52,6 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
     
     // MARK: Tabs
     
-    let tabBarController = UITabBarController()
     tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileNavigationController]
     navigationController.pushViewController(tabBarController, animated: true)
 }
@@ -52,15 +60,11 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
 
 // push from master to detail in products only works once you nav to basket
 
+// see if this effects the Vc's too? check that they all deinit
+
 // TODOs
 
-// some kind of toast ir alert for adding an item ???
-
 // dummy checkout screen (which clears the basket)
-
-// slide checkout off more
-
-// check binds in ALL coordinators, like above, when the tab bar gets popped on logot, do the subscriptions remain? may need takeUntil(vc.dellocating)
 
 
 // upload before then....
@@ -68,3 +72,5 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
 // bonus, add setting location like in Choosie, some interesting work to do there
 
 // ^ could link to this from profile
+
+// toast alet when adding items (with rx throttle so don't post tons as once???)

@@ -12,23 +12,18 @@ func productsCoordinator() -> (navigationController: UINavigationController, act
     let productsAction = productsViewController.installOutputViewModel(outputFactory: productsViewModel()).share(replay: 1)
     let navigationController = UINavigationController()
     
-//    _ = productsAction.subscribe(onNext: { result in
-//        if let error = result.error {
-//            navigationController.showBasicError(message: error.localizedDescription)
-//        }
-//    })
-    
-    //let buyAction = productsFlow(navigationController, showProduct: showProductViewController(_:product:), action: productsAction)
-    
-    // don't need the flow (but keep it for reference???)
-    
     _ = productsAction
         .compactMap { $0.error }
-        .subscribe(onNext: { navigationController.showBasicError(message: $0.localizedDescription) })
+        .take(until: navigationController.rx.deallocating.debug("*** deallocating"))
+        .debug("*** productsAction")
+        .bind { navigationController.showBasicError(message: $0.localizedDescription) }
     
     let buyAction = productsAction
         .compactMap { $0.success }
         .flatMap { showProductViewController(navigationController, product: $0) }
+        
+    // alternative usage:
+    // let buyAction = productsFlow(navigationController, showProduct: showProductViewController(_:product:), action: productsAction)
     
     navigationController.setViewControllers([productsViewController], animated: false)
     return (navigationController, buyAction)
@@ -40,3 +35,6 @@ func showProductViewController(_ navigationController: UINavigationController, p
     navigationController.pushViewController(productViewController, animated: true)
     return action
 }
+
+
+

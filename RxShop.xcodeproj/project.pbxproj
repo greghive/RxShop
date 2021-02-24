@@ -342,6 +342,15 @@
 			path = AppStyles;
 			sourceTree = "<group>";
 		};
+		F3BE879F25E6617700D9F811 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F3E2591C25C85EA900AF4A8C /* Product.swift */,
+				F3E2592125C8609D00AF4A8C /* ProductRequests.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		F3C4A5A525B22E98002FDAFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,10 +556,9 @@
 			isa = PBXGroup;
 			children = (
 				F38983C025DAB4C300106277 /* Products.storyboard */,
-				F3E2591C25C85EA900AF4A8C /* Product.swift */,
-				F3E2592125C8609D00AF4A8C /* ProductRequests.swift */,
 				F3E2592925C8634D00AF4A8C /* ProductsCoordinator.swift */,
 				F357D45725DAC0220080D4C8 /* ProductsFlow.swift */,
+				F3BE879F25E6617700D9F811 /* Shared */,
 				F38983D125DAB61200106277 /* Master */,
 				F38983D225DAB61800106277 /* Detail */,
 			);

@@ -61,7 +61,7 @@ class BasketViewController: UIViewController, HasViewModel {
     }
     
     private func animateCheckoutContainer(visible: Bool, animated: Bool) {
-        let offset: CGFloat = visible ? 12 : -162
+        let offset: CGFloat = visible ? 12 : -200
         if animated {
             UIView.animate(withDuration: 0.3) {
                 self.checkoutBottom.constant = offset
