@@ -46,7 +46,7 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
         .filter { $0 == .signOut }
         .take(until: tabBarController.rx.deallocating)
         .bind { _ in
-            clearUser(from: .standard)
+            clearUser()
             navigationController.popToRootViewController(animated: true)
         }
     
@@ -62,12 +62,14 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
 
 // see if this effects the Vc's too? check that they all deinit
 
-// TODOs
+// on sign out we don't get the tab bar?
 
-// dummy checkout screen (which clears the basket)
+// basket view controller to code? no xib
 
 
 // upload before then....
+
+// create new demo for this (place search)
 
 // bonus, add setting location like in Choosie, some interesting work to do there
 

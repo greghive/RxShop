@@ -28,7 +28,7 @@ func landingViewModel() -> (_ input: LandingInput) -> (output: LandingOutput, ac
     return { input in
         
         let user = input.viewWillAppear
-            .map { cachedUser(from: .standard)}
+            .map { cachedUser()}
             .distinctUntilChanged()
             .share()
         

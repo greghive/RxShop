@@ -23,7 +23,7 @@ func authCoordinator(_ window: UIWindow) {
         .subscribe(onNext: { result in
             switch result {
             case .success(let user):
-                cacheUser(user, to: .standard)
+                cacheUser(user)
                 showTabs(navigationController, user: user)
             case .error(let error):
                 navigationController.showBasicError(message: error.localizedDescription)
