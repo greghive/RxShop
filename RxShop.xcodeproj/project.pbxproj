@@ -33,6 +33,7 @@
 		F34A4FB125DBFB1500E38F57 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */; };
 		F34A4FB625DBFB5E00E38F57 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */; };
 		F357D45825DAC0220080D4C8 /* ProductsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F357D45725DAC0220080D4C8 /* ProductsFlow.swift */; };
+		F35C9DB425E80C9C006AB9E8 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C9DB325E80C9C006AB9E8 /* Resources.swift */; };
 		F3600DDD25E50FA600DCD1DF /* XiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3600DDC25E50FA600DCD1DF /* XiblessView.swift */; };
 		F3600DE625E5169D00DCD1DF /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3600DE525E5169D00DCD1DF /* CreatePasswordView.swift */; };
 		F3600DF425E5272800DCD1DF /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3600DF325E5272800DCD1DF /* LandingView.swift */; };
@@ -142,6 +143,7 @@
 		F34A4FAF25DBFB1500E38F57 /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		F34A4FB525DBFB5E00E38F57 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
 		F357D45725DAC0220080D4C8 /* ProductsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsFlow.swift; sourceTree = "<group>"; };
+		F35C9DB325E80C9C006AB9E8 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		F3600DDC25E50FA600DCD1DF /* XiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiblessView.swift; sourceTree = "<group>"; };
 		F3600DE525E5169D00DCD1DF /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		F3600DF325E5272800DCD1DF /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 				E7FE63B05B773A87258F105E /* Pods_RxShopTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F35C9DB225E80C87006AB9E8 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				F35C9DB325E80C9C006AB9E8 /* Resources.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 		F3600DE425E5167E00DCD1DF /* CreatePassword */ = {
@@ -481,6 +491,7 @@
 		F3D75B4525AE37400069862E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F35C9DB225E80C87006AB9E8 /* Logging */,
 				F38B2DED25E41F3C004E1EC9 /* Storyboards */,
 				F3C4A5A525B22E98002FDAFE /* Extensions */,
 				F37E9E4325DBD574007D744D /* Views */,
@@ -880,6 +891,7 @@
 				F3D75B1425AE36DD0069862E /* SceneDelegate.swift in Sources */,
 				F357D45825DAC0220080D4C8 /* ProductsFlow.swift in Sources */,
 				F38B2E0125E4499B004E1EC9 /* AuthView.swift in Sources */,
+				F35C9DB425E80C9C006AB9E8 /* Resources.swift in Sources */,
 				F34A4FA925DBFAF000E38F57 /* BasketCell.swift in Sources */,
 				F37850CC25B2254F00099AA7 /* CreatePasswordViewController.swift in Sources */,
 				F31A4EBB25DE664D000EE824 /* UIButton+AppStyles.swift in Sources */,
@@ -995,6 +1007,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1049,6 +1062,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1069,6 +1083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.madebyhive.RxShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
