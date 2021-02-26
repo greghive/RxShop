@@ -41,8 +41,4 @@ class ProductsViewController: XiblessViewController<ProductsView>, HasViewModel 
                 ProductsCellConfigurator.configure(cell, with: product)
             }.disposed(by: disposeBag)
     }
-    
-    deinit {
-        print("*** deinit ProductsViewController")
-    }
 }

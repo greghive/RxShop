@@ -18,11 +18,8 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
     let productsNavigationController = productCoordinatorResult.navigationController
     productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
   
-    // this may not be needed
-    // issue around tapping into a product...could be related
-    // ProductsViewController is not getting deallocated
-    // (check other vc's?)
     let addProduct = productCoordinatorResult.action
+        .share(replay: 1)
         .take(until: tabBarController.rx.deallocating)
     
     // MARK: Basket
@@ -48,19 +45,18 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
         .bind { _ in
             clearUser()
             navigationController.popToRootViewController(animated: true)
+            navigationController.setNavigationBarHidden(false, animated: true)
         }
     
     // MARK: Tabs
     
     tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileNavigationController]
     navigationController.pushViewController(tabBarController, animated: true)
+    _ = basketNavigationController.viewControllers[0].view
+    
 }
 
 // Bugs
-
-// push from master to detail in products only works once you nav to basket
-
-// see if this effects the Vc's too? check that they all deinit
 
 // on sign out we don't get the tab bar?
 
