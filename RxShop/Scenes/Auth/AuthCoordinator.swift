@@ -26,7 +26,7 @@ func authCoordinator(_ window: UIWindow) {
                 cacheUser(user)
                 showTabs(navigationController, user: user)
             case .error(let error):
-                navigationController.showBasicError(message: error.localizedDescription)
+                navigationController.showBasicAlert(message: error.localizedDescription)
             }
         })
 }

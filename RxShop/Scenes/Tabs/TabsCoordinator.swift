@@ -15,12 +15,9 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
     // MARK: Browse
     
     let productCoordinatorResult = productsCoordinator()
+    let addProduct = productCoordinatorResult.action
     let productsNavigationController = productCoordinatorResult.navigationController
     productsNavigationController.tabBarItem = .chunky(title: "Browse", icon: "house.fill", tag: 0)
-  
-    let addProduct = productCoordinatorResult.action
-        .share(replay: 1)
-        .take(until: tabBarController.rx.deallocating)
     
     // MARK: Basket
     
@@ -53,22 +50,4 @@ func tabsCoordinator(_ navigationController: UINavigationController, user: User)
     tabBarController.viewControllers = [productsNavigationController, basketNavigationController, profileNavigationController]
     navigationController.pushViewController(tabBarController, animated: true)
     _ = basketNavigationController.viewControllers[0].view
-    
 }
-
-// Bugs
-
-// on sign out we don't get the tab bar?
-
-// basket view controller to code? no xib
-
-
-// upload before then....
-
-// create new demo for this (place search)
-
-// bonus, add setting location like in Choosie, some interesting work to do there
-
-// ^ could link to this from profile
-
-// toast alet when adding items (with rx throttle so don't post tons as once???)

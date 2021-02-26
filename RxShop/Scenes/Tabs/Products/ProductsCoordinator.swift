@@ -16,7 +16,7 @@ func productsCoordinator() -> (navigationController: UINavigationController, act
         .compactMap { $0.error }
         .withUnretained(productsViewController)
         .bind(onNext: { vc, error in
-            vc.showBasicError(message: error.localizedDescription)
+            vc.showBasicAlert(message: error.localizedDescription)
         })
     
     let buyAction = productsAction
